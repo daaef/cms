@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    'home-page': HomePage;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,14 +79,16 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'home-page': HomePageSelect<false> | HomePageSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: string;
+    defaultIDType: number;
   };
+  fallbackLocale: null;
   globals: {};
   globalsSelect: {};
   locale: null;
@@ -120,7 +123,7 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -144,7 +147,7 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: string;
+  id: number;
   alt: string;
   updatedAt: string;
   createdAt: string;
@@ -159,11 +162,158 @@ export interface Media {
   focalY?: number | null;
 }
 /**
+ * Manage the home page content
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home-page".
+ */
+export interface HomePage {
+  id: number;
+  title: string;
+  locale: 'en' | 'ja';
+  heroSlides?:
+    | {
+        type: 'zibot' | 'glide' | 'consultancy' | 'custom';
+        title?: string | null;
+        subtitle?: string | null;
+        cursiveText?: string | null;
+        image: string;
+        ctaText?: string | null;
+        ctaLink?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  videoSection: {
+    enabled?: boolean | null;
+    videoUrl: string;
+    /**
+     * Optional poster image for video
+     */
+    posterImage?: string | null;
+  };
+  aboutSection: {
+    foundation: {
+      label?: string | null;
+      title: string;
+      description: string;
+      ctaText?: string | null;
+      ctaLink?: string | null;
+    };
+    purpose: {
+      label?: string | null;
+      title: string;
+      description: string;
+      image: string;
+    };
+    vision: {
+      label?: string | null;
+      title: string;
+      description: string;
+      image: string;
+    };
+    mission: {
+      label?: string | null;
+      title: string;
+      description: string;
+      image: string;
+      highlights?:
+        | {
+            title: string;
+            subtitle: string;
+            id?: string | null;
+          }[]
+        | null;
+    };
+  };
+  products?:
+    | {
+        title: string;
+        description: string;
+        image: string;
+        link: string;
+        /**
+         * Reverse layout (image on left)
+         */
+        reverse?: boolean | null;
+        features?:
+          | {
+              title: string;
+              subtitle: string;
+              icon:
+                | 'Clock'
+                | 'DollarSign'
+                | 'Leaf'
+                | 'Shield'
+                | 'Package'
+                | 'CheckCircle'
+                | 'UtensilsCrossed'
+                | 'Hotel';
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  customSolutions?:
+    | {
+        id: string;
+        category: string;
+        title: string;
+        description: string;
+        images?:
+          | {
+              src: string;
+              alt: string;
+              id?: string | null;
+            }[]
+          | null;
+        features?:
+          | {
+              title: string;
+              subtitle: string;
+              id?: string | null;
+            }[]
+          | null;
+      }[]
+    | null;
+  metricsSection?: {
+    title?: string | null;
+    subtitle?: string | null;
+    animatedStats?:
+      | {
+          value: number;
+          label: string;
+          icon: 'Package' | 'UtensilsCrossed' | 'Hotel' | 'MapPin' | 'Globe2' | 'CheckCircle';
+          id?: string | null;
+        }[]
+      | null;
+    staticStats?:
+      | {
+          value: string;
+          label: string;
+          icon: 'MapPin' | 'Globe2' | 'CheckCircle';
+          id?: string | null;
+        }[]
+      | null;
+  };
+  faqs?:
+    | {
+        question: string;
+        answer: string;
+        locale: 'en' | 'ja';
+        order?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: string;
+  id: number;
   key: string;
   data:
     | {
@@ -180,20 +330,24 @@ export interface PayloadKv {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
+  id: number;
   document?:
     | ({
         relationTo: 'users';
-        value: string | User;
+        value: number | User;
       } | null)
     | ({
         relationTo: 'media';
-        value: string | Media;
+        value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'home-page';
+        value: number | HomePage;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -203,10 +357,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: number;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   key?: string | null;
   value?:
@@ -226,7 +380,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -271,6 +425,150 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home-page_select".
+ */
+export interface HomePageSelect<T extends boolean = true> {
+  title?: T;
+  locale?: T;
+  heroSlides?:
+    | T
+    | {
+        type?: T;
+        title?: T;
+        subtitle?: T;
+        cursiveText?: T;
+        image?: T;
+        ctaText?: T;
+        ctaLink?: T;
+        id?: T;
+      };
+  videoSection?:
+    | T
+    | {
+        enabled?: T;
+        videoUrl?: T;
+        posterImage?: T;
+      };
+  aboutSection?:
+    | T
+    | {
+        foundation?:
+          | T
+          | {
+              label?: T;
+              title?: T;
+              description?: T;
+              ctaText?: T;
+              ctaLink?: T;
+            };
+        purpose?:
+          | T
+          | {
+              label?: T;
+              title?: T;
+              description?: T;
+              image?: T;
+            };
+        vision?:
+          | T
+          | {
+              label?: T;
+              title?: T;
+              description?: T;
+              image?: T;
+            };
+        mission?:
+          | T
+          | {
+              label?: T;
+              title?: T;
+              description?: T;
+              image?: T;
+              highlights?:
+                | T
+                | {
+                    title?: T;
+                    subtitle?: T;
+                    id?: T;
+                  };
+            };
+      };
+  products?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+        link?: T;
+        reverse?: T;
+        features?:
+          | T
+          | {
+              title?: T;
+              subtitle?: T;
+              icon?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  customSolutions?:
+    | T
+    | {
+        id?: T;
+        category?: T;
+        title?: T;
+        description?: T;
+        images?:
+          | T
+          | {
+              src?: T;
+              alt?: T;
+              id?: T;
+            };
+        features?:
+          | T
+          | {
+              title?: T;
+              subtitle?: T;
+              id?: T;
+            };
+      };
+  metricsSection?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        animatedStats?:
+          | T
+          | {
+              value?: T;
+              label?: T;
+              icon?: T;
+              id?: T;
+            };
+        staticStats?:
+          | T
+          | {
+              value?: T;
+              label?: T;
+              icon?: T;
+              id?: T;
+            };
+      };
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        locale?: T;
+        order?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

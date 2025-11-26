@@ -1,0 +1,289 @@
+{
+  "title": "Home Page",
+  "locale": "en",
+  "heroSlides": [
+    {
+      "type": "zibot",
+      "title": "ZiBot",
+      "subtitle": "Anything Anytime Anywhere",
+      "cursiveText": "Delivery",
+      "image": "/slides/zibot.png",
+      "ctaText": "Learn More",
+      "ctaLink": "/products/zibot"
+    },
+    {
+      "type": "glide",
+      "title": "Glide",
+      "subtitle": "Anything Anytime Anywhere",
+      "cursiveText": "Delivery",
+      "image": "/slides/glide.png",
+      "ctaText": "Learn More",
+      "ctaLink": "/products#glide"
+    },
+    {
+      "type": "consultancy",
+      "title": "Fainzy Consultancy",
+      "subtitle": "",
+      "cursiveText": "",
+      "image": "/slides/consultancy.png",
+      "ctaText": "Learn More",
+      "ctaLink": "/products#consultancy"
+    }
+  ],
+  "videoSection": {
+    "enabled": true,
+    "videoUrl": "/videos/zibot.mp4",
+    "posterImage": ""
+  },
+  "aboutSection": {
+    "foundation": {
+      "label": "Our Foundation",
+      "title": "Imagine the future we can build for humanity",
+      "description": "From autonomous delivery robots to cutting-edge AI solutions, our technology is transforming how services reach people, making delivery faster, safer, and more efficient through innovation and robotics.",
+      "ctaText": "Get Started",
+      "ctaLink": "#"
+    },
+    "purpose": {
+      "label": "Purpose",
+      "title": "Revolutionizing Last-Mile Delivery",
+      "description": "To create intelligent, autonomous delivery solutions that transform how goods and services reach people, making delivery faster, safer, and more efficient through cutting-edge robotics.",
+      "image": "/purpose.jpg"
+    },
+    "vision": {
+      "label": "Vision",
+      "title": "A World Where Robots Serve Humanity",
+      "description": "We envision a future where autonomous delivery robots become integral partners in seamlessly navigating cities and communities to deliver goods with precision, reliability, and sustainability.",
+      "image": "/vision.jpg"
+    },
+    "mission": {
+      "label": "Mission",
+      "title": "Pioneering the New Normal",
+      "description": "To develop and deploy advanced robotic delivery systems that prioritize safety, efficiency, and accessibility. We are committed to continuous innovation, exceptional quality, and creating solutions that transform lives.",
+      "image": "/mission.png",
+      "highlights": [
+        {
+          "title": "Safety",
+          "subtitle": "First Priority"
+        },
+        {
+          "title": "Innovation",
+          "subtitle": "Continuous"
+        }
+      ]
+    }
+  },
+  "products": [
+    {
+      "title": "ZiBot Last Mile Delivery Robot System",
+      "description": "The Last Mile Delivery System uses our robot to take food deliveries from restaurants to consumers' locations.",
+      "image": "/last-delivery.png",
+      "link": "/products/zibot",
+      "reverse": false,
+      "features": [
+        {
+          "title": "24/7 Operation",
+          "subtitle": "Always Available",
+          "icon": "Clock"
+        },
+        {
+          "title": "Cost Effective",
+          "subtitle": "Reduced Labor",
+          "icon": "DollarSign"
+        },
+        {
+          "title": "Eco-Friendly",
+          "subtitle": "Zero Emissions",
+          "icon": "Leaf"
+        },
+        {
+          "title": "Reliable",
+          "subtitle": "Consistent Service",
+          "icon": "Shield"
+        }
+      ]
+    },
+    {
+      "title": "Glide",
+      "description": "Introducing Fainzy's Glide, an innovative autonomous scooter that you can summon just like an Uber. Glide offers a seamless travel experience, allowing you to navigate your surroundings effortlessly while minimizing physical contact. Simply request a ride via the app, and your personal scooter will arrive to take you wherever you need to go!",
+      "image": "/glide.png",
+      "link": "#glide",
+      "reverse": true,
+      "features": [
+        {
+          "title": "24/7 Operation",
+          "subtitle": "Always Available",
+          "icon": "Clock"
+        },
+        {
+          "title": "Cost Effective",
+          "subtitle": "Reduced Labor",
+          "icon": "DollarSign"
+        },
+        {
+          "title": "Eco-Friendly",
+          "subtitle": "Zero Emissions",
+          "icon": "Leaf"
+        },
+        {
+          "title": "Reliable",
+          "subtitle": "Consistent Service",
+          "icon": "Shield"
+        }
+      ]
+    },
+    {
+      "title": "Fainzy Consultancy Services",
+      "description": "Our consulting services help businesses integrate autonomous robotic solutions efficiently. From feasibility studies to deployment and maintenance, we guide you through every step of the adoption process to ensure optimal performance and ROI.",
+      "image": "/products/consultancy.jpg",
+      "link": "/custom-solutions",
+      "reverse": false,
+      "features": [
+        {
+          "title": "Expert Analysis",
+          "subtitle": "Comprehensive Solutions",
+          "icon": "CheckCircle"
+        },
+        {
+          "title": "Custom Integration",
+          "subtitle": "Tailored to Your Needs",
+          "icon": "Package"
+        },
+        {
+          "title": "Full Support",
+          "subtitle": "End-to-End Guidance",
+          "icon": "Shield"
+        },
+        {
+          "title": "Proven Results",
+          "subtitle": "Maximize ROI",
+          "icon": "DollarSign"
+        }
+      ]
+    }
+  ],
+  "customSolutions": [],
+  "metricsSection": {
+    "title": "We'll keep making impact",
+    "subtitle": "Transforming industries with autonomous robotics technology",
+    "animatedStats": [
+      {
+        "value": 150,
+        "label": "Robots in active service",
+        "icon": "Package"
+      },
+      {
+        "value": 45,
+        "label": "Restaurants using the robot delivery system",
+        "icon": "UtensilsCrossed"
+      },
+      {
+        "value": 30,
+        "label": "Hotels using the robot delivery system",
+        "icon": "Hotel"
+      }
+    ],
+    "staticStats": [
+      {
+        "value": "25+",
+        "label": "Active Deployments",
+        "icon": "MapPin"
+      },
+      {
+        "value": "8+",
+        "label": "Countries Served",
+        "icon": "Globe2"
+      },
+      {
+        "value": "500K+",
+        "label": "Deliveries Completed",
+        "icon": "CheckCircle"
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "What is Fainzy Technologies' specialty?",
+      "answer": "We specialize on (1)advanced autonomous driving systems, (2)making robots, (3)mobile app and website development, and, (4)AI applications using deep learning",
+      "locale": "en",
+      "order": 1
+    },
+    {
+      "question": "How can I apply for a role?",
+      "answer": "Please contact us using the Contact Us Form, (make sure to select \"Apply For A Role\" as the Reason.",
+      "locale": "en",
+      "order": 2
+    },
+    {
+      "question": "What type of robots do you have?",
+      "answer": "Restaurant robot and last-mile delivery robot.",
+      "locale": "en",
+      "order": 3
+    },
+    {
+      "question": "I am interested in a robot, what do I do?",
+      "answer": "Please contact us using the Contact Us Form, (make sure to select \"Robot Sales\" as the Reason)",
+      "locale": "en",
+      "order": 4
+    },
+    {
+      "question": "Can you make custom robots?",
+      "answer": "Yes, we can make custom robots to fit your needs and requirements.",
+      "locale": "en",
+      "order": 5
+    },
+    {
+      "question": "I am interested in making a custom robot, what do I do?",
+      "answer": "Please contact us using the Contact Us Form, (make sure to select \"Custom Robot\" as the Reason)",
+      "locale": "en",
+      "order": 6
+    },
+    {
+      "question": "I would like to invest or partner with Fainzy Technologies",
+      "answer": "Fainzy Technologies is always looking new strategic partnerships. Therefore, please contact using the Contact US Form, (Make sure to select \"Invest/Partnership\" as the Reason)",
+      "locale": "en",
+      "order": 7
+    },
+    {
+      "question": "ファインジー・テクノロジーズの得意分野は何ですか?",
+      "answer": "(1)高度な自律走行システム、(2)ロボット製作、(3)モバイルアプリ・ウェブサイト開発、(4)ディープラーニングによるAIアプリケーションに特化した事業展開を行っています。",
+      "locale": "ja",
+      "order": 1
+    },
+    {
+      "question": "どのように応募すればよいのですか?",
+      "answer": "お問い合わせフォームよりご連絡ください(必ず「応募する」を選択してください)。",
+      "locale": "ja",
+      "order": 2
+    },
+    {
+      "question": "どのようなロボットをお持ちですか?",
+      "answer": "レストランロボットとラストワンマイルデリバリーロボット。",
+      "locale": "ja",
+      "order": 3
+    },
+    {
+      "question": "ロボットに興味があるのですが、どうしたらいいですか?",
+      "answer": "お問い合わせフォームよりお問い合わせください(理由は必ず「ロボット販売」を選択してください)。",
+      "locale": "ja",
+      "order": 4
+    },
+    {
+      "question": "カスタムロボットは作れますか?",
+      "answer": "はい、お客様のニーズやご要望に合わせたカスタムロボットの製作が可能です。",
+      "locale": "ja",
+      "order": 5
+    },
+    {
+      "question": "カスタムロボットの製作に興味があるのですが、どうすればよいですか?",
+      "answer": "お問い合わせフォームよりお問い合わせください(理由は必ず「カスタムロボット」を選択してください)。",
+      "locale": "ja",
+      "order": 6
+    },
+    {
+      "question": "ファインジー・テクノロジーへの投資・提携を希望します。",
+      "answer": "Fainzy Technologies は、常に新しい戦略的パートナーシップを模索しています。お問い合わせフォームからご連絡ください(その際、必ず「投資・パートナーシップ」を理由に選択してください)。",
+      "locale": "ja",
+      "order": 7
+    }
+  ]
+}
