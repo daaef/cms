@@ -1,7 +1,7 @@
 import { getPayload } from 'payload';
 import configPromise from '@payload-config';
 import { fileURLToPath } from 'url';
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { dirname, join } from 'path';
 
 /**
@@ -21,6 +21,11 @@ const seedHomePage = async () => {
 
         // Read the JSON data
         const dataPath = join(__dirname, '../seed-data/home-page.json');
+
+        if (!existsSync(dataPath)) {
+            throw new Error(`Seed data not found at: ${dataPath}`);
+        }
+
         const rawData = readFileSync(dataPath, 'utf-8');
         const homePageData = JSON.parse(rawData);
 
@@ -70,7 +75,7 @@ const seedHomePage = async () => {
         process.exit(0);
     } catch (error) {
         console.error('❌ Error seeding home page:', error);
-        console.error(error);
+        console.error('Stack:', error instanceof Error ? error.stack : error);
         process.exit(1);
     }
 };
