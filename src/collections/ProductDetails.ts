@@ -70,7 +70,6 @@ export const ProductDetails: CollectionConfig = {
           name: 'hero',
           type: 'group',
           label: 'Hero Section',
-          dbName: 'hero',
           admin: {
             condition: (data, siblingData) => {
               return siblingData?.sectionType === 'hero';
@@ -143,7 +142,6 @@ export const ProductDetails: CollectionConfig = {
           name: 'videoWithText',
           type: 'group',
           label: 'Video with Text',
-          dbName: 'vid_txt',
           admin: {
             condition: (data, siblingData) => {
               return siblingData?.sectionType === 'videoWithText';
@@ -237,7 +235,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'largeFeatureCarousel',
         type: 'group',
         label: 'Large Feature Carousel',
-        dbName: 'lg_feat',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'largeFeatureCarousel';
@@ -292,7 +289,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'cardCarousel',
         type: 'group',
         label: 'Card Carousel',
-        dbName: 'cards',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'cardCarousel';
@@ -368,7 +364,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'robotComparison',
         type: 'group',
         label: 'Robot Comparison',
-        dbName: 'robot_cmp',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'robotComparison';
@@ -417,7 +412,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'robotTopViewGrid',
         type: 'group',
         label: 'Robot Top View Grid',
-        dbName: 'robot_grid',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'robotTopViewGrid';
@@ -521,7 +515,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'videoWithStats',
         type: 'group',
         label: 'Video with Stats',
-        dbName: 'vid_stats',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'videoWithStats';
@@ -597,7 +590,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'benefitGrid',
         type: 'group',
         label: 'Benefit Grid',
-        dbName: 'benefits',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'benefitGrid';
@@ -668,7 +660,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'pricing',
         type: 'group',
         label: 'Pricing Section',
-        dbName: 'price',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'pricing';
@@ -799,7 +790,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'backgroundVideo',
         type: 'group',
         label: 'Background Video Section',
-        dbName: 'bg_vid',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'backgroundVideo';
@@ -851,7 +841,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'specifications',
         type: 'group',
         label: 'Specifications',
-        dbName: 'specs',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'specifications';
@@ -931,7 +920,6 @@ export const ProductDetails: CollectionConfig = {
         name: 'footerCTA',
         type: 'group',
         label: 'Footer CTA',
-        dbName: 'footer',
         admin: {
           condition: (data, siblingData) => {
             return siblingData?.sectionType === 'footerCTA';
