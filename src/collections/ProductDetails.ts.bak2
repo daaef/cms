@@ -1,0 +1,1022 @@
+import { CollectionConfig } from 'payload';
+
+export const ProductDetails: CollectionConfig = {
+  slug: 'product-details',
+  dbName: 'prod_details',
+  labels: {
+    singular: 'Product Detail Page',
+    plural: 'Product Detail Pages',
+  },
+  admin: {
+    useAsTitle: 'productName',
+    description: 'Manage product detail pages with flexible section-based content',
+  },
+  access: {
+    read: () => true,
+    create: ({ req: { user } }) => !!user,
+    update: ({ req: { user } }) => !!user,
+    delete: ({ req: { user } }) => !!user,
+  },
+  fields: [
+    {
+      name: 'productName',
+      type: 'text',
+      required: true,
+      admin: {
+        description: 'Product name (e.g., "ZiBot")',
+      },
+    },
+    {
+      name: 'slug',
+      type: 'text',
+      required: true,
+      unique: true,
+      admin: {
+        description: 'URL-friendly identifier (e.g., "zibot")',
+      },
+    },
+    {
+      name: 'sections',
+      type: 'array',
+      label: 'Page Sections',
+      required: false,
+      dbName: 'secs',
+      admin: {
+        description: 'Add and reorder sections to build your product page',
+      },
+      fields: [
+        {
+          name: 'sectionType',
+          type: 'select',
+          required: true,
+          options: [
+            { label: 'Hero Section', value: 'hero' },
+            { label: 'Video with Text', value: 'videoWithText' },
+            { label: 'Large Feature Carousel', value: 'largeFeatureCarousel' },
+            { label: 'Card Carousel', value: 'cardCarousel' },
+            { label: 'Robot Comparison', value: 'robotComparison' },
+            { label: 'Robot Top View Grid', value: 'robotTopViewGrid' },
+            { label: 'Video with Stats', value: 'videoWithStats' },
+            { label: 'Benefit Grid', value: 'benefitGrid' },
+            { label: 'Pricing Section', value: 'pricing' },
+            { label: 'Background Video', value: 'backgroundVideo' },
+            { label: 'Specifications', value: 'specifications' },
+            { label: 'Footer CTA', value: 'footerCTA' },
+          ],
+        },
+
+        // Hero Section
+        {
+          name: 'hero',
+          type: 'group',
+          label: 'Hero Section',
+          dbName: 'hero',
+          admin: {
+            condition: (data, siblingData) => {
+              return siblingData?.sectionType === 'hero';
+            },
+          },
+              fields: [
+                {
+                  name: 'backgroundVideo',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Background video for hero section',
+                  },
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Large hero title (e.g., "ZIBOT")',
+                  },
+                },
+                {
+                  name: 'tagline',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Subtitle/tagline below title',
+                  },
+                },
+                {
+                  name: 'primaryCTA',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Primary call-to-action button text',
+                  },
+                },
+                {
+                  name: 'stats',
+                  type: 'array',
+                  label: 'Key Stats',
+                  maxRows: 3,
+                  required: false,
+                  fields: [
+                    {
+                      name: 'value',
+                      type: 'text',
+                      required: true,
+                      admin: {
+                        description: 'Stat value (e.g., "50km")',
+                      },
+                    },
+                    {
+                      name: 'label',
+                      type: 'text',
+                      required: true,
+                      admin: {
+                        description: 'Stat label (e.g., "Range")',
+                      },
+                    },
+                  ],
+                },
+          ],
+        },
+
+        // Video with Text
+        {
+          name: 'videoWithText',
+          type: 'group',
+          label: 'Video with Text',
+          dbName: 'vid_txt',
+          admin: {
+            condition: (data, siblingData) => {
+              return siblingData?.sectionType === 'videoWithText';
+            },
+          },
+              fields: [
+                {
+                  name: 'video',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Video file',
+                  },
+                },
+                {
+                  name: 'poster',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Video poster image',
+                  },
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section title',
+                  },
+                },
+                {
+                  name: 'description',
+                  type: 'textarea',
+                  required: false,
+                  admin: {
+                    description: 'Section description',
+                  },
+                },
+                {
+                  name: 'titlePosition',
+                  type: 'select',
+                  required: false,
+                  defaultValue: 'below',
+                  dbName: 'title_pos',
+                  options: [
+                    { label: 'Above Video', value: 'above' },
+                    { label: 'Below Video', value: 'below' },
+                    { label: 'Overlay on Video', value: 'overlay' },
+                  ],
+                },
+                {
+                  name: 'height',
+                  type: 'select',
+                  required: false,
+                  defaultValue: 'medium',
+                  options: [
+                    { label: 'Small', value: 'small' },
+                    { label: 'Medium', value: 'medium' },
+                    { label: 'Large', value: 'large' },
+                  ],
+                },
+                {
+                  name: 'overlayText',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Optional overlay text',
+                  },
+                },
+                {
+                  name: 'overlayPosition',
+                  type: 'select',
+                  required: false,
+                  defaultValue: 'center',
+                  dbName: 'overlay_pos',
+                  options: [
+                    { label: 'Top Left', value: 'top-left' },
+                    { label: 'Top Right', value: 'top-right' },
+                    { label: 'Bottom Left', value: 'bottom-left' },
+                    { label: 'Bottom Right', value: 'bottom-right' },
+                    { label: 'Center', value: 'center' },
+                  ],
+                },
+              ],
+            },
+
+            // Large Feature Carousel
+            {
+              name: 'largeFeatureCarousel',
+              type: 'group',
+              label: 'Large Feature Carousel',
+              dbName: 'lg_feat',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'largeFeatureCarousel';
+                },
+              },
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section title',
+                  },
+                },
+                {
+                  name: 'subtitle',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section subtitle',
+                  },
+                },
+                {
+                  name: 'features',
+                  type: 'array',
+                  label: 'Features',
+                  required: false,
+                  fields: [
+                    {
+                      name: 'image',
+                      type: 'upload',
+                      relationTo: 'media',
+                      required: false,
+                    },
+                    {
+                      name: 'title',
+                      type: 'text',
+                      required: false,
+                    },
+                    {
+                      name: 'description',
+                      type: 'textarea',
+                      required: false,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // Card Carousel
+            {
+              name: 'cardCarousel',
+              type: 'group',
+              label: 'Card Carousel',
+              dbName: 'cards',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'cardCarousel';
+                },
+              },
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section title',
+                  },
+                },
+                {
+                  name: 'subtitle',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section subtitle',
+                  },
+                },
+                {
+                  name: 'cardsPerView',
+                  type: 'number',
+                  required: false,
+                  defaultValue: 4,
+                  admin: {
+                    description: 'Number of cards visible at once',
+                  },
+                },
+                {
+                  name: 'navigationPosition',
+                  type: 'select',
+                  required: false,
+                  defaultValue: 'top-right',
+                  dbName: 'nav_pos',
+                  options: [
+                    { label: 'Top Left', value: 'top-left' },
+                    { label: 'Top Right', value: 'top-right' },
+                    { label: 'Bottom', value: 'bottom' },
+                  ],
+                },
+                {
+                  name: 'cards',
+                  type: 'array',
+                  label: 'Cards',
+                  required: false,
+                  fields: [
+                    {
+                      name: 'image',
+                      type: 'upload',
+                      relationTo: 'media',
+                      required: false,
+                    },
+                    {
+                      name: 'title',
+                      type: 'text',
+                      required: false,
+                    },
+                    {
+                      name: 'description',
+                      type: 'text',
+                      required: false,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // Robot Comparison
+            {
+              name: 'robotComparison',
+              type: 'group',
+              label: 'Robot Comparison',
+              dbName: 'robot_cmp',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'robotComparison';
+                },
+              },
+              fields: [
+                {
+                  name: 'robotImage',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Robot comparison image',
+                  },
+                },
+                {
+                  name: 'specs',
+                  type: 'array',
+                  label: 'Specifications',
+                  maxRows: 3,
+                  required: false,
+                  fields: [
+                    {
+                      name: 'value',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Spec value (e.g., "125kg")',
+                      },
+                    },
+                    {
+                      name: 'label',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Spec label (e.g., "Max Load")',
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // Robot Top View Grid
+            {
+              name: 'robotTopViewGrid',
+              type: 'group',
+              label: 'Robot Top View Grid',
+              dbName: 'robot_grid',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'robotTopViewGrid';
+                },
+              },
+              fields: [
+                {
+                  name: 'robotImage',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Robot top view image',
+                  },
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section title',
+                  },
+                },
+                {
+                  name: 'subtitle',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section subtitle',
+                  },
+                },
+                {
+                  name: 'gridCols',
+                  type: 'select',
+                  required: false,
+                  defaultValue: '3',
+                  dbName: 'cols',
+                  options: [
+                    { label: '2 Columns', value: '2' },
+                    { label: '3 Columns', value: '3' },
+                    { label: '6 Columns', value: '6' },
+                  ],
+                },
+                {
+                  name: 'gridItems',
+                  type: 'array',
+                  label: 'Grid Items',
+                  required: false,
+                  fields: [
+                    {
+                      name: 'image',
+                      type: 'upload',
+                      relationTo: 'media',
+                      required: false,
+                    },
+                    {
+                      name: 'title',
+                      type: 'text',
+                      required: false,
+                    },
+                    {
+                      name: 'description',
+                      type: 'text',
+                      required: false,
+                    },
+                  ],
+                },
+                {
+                  name: 'rightContentType',
+                  type: 'select',
+                  required: false,
+                  defaultValue: 'none',
+                  dbName: 'right_type',
+                  options: [
+                    { label: 'None', value: 'none' },
+                    { label: 'CTA Button', value: 'cta' },
+                    { label: 'App Store Buttons', value: 'appButtons' },
+                  ],
+                },
+                {
+                  name: 'rightContentText',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Text for right content area',
+                  },
+                },
+                {
+                  name: 'rightContentButtonText',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Button text for CTA',
+                  },
+                },
+              ],
+            },
+
+            // Video with Stats
+            {
+              name: 'videoWithStats',
+              type: 'group',
+              label: 'Video with Stats',
+              dbName: 'vid_stats',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'videoWithStats';
+                },
+              },
+              fields: [
+                {
+                  name: 'video',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Background video',
+                  },
+                },
+                {
+                  name: 'poster',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Video poster image',
+                  },
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section title',
+                  },
+                },
+                {
+                  name: 'stats',
+                  type: 'array',
+                  label: 'Stats',
+                  maxRows: 3,
+                  required: false,
+                  fields: [
+                    {
+                      name: 'value',
+                      type: 'text',
+                      required: false,
+                    },
+                    {
+                      name: 'label',
+                      type: 'text',
+                      required: false,
+                    },
+                  ],
+                },
+                {
+                  name: 'ctaText',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'CTA button text',
+                  },
+                },
+                {
+                  name: 'ctaLink',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'CTA button link',
+                  },
+                },
+              ],
+            },
+
+            // Benefit Grid
+            {
+              name: 'benefitGrid',
+              type: 'group',
+              label: 'Benefit Grid',
+              dbName: 'benefits',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'benefitGrid';
+                },
+              },
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Main section title',
+                  },
+                },
+                {
+                  name: 'sections',
+                  type: 'array',
+                  label: 'Benefit Sections',
+                  required: false,
+                  fields: [
+                    {
+                      name: 'heading',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Section heading (e.g., "For Store Owners")',
+                      },
+                    },
+                    {
+                      name: 'subheading',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Section subheading',
+                      },
+                    },
+                    {
+                      name: 'items',
+                      type: 'array',
+                      label: 'Benefit Items',
+                      required: false,
+                      fields: [
+                        {
+                          name: 'image',
+                          type: 'upload',
+                          relationTo: 'media',
+                          required: false,
+                        },
+                        {
+                          name: 'title',
+                          type: 'text',
+                          required: false,
+                        },
+                        {
+                          name: 'description',
+                          type: 'textarea',
+                          required: false,
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // Pricing Section
+            {
+              name: 'pricing',
+              type: 'group',
+              label: 'Pricing Section',
+              dbName: 'price',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'pricing';
+                },
+              },
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section title',
+                  },
+                },
+                {
+                  name: 'description',
+                  type: 'textarea',
+                  required: false,
+                  admin: {
+                    description: 'Section description',
+                  },
+                },
+                {
+                  name: 'robotImage',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Robot image for pricing section',
+                  },
+                },
+                {
+                  name: 'robotImageHeight',
+                  type: 'select',
+                  required: false,
+                  defaultValue: 'medium',
+                  dbName: 'img_height',
+                  options: [
+                    { label: 'Small', value: 'small' },
+                    { label: 'Medium', value: 'medium' },
+                    { label: 'Large', value: 'large' },
+                  ],
+                },
+                {
+                  name: 'pricingTiers',
+                  type: 'array',
+                  label: 'Pricing Tiers',
+                  required: false,
+                  fields: [
+                    {
+                      name: 'name',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Tier name (e.g., "Standard", "Premium")',
+                      },
+                    },
+                    {
+                      name: 'badge',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Optional badge text (e.g., "Most Popular")',
+                      },
+                    },
+                    {
+                      name: 'badgeColor',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Badge color (hex code)',
+                      },
+                    },
+                    {
+                      name: 'price',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Price display (e.g., "$499/month")',
+                      },
+                    },
+                    {
+                      name: 'commission',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Commission info',
+                      },
+                    },
+                    {
+                      name: 'features',
+                      type: 'array',
+                      label: 'Features',
+                      required: false,
+                      fields: [
+                        {
+                          name: 'feature',
+                          type: 'text',
+                          required: false,
+                        },
+                      ],
+                    },
+                    {
+                      name: 'buttonText',
+                      type: 'text',
+                      required: false,
+                      defaultValue: 'Get Started',
+                    },
+                    {
+                      name: 'buttonVariant',
+                      type: 'select',
+                      required: false,
+                      defaultValue: 'default',
+                      dbName: 'btn_var',
+                      options: [
+                        { label: 'Default', value: 'default' },
+                        { label: 'Outline', value: 'outline' },
+                        { label: 'Ghost', value: 'ghost' },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // Background Video Section
+            {
+              name: 'backgroundVideo',
+              type: 'group',
+              label: 'Background Video Section',
+              dbName: 'bg_vid',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'backgroundVideo';
+                },
+              },
+              fields: [
+                {
+                  name: 'video',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Background video',
+                  },
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section title',
+                  },
+                },
+                {
+                  name: 'description',
+                  type: 'textarea',
+                  required: false,
+                  admin: {
+                    description: 'Section description',
+                  },
+                },
+                {
+                  name: 'minHeight',
+                  type: 'select',
+                  required: false,
+                  defaultValue: '70vh',
+                  dbName: 'min_h',
+                  options: [
+                    { label: '50% viewport height', value: '50vh' },
+                    { label: '70% viewport height', value: '70vh' },
+                    { label: '100% viewport height', value: '100vh' },
+                  ],
+                },
+              ],
+            },
+
+            // Specifications
+            {
+              name: 'specifications',
+              type: 'group',
+              label: 'Specifications',
+              dbName: 'specs',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'specifications';
+                },
+              },
+              fields: [
+                {
+                  name: 'productName',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Product name for specs section',
+                  },
+                },
+                {
+                  name: 'subtitle',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Section subtitle',
+                  },
+                },
+                {
+                  name: 'robotImage',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Robot image for specs section',
+                  },
+                },
+                {
+                  name: 'specGroups',
+                  type: 'array',
+                  label: 'Specification Groups',
+                  required: false,
+                  fields: [
+                    {
+                      name: 'groupName',
+                      type: 'text',
+                      required: false,
+                      admin: {
+                        description: 'Group name (e.g., "Performance", "Dimensions")',
+                      },
+                    },
+                    {
+                      name: 'specs',
+                      type: 'array',
+                      label: 'Specifications',
+                      required: false,
+                      fields: [
+                        {
+                          name: 'label',
+                          type: 'text',
+                          required: false,
+                          admin: {
+                            description: 'Spec label (e.g., "Max Speed")',
+                          },
+                        },
+                        {
+                          name: 'value',
+                          type: 'text',
+                          required: false,
+                          admin: {
+                            description: 'Spec value (e.g., "20 km/h")',
+                          },
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // Footer CTA
+            {
+              name: 'footerCTA',
+              type: 'group',
+              label: 'Footer CTA',
+              dbName: 'footer',
+              admin: {
+                condition: (data, siblingData) => {
+                  return siblingData?.sectionType === 'footerCTA';
+                },
+              },
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Main title',
+                  },
+                },
+                {
+                  name: 'description',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Description text',
+                  },
+                },
+                {
+                  name: 'subtitle',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'Subtitle text',
+                  },
+                },
+                {
+                  name: 'ctaText',
+                  type: 'text',
+                  required: false,
+                  admin: {
+                    description: 'CTA button text',
+                  },
+                },
+                {
+                  name: 'robotImage',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: false,
+                  admin: {
+                    description: 'Robot image for footer',
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    // SEO
+    {
+      name: 'seo',
+      type: 'group',
+      label: 'SEO',
+      fields: [
+        {
+          name: 'metaTitle',
+          type: 'text',
+          required: false,
+          admin: {
+            description: 'SEO title (recommended: 50-60 characters)',
+          },
+        },
+        {
+          name: 'metaDescription',
+          type: 'textarea',
+          required: false,
+          admin: {
+            description: 'SEO description (recommended: 150-160 characters)',
+          },
+        },
+        {
+          name: 'keywords',
+          type: 'text',
+          required: false,
+          admin: {
+            description: 'SEO keywords (comma-separated)',
+          },
+        },
+      ],
+    },
+  ],
+};

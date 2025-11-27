@@ -1,0 +1,158 @@
+[
+  {
+    "name": "ZiBot & Glide",
+    "slug": "zibot-glide-delivery",
+    "category": "Robotics",
+    "title": "Last Mile Delivery Robot System",
+    "description": "Transform your delivery operations with our dual-platform solution. ZiBot offers autonomous robot delivery for sidewalks and indoor environments, while Glide provides fast scooter-based delivery for longer distances. Together, they create a complete last-mile delivery ecosystem.",
+    "images": [
+      {
+        "image": "/dashboard/last-delivery.png",
+        "alt": "ZiBot autonomous delivery robot",
+        "label": "ZiBot"
+      },
+      {
+        "image": "/dashboard/glide.png",
+        "alt": "Glide electric scooter delivery",
+        "label": "Glide"
+      }
+    ],
+    "features": [
+      {
+        "icon": "🤖",
+        "title": "ZiBot Robot",
+        "description": "Autonomous sidewalk delivery with 24/7 operation capability"
+      },
+      {
+        "icon": "🛴",
+        "title": "Glide Service",
+        "description": "Fast electric scooter delivery for extended range"
+      },
+      {
+        "icon": "🗺️",
+        "title": "Smart Routing",
+        "description": "AI-powered optimization for efficient delivery paths"
+      },
+      {
+        "icon": "📍",
+        "title": "Real-time Tracking",
+        "description": "Live updates and precise ETA for every delivery"
+      }
+    ],
+    "ctaText": "Get Started",
+    "ctaLink": "/products/zibot-glide",
+    "layout": "image-grid",
+    "order": 1,
+    "locale": "en",
+    "isActive": true,
+    "seo": {
+      "metaTitle": "ZiBot & Glide - Last Mile Delivery Robot System",
+      "metaDescription": "Autonomous delivery solution combining ZiBot sidewalk robots and Glide scooter service for complete last-mile logistics coverage.",
+      "keywords": "last mile delivery, autonomous robots, delivery robots, ZiBot, Glide, scooter delivery"
+    }
+  },
+  {
+    "name": "Fainzy Consultancy",
+    "slug": "fainzy-consultancy",
+    "category": "Consultancy",
+    "title": "Fainzy Consultancy",
+    "description": "Advanced AI-powered analytics to predict customer demand patterns, optimize inventory management, and streamline your supply chain operations.",
+    "images": [
+      {
+        "image": "/dashboard/consultancy.jpg",
+        "alt": "Fainzy Consultancy services",
+        "label": ""
+      }
+    ],
+    "features": [],
+    "ctaText": "Get Started",
+    "ctaLink": "/consultancy",
+    "layout": "image-left",
+    "order": 2,
+    "locale": "en",
+    "isActive": true,
+    "seo": {
+      "metaTitle": "Fainzy Consultancy - AI-Powered Business Analytics",
+      "metaDescription": "Expert consultancy services leveraging AI and data analytics to optimize your business operations and supply chain management.",
+      "keywords": "business consultancy, AI analytics, supply chain optimization, demand forecasting"
+    }
+  },
+  {
+    "name": "MiraX",
+    "slug": "mirax-restaurant-robot",
+    "category": "Custom Solution",
+    "title": "MiraX",
+    "description": "Our in-restaurant delivery robot designed to minimize physical contact between staff and customers, seamlessly delivering orders throughout your establishment.",
+    "images": [
+      {
+        "image": "/dashboard/mirax.png",
+        "alt": "MiraX restaurant delivery robot",
+        "label": ""
+      }
+    ],
+    "features": [],
+    "ctaText": "Get Started",
+    "ctaLink": "/products/mirax",
+    "layout": "image-right",
+    "order": 3,
+    "locale": "en",
+    "isActive": true,
+    "seo": {
+      "metaTitle": "MiraX - Restaurant Delivery Robot",
+      "metaDescription": "Contactless in-restaurant delivery robot for seamless food service automation and enhanced customer experience.",
+      "keywords": "restaurant robot, food delivery robot, MiraX, contactless service, restaurant automation"
+    }
+  },
+  {
+    "name": "Efficient Food Ordering System",
+    "slug": "food-ordering-system",
+    "category": "Food Service",
+    "title": "Efficient Food Ordering System",
+    "description": "Connect restaurants and customers on a unified platform where orders are seamlessly processed and delivered by our autonomous robot fleet.",
+    "images": [
+      {
+        "image": "/dashboard/efficient.jpg",
+        "alt": "Efficient food ordering system",
+        "label": ""
+      }
+    ],
+    "features": [],
+    "ctaText": "Get Started",
+    "ctaLink": "/food-ordering",
+    "layout": "image-left",
+    "order": 4,
+    "locale": "en",
+    "isActive": true,
+    "seo": {
+      "metaTitle": "Efficient Food Ordering System - Automated Delivery Platform",
+      "metaDescription": "Unified food ordering platform connecting restaurants and customers with autonomous robot delivery for efficient operations.",
+      "keywords": "food ordering system, restaurant platform, automated delivery, robot fleet management"
+    }
+  },
+  {
+    "name": "Hotel Robot Delivery System",
+    "slug": "hotel-robot-delivery",
+    "category": "Hospitality",
+    "title": "Hotel Robot Delivery System",
+    "description": "In-door hotel delivery robot that handles guest requests through an integrated tablet system, delivering items directly to rooms with precision.",
+    "images": [
+      {
+        "image": "/dashboard/hotel.png",
+        "alt": "Hotel robot delivery system",
+        "label": ""
+      }
+    ],
+    "features": [],
+    "ctaText": "Get Started",
+    "ctaLink": "/products/hotel-delivery",
+    "layout": "image-right",
+    "order": 5,
+    "locale": "en",
+    "isActive": true,
+    "seo": {
+      "metaTitle": "Hotel Robot Delivery System - Automated Guest Services",
+      "metaDescription": "Indoor hotel delivery robot with tablet integration for seamless guest room service and amenity delivery.",
+      "keywords": "hotel robot, hospitality automation, room service robot, hotel delivery, guest services"
+    }
+  }
+]

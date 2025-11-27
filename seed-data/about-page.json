@@ -1,0 +1,104 @@
+{
+  "title": "About Page",
+  "locale": "en",
+  "heroSection": {
+    "title": "About Us",
+    "subtitle": "All you need to know about us",
+    "bannerImage": "/about/about-banner.jpg"
+  },
+  "foundedSection": {
+    "title": "Founded in 2018. Headquartered in Nagoya.",
+    "paragraphs": [
+      {
+        "text": "Founded in 2018 and headquartered in Moscow, Idaho, Fainzy Technologies is at the forefront of robotics and artificial intelligence innovation. We believe that the intersection of cutting-edge technology and human ingenuity holds the key to solving tomorrow's challenges."
+      },
+      {
+        "text": "Our team of world-class engineers, researchers, and designers work tirelessly to create intelligent systems that enhance productivity, improve safety, and unlock new possibilities across industries."
+      },
+      {
+        "text": "From autonomous robotics to advanced AI solutions, we're committed to building technology that makes a meaningful impact on the world. Our vision is to democratize access to cutting-edge automation and intelligence, empowering businesses and communities globally."
+      }
+    ],
+    "image": "/about/founded.jpg"
+  },
+  "peopleBannerSection": {
+    "title": "The People Behind The Innovation",
+    "description": "To revolutionize robotics and AI, we need exceptional talent. Based in Nagoya, our team operates across multiple continents. With expertise spanning robotics, software engineering, and AI research, we design, build, test and deploy our innovations in-house.",
+    "bannerImage": "/about/people-banner.jpg"
+  },
+  "visionSection": {
+    "title": "Our Vision",
+    "paragraphs": [
+      {
+        "text": "We envision a world where intelligent machines work seamlessly alongside humans, amplifying our capabilities and freeing us to focus on what matters most - creativity, innovation, and meaningful human connection."
+      },
+      {
+        "text": "Through continuous research and development, we're pushing the boundaries of what's possible in robotics and AI, creating solutions that are not just technologically advanced, but also accessible, reliable, and built to last."
+      }
+    ],
+    "image": "/about/vision.jpg"
+  },
+  "leadershipSection": {
+    "title": "Our leadership",
+    "subtitle": "The brilliant minds driving innovation at Fainzy Technologies",
+    "teamMembers": [
+      {
+        "name": "Dr. Jude Nwadiuto",
+        "role": "Co-Founder & CEO",
+        "imageUrl": "/about/jude.jpg"
+      },
+      {
+        "name": "Emmanuel Omeogah",
+        "role": "Co-Founder & Tech Lead",
+        "imageUrl": "/about/emmanuel.jpg"
+      },
+      {
+        "name": "Patric John",
+        "role": "Co-Founder & Design Lead",
+        "imageUrl": "/about/patrick.jpg"
+      },
+      {
+        "name": "Michael Nwadiuto",
+        "role": "Co-Founder & Project Lead",
+        "imageUrl": "/about/mike.jpg"
+      },
+      {
+        "name": "Afekhide Bot Gbadamosi",
+        "role": "Full Stack Developer",
+        "imageUrl": "/about/afe.jpg"
+      },
+      {
+        "name": "Prof. Tatsuya Suzuki",
+        "role": "Special Advisor",
+        "imageUrl": "/about/tatsuya.jpg"
+      },
+      {
+        "name": "Assoc. Prof Hiroyuki Okuda",
+        "role": "Technical Advisor",
+        "imageUrl": "/about/hiroyuki.jpg"
+      }
+    ]
+  },
+  "ctaSection": {
+    "title": "Let's do great things together",
+    "description": "We're looking for talented individuals who are passionate about robotics, AI, and building the future. Explore opportunities to work on cutting-edge technology.",
+    "bannerImage": "/about/join.jpg",
+    "buttons": [
+      {
+        "text": "View Open Positions",
+        "link": "/careers",
+        "variant": "primary"
+      },
+      {
+        "text": "Get in Touch",
+        "link": "/contact",
+        "variant": "outline"
+      }
+    ]
+  },
+  "seo": {
+    "metaTitle": "About Us - Fainzy Technologies | Robotics Innovation",
+    "metaDescription": "Learn about Fainzy Technologies, a pioneering robotics company based in Japan. Discover our mission to revolutionize industries with autonomous robots and AI technology.",
+    "keywords": "about Fainzy Technologies, robotics company Japan, autonomous robots, AI innovation, Nagoya robotics, robotic solutions"
+  }
+}

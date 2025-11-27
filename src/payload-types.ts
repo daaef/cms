@@ -70,6 +70,14 @@ export interface Config {
     users: User;
     media: Media;
     'home-page': HomePage;
+    'about-page': AboutPage;
+    'products-page': ProductsPage;
+    'careers-page': CareersPage;
+    'blog-posts': BlogPost;
+    'contact-page': ContactPage;
+    products: Product;
+    'dashboard-home-page': DashboardHomePage;
+    'product-details': ProductDetail;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -80,6 +88,14 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'home-page': HomePageSelect<false> | HomePageSelect<true>;
+    'about-page': AboutPageSelect<false> | AboutPageSelect<true>;
+    'products-page': ProductsPageSelect<false> | ProductsPageSelect<true>;
+    'careers-page': CareersPageSelect<false> | CareersPageSelect<true>;
+    'blog-posts': BlogPostsSelect<false> | BlogPostsSelect<true>;
+    'contact-page': ContactPageSelect<false> | ContactPageSelect<true>;
+    products: ProductsSelect<false> | ProductsSelect<true>;
+    'dashboard-home-page': DashboardHomePageSelect<false> | DashboardHomePageSelect<true>;
+    'product-details': ProductDetailsSelect<false> | ProductDetailsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -177,7 +193,7 @@ export interface HomePage {
         title?: string | null;
         subtitle?: string | null;
         cursiveText?: string | null;
-        image: string;
+        image?: (number | null) | Media;
         ctaText?: string | null;
         ctaLink?: string | null;
         id?: string | null;
@@ -189,7 +205,7 @@ export interface HomePage {
     /**
      * Optional poster image for video
      */
-    posterImage?: string | null;
+    posterImage?: (number | null) | Media;
   };
   aboutSection: {
     foundation: {
@@ -203,19 +219,19 @@ export interface HomePage {
       label?: string | null;
       title: string;
       description: string;
-      image: string;
+      image: number | Media;
     };
     vision: {
       label?: string | null;
       title: string;
       description: string;
-      image: string;
+      image: number | Media;
     };
     mission: {
       label?: string | null;
       title: string;
       description: string;
-      image: string;
+      image: number | Media;
       highlights?:
         | {
             title: string;
@@ -229,7 +245,7 @@ export interface HomePage {
     | {
         title: string;
         description: string;
-        image: string;
+        image?: (number | null) | Media;
         link: string;
         /**
          * Reverse layout (image on left)
@@ -262,8 +278,7 @@ export interface HomePage {
         description: string;
         images?:
           | {
-              src: string;
-              alt: string;
+              image: number | Media;
               id?: string | null;
             }[]
           | null;
@@ -305,6 +320,920 @@ export interface HomePage {
         id?: string | null;
       }[]
     | null;
+  seo?: {
+    /**
+     * SEO title (recommended: 50-60 characters)
+     */
+    metaTitle?: string | null;
+    /**
+     * SEO description (recommended: 150-160 characters)
+     */
+    metaDescription?: string | null;
+    /**
+     * SEO keywords (comma-separated)
+     */
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage the about page content
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-page".
+ */
+export interface AboutPage {
+  id: number;
+  title: string;
+  locale: 'en' | 'ja';
+  heroSection: {
+    title: string;
+    subtitle: string;
+    bannerImage?: (number | null) | Media;
+  };
+  foundedSection: {
+    title: string;
+    paragraphs?:
+      | {
+          text: string;
+          id?: string | null;
+        }[]
+      | null;
+    image?: (number | null) | Media;
+  };
+  peopleBannerSection: {
+    title: string;
+    description: string;
+    bannerImage?: (number | null) | Media;
+  };
+  visionSection: {
+    title: string;
+    paragraphs?:
+      | {
+          text: string;
+          id?: string | null;
+        }[]
+      | null;
+    image?: (number | null) | Media;
+  };
+  leadershipSection: {
+    title: string;
+    subtitle: string;
+    teamMembers?:
+      | {
+          name: string;
+          role: string;
+          imageUrl: number | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  ctaSection: {
+    title: string;
+    description: string;
+    bannerImage?: (number | null) | Media;
+    buttons?:
+      | {
+          text: string;
+          link: string;
+          variant: 'primary' | 'outline';
+          id?: string | null;
+        }[]
+      | null;
+  };
+  seo?: {
+    /**
+     * SEO title (recommended: 50-60 characters)
+     */
+    metaTitle?: string | null;
+    /**
+     * SEO description (recommended: 150-160 characters)
+     */
+    metaDescription?: string | null;
+    /**
+     * SEO keywords (comma-separated)
+     */
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage the products page content
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products-page".
+ */
+export interface ProductsPage {
+  id: number;
+  title: string;
+  locale: 'en' | 'ja';
+  heroSection: {
+    title: string;
+    subtitle: string;
+    bannerImage?: (number | null) | Media;
+  };
+  products?:
+    | {
+        /**
+         * Unique identifier for anchor links (e.g., "zibot", "glide")
+         */
+        id: string;
+        title: string;
+        description: string;
+        image?: (number | null) | Media;
+        link: string;
+        /**
+         * Reverse layout (image on right)
+         */
+        reverse?: boolean | null;
+        features?:
+          | {
+              title: string;
+              subtitle: string;
+              icon:
+                | 'Clock'
+                | 'DollarSign'
+                | 'Leaf'
+                | 'Shield'
+                | 'Package'
+                | 'CheckCircle'
+                | 'UtensilsCrossed'
+                | 'Hotel';
+              id?: string | null;
+            }[]
+          | null;
+      }[]
+    | null;
+  customSolutions?:
+    | {
+        /**
+         * Unique identifier (e.g., "customized-robots", "iot-solutions")
+         */
+        id: string;
+        category: string;
+        title: string;
+        description: string;
+        images?:
+          | {
+              image: number | Media;
+              id?: string | null;
+            }[]
+          | null;
+        features?:
+          | {
+              title: string;
+              subtitle: string;
+              id?: string | null;
+            }[]
+          | null;
+      }[]
+    | null;
+  ctaSection: {
+    text: string;
+    link: string;
+  };
+  faqs?:
+    | {
+        question: string;
+        answer: string;
+        locale: 'en' | 'ja';
+        order?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  seo?: {
+    /**
+     * SEO title (recommended: 50-60 characters)
+     */
+    metaTitle?: string | null;
+    /**
+     * SEO description (recommended: 150-160 characters)
+     */
+    metaDescription?: string | null;
+    /**
+     * SEO keywords (comma-separated)
+     */
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage the Careers page content
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "careers-page".
+ */
+export interface CareersPage {
+  id: number;
+  title: string;
+  heroSection: {
+    title: string;
+    subtitle: string;
+    backgroundImage?: (number | null) | Media;
+  };
+  introSection: {
+    description: string;
+  };
+  departmentsSection?: {
+    departments?:
+      | {
+          title: string;
+          description: string;
+          image?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+    ctaButtonText?: string | null;
+  };
+  missionSection: {
+    title: string;
+    description: string;
+    image?: (number | null) | Media;
+  };
+  facilitiesSection: {
+    title: string;
+    description: string;
+    backgroundImage?: (number | null) | Media;
+  };
+  benefitsSection: {
+    title: string;
+    description: string;
+    benefits?:
+      | {
+          benefit: string;
+          id?: string | null;
+        }[]
+      | null;
+    image?: (number | null) | Media;
+  };
+  innovationSection: {
+    title: string;
+    description: string;
+    image?: (number | null) | Media;
+  };
+  growthSection: {
+    title: string;
+    description: string;
+    image?: (number | null) | Media;
+  };
+  peopleImageSection?: {
+    image?: (number | null) | Media;
+  };
+  ctaSection: {
+    title: string;
+    description: string;
+    buttonText?: string | null;
+  };
+  seo?: {
+    /**
+     * SEO title (recommended: 50-60 characters)
+     */
+    metaTitle?: string | null;
+    /**
+     * SEO description (recommended: 150-160 characters)
+     */
+    metaDescription?: string | null;
+    /**
+     * SEO keywords (comma-separated)
+     */
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage blog posts
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-posts".
+ */
+export interface BlogPost {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the title
+   */
+  slug: string;
+  category: 'business' | 'technology' | 'case-study' | 'careers' | 'sustainability';
+  /**
+   * Short description or excerpt for the blog post
+   */
+  description: string;
+  featuredImage?: (number | null) | Media;
+  publishedDate: string;
+  /**
+   * e.g., "5 min read"
+   */
+  readTime?: string | null;
+  /**
+   * Mark this post as featured (shown prominently on blog page)
+   */
+  featured?: boolean | null;
+  /**
+   * Full blog post content
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Number of views (auto-incremented)
+   */
+  views?: number | null;
+  /**
+   * Number of likes
+   */
+  likes?: number | null;
+  /**
+   * Select the author from registered users
+   */
+  author?: (number | null) | User;
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage the Contact Us page content
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-page".
+ */
+export interface ContactPage {
+  id: number;
+  title: string;
+  heroSection: {
+    title: string;
+    description: string;
+  };
+  socialMedia?: {
+    twitter?: string | null;
+    linkedin?: string | null;
+    instagram?: string | null;
+  };
+  contactInfo: {
+    email: string;
+    phone: string;
+    officeAddress: {
+      en: string;
+      ja: string;
+    };
+  };
+  mapLocation: {
+    /**
+     * e.g., 35.157308228381325
+     */
+    latitude: number;
+    /**
+     * e.g., 136.96488391534322
+     */
+    longitude: number;
+  };
+  seo?: {
+    /**
+     * SEO title (recommended: 50-60 characters)
+     */
+    metaTitle?: string | null;
+    /**
+     * SEO description (recommended: 150-160 characters)
+     */
+    metaDescription?: string | null;
+    /**
+     * SEO keywords (comma-separated)
+     */
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage products and services
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products".
+ */
+export interface Product {
+  id: number;
+  /**
+   * Product name (e.g., "ZiBot & Glide")
+   */
+  name: string;
+  /**
+   * URL-friendly identifier
+   */
+  slug: string;
+  /**
+   * Category badge (e.g., "Robotics", "Consultancy")
+   */
+  category: string;
+  /**
+   * Display title for the product
+   */
+  title: string;
+  description: string;
+  images?:
+    | {
+        image: number | Media;
+        alt: string;
+        /**
+         * Optional label overlay (e.g., "ZiBot", "Glide")
+         */
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  features?:
+    | {
+        /**
+         * Emoji icon (e.g., "🤖", "🛴")
+         */
+        icon: string;
+        title: string;
+        description: string;
+        id?: string | null;
+      }[]
+    | null;
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  /**
+   * Layout configuration for the product display
+   */
+  layout: 'image-right' | 'image-left' | 'image-grid';
+  /**
+   * Display order (lower numbers appear first)
+   */
+  order: number;
+  locale: 'en' | 'ja';
+  /**
+   * Show/hide this product
+   */
+  isActive?: boolean | null;
+  seo?: {
+    /**
+     * SEO title (recommended: 50-60 characters)
+     */
+    metaTitle?: string | null;
+    /**
+     * SEO description (recommended: 150-160 characters)
+     */
+    metaDescription?: string | null;
+    /**
+     * SEO keywords (comma-separated)
+     */
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage the Dashboard home page content
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dashboard-home-page".
+ */
+export interface DashboardHomePage {
+  id: number;
+  title: string;
+  heroSection: {
+    /**
+     * Text for the badge above the title
+     */
+    badgeText: string;
+    title: string;
+    description: string;
+    primaryButtonText: string;
+    primaryButtonLink?: string | null;
+    secondaryButtonText: string;
+    secondaryButtonLink?: string | null;
+    /**
+     * Text below the buttons (e.g., "Already have a Fainzy Business account?")
+     */
+    footerText?: string | null;
+  };
+  dashboardSection: {
+    /**
+     * Dashboard preview image
+     */
+    image: number | Media;
+  };
+  productsSection: {
+    title: string;
+    description: string;
+    /**
+     * Select products to display on the homepage
+     */
+    products?: (number | Product)[] | null;
+  };
+  seo?: {
+    /**
+     * SEO title (recommended: 50-60 characters)
+     */
+    metaTitle?: string | null;
+    /**
+     * SEO description (recommended: 150-160 characters)
+     */
+    metaDescription?: string | null;
+    /**
+     * SEO keywords (comma-separated)
+     */
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage product detail pages with flexible section-based content
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "product-details".
+ */
+export interface ProductDetail {
+  id: number;
+  /**
+   * Product name (e.g., "ZiBot")
+   */
+  productName: string;
+  /**
+   * URL-friendly identifier (e.g., "zibot")
+   */
+  slug: string;
+  /**
+   * Add and reorder sections to build your product page
+   */
+  sections?:
+    | {
+        sectionType:
+          | 'hero'
+          | 'videoWithText'
+          | 'largeFeatureCarousel'
+          | 'cardCarousel'
+          | 'robotComparison'
+          | 'robotTopViewGrid'
+          | 'videoWithStats'
+          | 'benefitGrid'
+          | 'pricing'
+          | 'backgroundVideo'
+          | 'specifications'
+          | 'footerCTA';
+        hero?: {
+          /**
+           * Background video for hero section
+           */
+          backgroundVideo?: (number | null) | Media;
+          /**
+           * Large hero title (e.g., "ZIBOT")
+           */
+          title?: string | null;
+          /**
+           * Subtitle/tagline below title
+           */
+          tagline?: string | null;
+          /**
+           * Primary call-to-action button text
+           */
+          primaryCTA?: string | null;
+          stats?:
+            | {
+                /**
+                 * Stat value (e.g., "50km")
+                 */
+                value: string;
+                /**
+                 * Stat label (e.g., "Range")
+                 */
+                label: string;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        videoWithText?: {
+          /**
+           * Video file
+           */
+          video?: (number | null) | Media;
+          /**
+           * Video poster image
+           */
+          poster?: (number | null) | Media;
+          /**
+           * Section title
+           */
+          title?: string | null;
+          /**
+           * Section description
+           */
+          description?: string | null;
+          titlePosition?: ('above' | 'below' | 'overlay') | null;
+          height?: ('small' | 'medium' | 'large') | null;
+          /**
+           * Optional overlay text
+           */
+          overlayText?: string | null;
+          overlayPosition?: ('top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'center') | null;
+        };
+        largeFeatureCarousel?: {
+          /**
+           * Section title
+           */
+          title?: string | null;
+          /**
+           * Section subtitle
+           */
+          subtitle?: string | null;
+          features?:
+            | {
+                image?: (number | null) | Media;
+                title?: string | null;
+                description?: string | null;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        cardCarousel?: {
+          /**
+           * Section title
+           */
+          title?: string | null;
+          /**
+           * Section subtitle
+           */
+          subtitle?: string | null;
+          /**
+           * Number of cards visible at once
+           */
+          cardsPerView?: number | null;
+          navigationPosition?: ('top-left' | 'top-right' | 'bottom') | null;
+          cards?:
+            | {
+                image?: (number | null) | Media;
+                title?: string | null;
+                description?: string | null;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        robotComparison?: {
+          /**
+           * Robot comparison image
+           */
+          robotImage?: (number | null) | Media;
+          specs?:
+            | {
+                /**
+                 * Spec value (e.g., "125kg")
+                 */
+                value?: string | null;
+                /**
+                 * Spec label (e.g., "Max Load")
+                 */
+                label?: string | null;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        robotTopViewGrid?: {
+          /**
+           * Robot top view image
+           */
+          robotImage?: (number | null) | Media;
+          /**
+           * Section title
+           */
+          title?: string | null;
+          /**
+           * Section subtitle
+           */
+          subtitle?: string | null;
+          gridCols?: ('2' | '3' | '6') | null;
+          gridItems?:
+            | {
+                image?: (number | null) | Media;
+                title?: string | null;
+                description?: string | null;
+                id?: string | null;
+              }[]
+            | null;
+          rightContentType?: ('none' | 'cta' | 'appButtons') | null;
+          /**
+           * Text for right content area
+           */
+          rightContentText?: string | null;
+          /**
+           * Button text for CTA
+           */
+          rightContentButtonText?: string | null;
+        };
+        videoWithStats?: {
+          /**
+           * Background video
+           */
+          video?: (number | null) | Media;
+          /**
+           * Video poster image
+           */
+          poster?: (number | null) | Media;
+          /**
+           * Section title
+           */
+          title?: string | null;
+          stats?:
+            | {
+                value?: string | null;
+                label?: string | null;
+                id?: string | null;
+              }[]
+            | null;
+          /**
+           * CTA button text
+           */
+          ctaText?: string | null;
+          /**
+           * CTA button link
+           */
+          ctaLink?: string | null;
+        };
+        benefitGrid?: {
+          /**
+           * Main section title
+           */
+          title?: string | null;
+          sections?:
+            | {
+                /**
+                 * Section heading (e.g., "For Store Owners")
+                 */
+                heading?: string | null;
+                /**
+                 * Section subheading
+                 */
+                subheading?: string | null;
+                items?:
+                  | {
+                      image?: (number | null) | Media;
+                      title?: string | null;
+                      description?: string | null;
+                      id?: string | null;
+                    }[]
+                  | null;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        pricing?: {
+          /**
+           * Section title
+           */
+          title?: string | null;
+          /**
+           * Section description
+           */
+          description?: string | null;
+          /**
+           * Robot image for pricing section
+           */
+          robotImage?: (number | null) | Media;
+          robotImageHeight?: ('small' | 'medium' | 'large') | null;
+          pricingTiers?:
+            | {
+                /**
+                 * Tier name (e.g., "Standard", "Premium")
+                 */
+                name?: string | null;
+                /**
+                 * Optional badge text (e.g., "Most Popular")
+                 */
+                badge?: string | null;
+                /**
+                 * Badge color (hex code)
+                 */
+                badgeColor?: string | null;
+                /**
+                 * Price display (e.g., "$499/month")
+                 */
+                price?: string | null;
+                /**
+                 * Commission info
+                 */
+                commission?: string | null;
+                features?:
+                  | {
+                      feature?: string | null;
+                      id?: string | null;
+                    }[]
+                  | null;
+                buttonText?: string | null;
+                buttonVariant?: ('default' | 'outline' | 'ghost') | null;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        backgroundVideo?: {
+          /**
+           * Background video
+           */
+          video?: (number | null) | Media;
+          /**
+           * Section title
+           */
+          title?: string | null;
+          /**
+           * Section description
+           */
+          description?: string | null;
+          minHeight?: ('50vh' | '70vh' | '100vh') | null;
+        };
+        specifications?: {
+          /**
+           * Product name for specs section
+           */
+          productName?: string | null;
+          /**
+           * Section subtitle
+           */
+          subtitle?: string | null;
+          /**
+           * Robot image for specs section
+           */
+          robotImage?: (number | null) | Media;
+          specGroups?:
+            | {
+                /**
+                 * Group name (e.g., "Performance", "Dimensions")
+                 */
+                groupName?: string | null;
+                specs?:
+                  | {
+                      /**
+                       * Spec label (e.g., "Max Speed")
+                       */
+                      label?: string | null;
+                      /**
+                       * Spec value (e.g., "20 km/h")
+                       */
+                      value?: string | null;
+                      id?: string | null;
+                    }[]
+                  | null;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        footerCTA?: {
+          /**
+           * Main title
+           */
+          title?: string | null;
+          /**
+           * Description text
+           */
+          description?: string | null;
+          /**
+           * Subtitle text
+           */
+          subtitle?: string | null;
+          /**
+           * CTA button text
+           */
+          ctaText?: string | null;
+          /**
+           * Robot image for footer
+           */
+          robotImage?: (number | null) | Media;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  seo?: {
+    /**
+     * SEO title (recommended: 50-60 characters)
+     */
+    metaTitle?: string | null;
+    /**
+     * SEO description (recommended: 150-160 characters)
+     */
+    metaDescription?: string | null;
+    /**
+     * SEO keywords (comma-separated)
+     */
+    keywords?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -343,6 +1272,38 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'home-page';
         value: number | HomePage;
+      } | null)
+    | ({
+        relationTo: 'about-page';
+        value: number | AboutPage;
+      } | null)
+    | ({
+        relationTo: 'products-page';
+        value: number | ProductsPage;
+      } | null)
+    | ({
+        relationTo: 'careers-page';
+        value: number | CareersPage;
+      } | null)
+    | ({
+        relationTo: 'blog-posts';
+        value: number | BlogPost;
+      } | null)
+    | ({
+        relationTo: 'contact-page';
+        value: number | ContactPage;
+      } | null)
+    | ({
+        relationTo: 'products';
+        value: number | Product;
+      } | null)
+    | ({
+        relationTo: 'dashboard-home-page';
+        value: number | DashboardHomePage;
+      } | null)
+    | ({
+        relationTo: 'product-details';
+        value: number | ProductDetail;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -524,8 +1485,7 @@ export interface HomePageSelect<T extends boolean = true> {
         images?:
           | T
           | {
-              src?: T;
-              alt?: T;
+              image?: T;
               id?: T;
             };
         features?:
@@ -566,6 +1526,635 @@ export interface HomePageSelect<T extends boolean = true> {
         locale?: T;
         order?: T;
         id?: T;
+      };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-page_select".
+ */
+export interface AboutPageSelect<T extends boolean = true> {
+  title?: T;
+  locale?: T;
+  heroSection?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        bannerImage?: T;
+      };
+  foundedSection?:
+    | T
+    | {
+        title?: T;
+        paragraphs?:
+          | T
+          | {
+              text?: T;
+              id?: T;
+            };
+        image?: T;
+      };
+  peopleBannerSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        bannerImage?: T;
+      };
+  visionSection?:
+    | T
+    | {
+        title?: T;
+        paragraphs?:
+          | T
+          | {
+              text?: T;
+              id?: T;
+            };
+        image?: T;
+      };
+  leadershipSection?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        teamMembers?:
+          | T
+          | {
+              name?: T;
+              role?: T;
+              imageUrl?: T;
+              id?: T;
+            };
+      };
+  ctaSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        bannerImage?: T;
+        buttons?:
+          | T
+          | {
+              text?: T;
+              link?: T;
+              variant?: T;
+              id?: T;
+            };
+      };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products-page_select".
+ */
+export interface ProductsPageSelect<T extends boolean = true> {
+  title?: T;
+  locale?: T;
+  heroSection?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        bannerImage?: T;
+      };
+  products?:
+    | T
+    | {
+        id?: T;
+        title?: T;
+        description?: T;
+        image?: T;
+        link?: T;
+        reverse?: T;
+        features?:
+          | T
+          | {
+              title?: T;
+              subtitle?: T;
+              icon?: T;
+              id?: T;
+            };
+      };
+  customSolutions?:
+    | T
+    | {
+        id?: T;
+        category?: T;
+        title?: T;
+        description?: T;
+        images?:
+          | T
+          | {
+              image?: T;
+              id?: T;
+            };
+        features?:
+          | T
+          | {
+              title?: T;
+              subtitle?: T;
+              id?: T;
+            };
+      };
+  ctaSection?:
+    | T
+    | {
+        text?: T;
+        link?: T;
+      };
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        locale?: T;
+        order?: T;
+        id?: T;
+      };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "careers-page_select".
+ */
+export interface CareersPageSelect<T extends boolean = true> {
+  title?: T;
+  heroSection?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        backgroundImage?: T;
+      };
+  introSection?:
+    | T
+    | {
+        description?: T;
+      };
+  departmentsSection?:
+    | T
+    | {
+        departments?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              id?: T;
+            };
+        ctaButtonText?: T;
+      };
+  missionSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  facilitiesSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        backgroundImage?: T;
+      };
+  benefitsSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        benefits?:
+          | T
+          | {
+              benefit?: T;
+              id?: T;
+            };
+        image?: T;
+      };
+  innovationSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  growthSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  peopleImageSection?:
+    | T
+    | {
+        image?: T;
+      };
+  ctaSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        buttonText?: T;
+      };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-posts_select".
+ */
+export interface BlogPostsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  category?: T;
+  description?: T;
+  featuredImage?: T;
+  publishedDate?: T;
+  readTime?: T;
+  featured?: T;
+  content?: T;
+  views?: T;
+  likes?: T;
+  author?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-page_select".
+ */
+export interface ContactPageSelect<T extends boolean = true> {
+  title?: T;
+  heroSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  socialMedia?:
+    | T
+    | {
+        twitter?: T;
+        linkedin?: T;
+        instagram?: T;
+      };
+  contactInfo?:
+    | T
+    | {
+        email?: T;
+        phone?: T;
+        officeAddress?:
+          | T
+          | {
+              en?: T;
+              ja?: T;
+            };
+      };
+  mapLocation?:
+    | T
+    | {
+        latitude?: T;
+        longitude?: T;
+      };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products_select".
+ */
+export interface ProductsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  category?: T;
+  title?: T;
+  description?: T;
+  images?:
+    | T
+    | {
+        image?: T;
+        alt?: T;
+        label?: T;
+        id?: T;
+      };
+  features?:
+    | T
+    | {
+        icon?: T;
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  ctaText?: T;
+  ctaLink?: T;
+  layout?: T;
+  order?: T;
+  locale?: T;
+  isActive?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dashboard-home-page_select".
+ */
+export interface DashboardHomePageSelect<T extends boolean = true> {
+  title?: T;
+  heroSection?:
+    | T
+    | {
+        badgeText?: T;
+        title?: T;
+        description?: T;
+        primaryButtonText?: T;
+        primaryButtonLink?: T;
+        secondaryButtonText?: T;
+        secondaryButtonLink?: T;
+        footerText?: T;
+      };
+  dashboardSection?:
+    | T
+    | {
+        image?: T;
+      };
+  productsSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        products?: T;
+      };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "product-details_select".
+ */
+export interface ProductDetailsSelect<T extends boolean = true> {
+  productName?: T;
+  slug?: T;
+  sections?:
+    | T
+    | {
+        sectionType?: T;
+        hero?:
+          | T
+          | {
+              backgroundVideo?: T;
+              title?: T;
+              tagline?: T;
+              primaryCTA?: T;
+              stats?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    id?: T;
+                  };
+            };
+        videoWithText?:
+          | T
+          | {
+              video?: T;
+              poster?: T;
+              title?: T;
+              description?: T;
+              titlePosition?: T;
+              height?: T;
+              overlayText?: T;
+              overlayPosition?: T;
+            };
+        largeFeatureCarousel?:
+          | T
+          | {
+              title?: T;
+              subtitle?: T;
+              features?:
+                | T
+                | {
+                    image?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+            };
+        cardCarousel?:
+          | T
+          | {
+              title?: T;
+              subtitle?: T;
+              cardsPerView?: T;
+              navigationPosition?: T;
+              cards?:
+                | T
+                | {
+                    image?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+            };
+        robotComparison?:
+          | T
+          | {
+              robotImage?: T;
+              specs?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    id?: T;
+                  };
+            };
+        robotTopViewGrid?:
+          | T
+          | {
+              robotImage?: T;
+              title?: T;
+              subtitle?: T;
+              gridCols?: T;
+              gridItems?:
+                | T
+                | {
+                    image?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              rightContentType?: T;
+              rightContentText?: T;
+              rightContentButtonText?: T;
+            };
+        videoWithStats?:
+          | T
+          | {
+              video?: T;
+              poster?: T;
+              title?: T;
+              stats?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              ctaText?: T;
+              ctaLink?: T;
+            };
+        benefitGrid?:
+          | T
+          | {
+              title?: T;
+              sections?:
+                | T
+                | {
+                    heading?: T;
+                    subheading?: T;
+                    items?:
+                      | T
+                      | {
+                          image?: T;
+                          title?: T;
+                          description?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+            };
+        pricing?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              robotImage?: T;
+              robotImageHeight?: T;
+              pricingTiers?:
+                | T
+                | {
+                    name?: T;
+                    badge?: T;
+                    badgeColor?: T;
+                    price?: T;
+                    commission?: T;
+                    features?:
+                      | T
+                      | {
+                          feature?: T;
+                          id?: T;
+                        };
+                    buttonText?: T;
+                    buttonVariant?: T;
+                    id?: T;
+                  };
+            };
+        backgroundVideo?:
+          | T
+          | {
+              video?: T;
+              title?: T;
+              description?: T;
+              minHeight?: T;
+            };
+        specifications?:
+          | T
+          | {
+              productName?: T;
+              subtitle?: T;
+              robotImage?: T;
+              specGroups?:
+                | T
+                | {
+                    groupName?: T;
+                    specs?:
+                      | T
+                      | {
+                          label?: T;
+                          value?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+            };
+        footerCTA?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              subtitle?: T;
+              ctaText?: T;
+              robotImage?: T;
+            };
+        id?: T;
+      };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
       };
   updatedAt?: T;
   createdAt?: T;

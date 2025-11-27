@@ -1,0 +1,89 @@
+{
+  "title": "Careers Page",
+  "heroSection": {
+    "title": "Join Us in Building the Future",
+    "subtitle": "At Fainzy Technologies, we're pioneering the next generation of robotics and AI solutions that will transform industries worldwide.",
+    "backgroundImage": "/careers/careers-banner.jpg"
+  },
+  "introSection": {
+    "description": "We're looking for talented, passionate individuals who want to make a real impact. Whether you're an engineer, designer, researcher, or operations specialist, there's a place for you here. Join our team of innovators working on cutting-edge projects that push the boundaries of what's possible."
+  },
+  "departmentsSection": {
+    "departments": [
+      {
+        "title": "Engineering & Technology",
+        "description": "Build the future of robotics and AI",
+        "image": "/careers/engineering.jpg"
+      },
+      {
+        "title": "Product & Design",
+        "description": "Shape innovative user experiences",
+        "image": "/careers/product.jpg"
+      },
+      {
+        "title": "Operations & Manufacturing",
+        "description": "Drive excellence in production",
+        "image": "/careers/people.jpg"
+      }
+    ],
+    "ctaButtonText": "See all Jobs"
+  },
+  "missionSection": {
+    "title": "Our Mission",
+    "description": "To accelerate the world's transition to sustainable automation through intelligent robotics and AI systems. We believe that by combining human creativity with machine precision, we can solve some of the world's most pressing challenges while creating meaningful work for our team members.",
+    "image": "/careers/product.jpg"
+  },
+  "facilitiesSection": {
+    "title": "World-Class Facilities",
+    "description": "Work in state-of-the-art facilities equipped with the latest technology, tools, and resources. Our labs and workspaces are designed to foster innovation and collaboration.",
+    "backgroundImage": "/careers/world-class-banner.jpg"
+  },
+  "benefitsSection": {
+    "title": "Benefits & Perks",
+    "description": "We believe in taking care of our team members with comprehensive benefits that support your health, growth, and well-being.",
+    "benefits": [
+      {
+        "benefit": "Competitive salary and equity packages"
+      },
+      {
+        "benefit": "Comprehensive health, dental, and vision insurance"
+      },
+      {
+        "benefit": "Flexible work arrangements and remote options"
+      },
+      {
+        "benefit": "Professional development and learning budgets"
+      },
+      {
+        "benefit": "Generous PTO and parental leave policies"
+      },
+      {
+        "benefit": "Cutting-edge equipment and tools"
+      }
+    ],
+    "image": "/careers/engineering.jpg"
+  },
+  "innovationSection": {
+    "title": "Innovation at Scale",
+    "description": "Work on projects that impact millions of users and transform entire industries. Our team is developing breakthrough technologies in autonomous systems, machine learning, and robotics that will shape the future of work and society.",
+    "image": "/careers/innovation.jpg"
+  },
+  "growthSection": {
+    "title": "Continuous Growth",
+    "description": "We invest heavily in our team's development through mentorship programs, workshops, conferences, and educational opportunities. Your growth is our priority, and we provide the resources and support you need to advance your career.",
+    "image": "/careers/continous.jpg"
+  },
+  "peopleImageSection": {
+    "image": "/careers/people.jpg"
+  },
+  "ctaSection": {
+    "title": "Ready to Join Us?",
+    "description": "Explore our open positions and find the perfect role for you. We're always looking for talented individuals who share our passion for innovation.",
+    "buttonText": "Explore Open Positions"
+  },
+  "seo": {
+    "metaTitle": "Careers - Join Fainzy Technologies | Robotics Jobs",
+    "metaDescription": "Join Fainzy Technologies and help shape the future of robotics. Explore career opportunities in engineering, AI, product design, and more at our Nagoya-based innovation hub.",
+    "keywords": "robotics careers, AI jobs, engineering jobs Japan, Nagoya jobs, robotics engineer, product design careers, technology jobs"
+  }
+}

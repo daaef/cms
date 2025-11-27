@@ -1,0 +1,652 @@
+{
+  "productName": "ZiBot",
+  "slug": "zibot",
+  "sections": [
+    {
+      "sectionType": "hero",
+      "sectionData": {
+        "hero": {
+          "backgroundVideo": "/videos/zibot.mp4",
+          "title": "ZIBOT",
+          "tagline": "ANYTHING - ANYTIME - ANYWHERE DELIVERY",
+          "primaryCTA": "GET STARTED",
+          "stats": [
+            {
+              "value": "24/7",
+              "label": "Available Anytime"
+            },
+            {
+              "value": "Smart AI",
+              "label": "Autonomous navigation"
+            },
+            {
+              "value": "Instant",
+              "label": "Fast Delivery"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "videoWithText",
+      "sectionData": {
+        "videoWithText": {
+          "video": "/videos/zibot.mp4",
+          "poster": "https://images.unsplash.com/photo-1629248242733-43d4013f33a1?w=1200&q=80",
+          "title": "From Cozy Dinners to Office Lunches",
+          "description": "ZiBot ensures your orders are delivered promptly and accurately. Robots navigate through traffic faster than human drivers—resulting in quicker delivery times, especially during peak hours.",
+          "titlePosition": "below",
+          "height": "medium"
+        }
+      }
+    },
+    {
+      "sectionType": "videoWithText",
+      "sectionData": {
+        "videoWithText": {
+          "video": "/videos/zibot.mp4",
+          "poster": "https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?w=1200&q=80",
+          "title": "Hot and Fresh. Every Single Time.",
+          "description": "Wait for your hot and fresh food to get delivered by ZiBot – contactless, clean, and exactly when you need it.",
+          "titlePosition": "below",
+          "height": "medium"
+        }
+      }
+    },
+    {
+      "sectionType": "largeFeatureCarousel",
+      "sectionData": {
+        "largeFeatureCarousel": {
+          "title": "Main Features",
+          "subtitle": "Experience the future of delivery",
+          "features": [
+            {
+              "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+              "title": "Autonomous Navigation",
+              "description": "Advanced AI-powered navigation system for safe and efficient delivery routes."
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=1200&q=80",
+              "title": "Temperature Control",
+              "description": "Keep your food hot or cold with precise temperature management."
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=1200&q=80",
+              "title": "Secure Delivery",
+              "description": "Contactless delivery with secure locking mechanism."
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80",
+              "title": "Real-time Tracking",
+              "description": "Track your delivery in real-time with GPS precision."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "cardCarousel",
+      "sectionData": {
+        "cardCarousel": {
+          "title": "Beyond Delivery. Into What Matters.",
+          "subtitle": "More than logistics. It's time back. It's peace of mind. It's life, simplified.",
+          "cardsPerView": 4,
+          "navigationPosition": "top-right",
+          "cards": [
+            {
+              "image": "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&q=80",
+              "title": "Time Saved",
+              "description": "Get back hours in your day with automated delivery"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1551135049-8a33b5883817?w=800&q=80",
+              "title": "Cost Effective",
+              "description": "Lower delivery costs compared to traditional methods"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=800&q=80",
+              "title": "Eco-Friendly",
+              "description": "Zero emissions electric delivery solution"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+              "title": "Business Growth",
+              "description": "Scale your delivery operations effortlessly"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "robotComparison",
+      "sectionData": {
+        "robotComparison": {
+          "robotImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+          "specs": [
+            {
+              "value": "125kg",
+              "label": "Max Load Capacity"
+            },
+            {
+              "value": "50km",
+              "label": "Range per Charge"
+            },
+            {
+              "value": "20km/h",
+              "label": "Max Speed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "largeFeatureCarousel",
+      "sectionData": {
+        "largeFeatureCarousel": {
+          "title": "Smart Features",
+          "subtitle": "Technology that works for you",
+          "features": [
+            {
+              "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80",
+              "title": "AI-Powered Route Optimization",
+              "description": "Intelligent routing algorithms find the fastest path to your destination."
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+              "title": "Cloud Analytics",
+              "description": "Real-time data insights to improve delivery efficiency."
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+              "title": "Fleet Management",
+              "description": "Manage multiple robots from a single dashboard."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "robotTopViewGrid",
+      "sectionData": {
+        "robotTopViewGrid": {
+          "robotImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+          "title": "Advanced Sensors",
+          "subtitle": "360° awareness for safe navigation",
+          "gridCols": "3",
+          "gridItems": [
+            {
+              "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&q=80",
+              "title": "LiDAR Scanner",
+              "description": "3D mapping for obstacle detection"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=400&q=80",
+              "title": "HD Cameras",
+              "description": "Multiple cameras for complete visibility"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
+              "title": "Ultrasonic Sensors",
+              "description": "Close-range detection and parking"
+            }
+          ],
+          "rightContentType": "cta",
+          "rightContentText": "Experience ZiBot's advanced sensor technology",
+          "rightContentButtonText": "Learn More"
+        }
+      }
+    },
+    {
+      "sectionType": "videoWithText",
+      "sectionData": {
+        "videoWithText": {
+          "video": "/videos/zibot.mp4",
+          "poster": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=1200&q=80",
+          "title": "Built for All Weather Conditions",
+          "description": "Rain or shine, ZiBot delivers. Weather-resistant design ensures reliable operation in any condition.",
+          "titlePosition": "below",
+          "height": "large"
+        }
+      }
+    },
+    {
+      "sectionType": "largeFeatureCarousel",
+      "sectionData": {
+        "largeFeatureCarousel": {
+          "title": "Safety First",
+          "subtitle": "Multiple safety systems for peace of mind",
+          "features": [
+            {
+              "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+              "title": "Emergency Stop",
+              "description": "Instant braking system for unexpected situations."
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+              "title": "Anti-Theft Protection",
+              "description": "GPS tracking and secure locking mechanisms."
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+              "title": "Collision Avoidance",
+              "description": "AI-powered system to prevent accidents."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "benefitGrid",
+      "sectionData": {
+        "benefitGrid": {
+          "title": "Benefits for Everyone",
+          "sections": [
+            {
+              "heading": "For Store Owners",
+              "subheading": "Grow your business with automated delivery",
+              "items": [
+                {
+                  "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
+                  "title": "Reduce Delivery Costs",
+                  "description": "Save up to 70% on delivery expenses with robotic automation"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1551135049-8a33b5883817?w=600&q=80",
+                  "title": "Increase Order Capacity",
+                  "description": "Handle more deliveries simultaneously without hiring more staff"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
+                  "title": "24/7 Operations",
+                  "description": "Never miss a delivery with round-the-clock service"
+                }
+              ]
+            },
+            {
+              "heading": "For Customers",
+              "subheading": "Experience the future of food delivery",
+              "items": [
+                {
+                  "image": "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=600&q=80",
+                  "title": "Faster Deliveries",
+                  "description": "Get your food delivered in record time"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=600&q=80",
+                  "title": "Contactless Safety",
+                  "description": "100% contactless delivery for your safety"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=600&q=80",
+                  "title": "Track in Real-Time",
+                  "description": "Watch your delivery arrive with live GPS tracking"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "cardCarousel",
+      "sectionData": {
+        "cardCarousel": {
+          "title": "Use Cases",
+          "subtitle": "ZiBot adapts to your delivery needs",
+          "cardsPerView": 4,
+          "navigationPosition": "top-right",
+          "cards": [
+            {
+              "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
+              "title": "Restaurant Delivery",
+              "description": "Hot food delivered fresh to customers"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800&q=80",
+              "title": "Office Catering",
+              "description": "Lunch delivery for teams and events"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80",
+              "title": "Grocery Delivery",
+              "description": "Fresh groceries to your doorstep"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1593013201-c7f6f5ebafa0?w=800&q=80",
+              "title": "Retail Deliveries",
+              "description": "Products delivered same-day"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "largeFeatureCarousel",
+      "sectionData": {
+        "largeFeatureCarousel": {
+          "title": "Connectivity",
+          "subtitle": "Seamless integration with your systems",
+          "features": [
+            {
+              "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+              "title": "API Integration",
+              "description": "Easy integration with existing POS and ordering systems."
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+              "title": "Mobile App",
+              "description": "iOS and Android apps for customers and operators."
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+              "title": "Cloud Dashboard",
+              "description": "Manage your fleet from anywhere with web access."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "cardCarousel",
+      "sectionData": {
+        "cardCarousel": {
+          "title": "Customer Success Stories",
+          "subtitle": "See how businesses are thriving with ZiBot",
+          "cardsPerView": 4,
+          "navigationPosition": "top-right",
+          "cards": [
+            {
+              "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+              "title": "Restaurant Chain",
+              "description": "Increased delivery capacity by 300%"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
+              "title": "Hotel Group",
+              "description": "Room service deliveries in under 5 minutes"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+              "title": "Office Complex",
+              "description": "Lunch for 500+ employees daily"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
+              "title": "Campus Delivery",
+              "description": "Serving 10,000 students across university"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "robotTopViewGrid",
+      "sectionData": {
+        "robotTopViewGrid": {
+          "robotImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+          "title": "Compartment Design",
+          "subtitle": "Multi-temperature zones for perfect delivery",
+          "gridCols": "3",
+          "gridItems": [
+            {
+              "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
+              "title": "Hot Zone",
+              "description": "Keeps hot food at optimal temperature"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=400&q=80",
+              "title": "Cold Zone",
+              "description": "Refrigerated compartment for cold items"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=400&q=80",
+              "title": "Secure Lock",
+              "description": "PIN or QR code access for pickup"
+            }
+          ],
+          "rightContentType": "appButtons",
+          "rightContentText": "Download the ZiBot app to get started"
+        }
+      }
+    },
+    {
+      "sectionType": "videoWithStats",
+      "sectionData": {
+        "videoWithStats": {
+          "video": "/videos/zibot.mp4",
+          "poster": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+          "title": "Trusted by Thousands",
+          "stats": [
+            {
+              "value": "50,000+",
+              "label": "Deliveries Daily"
+            },
+            {
+              "value": "500+",
+              "label": "Partner Restaurants"
+            },
+            {
+              "value": "99.9%",
+              "label": "On-Time Rate"
+            }
+          ],
+          "ctaText": "Join Our Network",
+          "ctaLink": "/contact"
+        }
+      }
+    },
+    {
+      "sectionType": "robotTopViewGrid",
+      "sectionData": {
+        "robotTopViewGrid": {
+          "robotImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+          "title": "Battery & Charging",
+          "subtitle": "Long-range operation with fast charging",
+          "gridCols": "2",
+          "gridItems": [
+            {
+              "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
+              "title": "50km Range",
+              "description": "All-day operation on single charge"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&q=80",
+              "title": "Fast Charging",
+              "description": "80% charge in just 2 hours"
+            }
+          ],
+          "rightContentType": "none"
+        }
+      }
+    },
+    {
+      "sectionType": "robotTopViewGrid",
+      "sectionData": {
+        "robotTopViewGrid": {
+          "robotImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+          "title": "Maintenance & Support",
+          "subtitle": "Hassle-free ownership experience",
+          "gridCols": "6",
+          "gridItems": [
+            {
+              "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&q=80",
+              "title": "Self-Diagnostic",
+              "description": "AI monitors health"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=300&q=80",
+              "title": "Remote Updates",
+              "description": "OTA software updates"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=300&q=80",
+              "title": "24/7 Support",
+              "description": "Always available help"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=300&q=80",
+              "title": "Quick Repairs",
+              "description": "Modular design"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&q=80",
+              "title": "Spare Parts",
+              "description": "Ready inventory"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&q=80",
+              "title": "Training Included",
+              "description": "Operator certification"
+            }
+          ],
+          "rightContentType": "cta",
+          "rightContentText": "Get comprehensive support with every ZiBot",
+          "rightContentButtonText": "View Support Plans"
+        }
+      }
+    },
+    {
+      "sectionType": "pricing",
+      "sectionData": {
+        "pricing": {
+          "title": "Choose Your Plan",
+          "description": "Flexible pricing options to match your delivery needs",
+          "robotImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+          "robotImageHeight": "medium",
+          "pricingTiers": [
+            {
+              "name": "Starter",
+              "badge": "",
+              "badgeColor": "",
+              "price": "$499/month",
+              "commission": "15% per delivery",
+              "features": [
+                { "feature": "1 ZiBot unit" },
+                { "feature": "50km daily range" },
+                { "feature": "Basic app access" },
+                { "feature": "Email support" },
+                { "feature": "Standard maintenance" }
+              ],
+              "buttonText": "Get Started",
+              "buttonVariant": "outline"
+            },
+            {
+              "name": "Professional",
+              "badge": "Most Popular",
+              "badgeColor": "#3b82f6",
+              "price": "$899/month",
+              "commission": "10% per delivery",
+              "features": [
+                { "feature": "3 ZiBot units" },
+                { "feature": "Unlimited range" },
+                { "feature": "Pro app + dashboard" },
+                { "feature": "Priority support" },
+                { "feature": "Premium maintenance" },
+                { "feature": "Custom branding" }
+              ],
+              "buttonText": "Get Started",
+              "buttonVariant": "default"
+            },
+            {
+              "name": "Enterprise",
+              "badge": "",
+              "badgeColor": "",
+              "price": "Custom",
+              "commission": "5% per delivery",
+              "features": [
+                { "feature": "Unlimited ZiBot fleet" },
+                { "feature": "White-label solution" },
+                { "feature": "Custom integrations" },
+                { "feature": "Dedicated account manager" },
+                { "feature": "On-site training" },
+                { "feature": "SLA guarantees" }
+              ],
+              "buttonText": "Contact Sales",
+              "buttonVariant": "outline"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "backgroundVideo",
+      "sectionData": {
+        "backgroundVideo": {
+          "video": "/videos/zibot.mp4",
+          "title": "No Boundaries. Just Deliveries.",
+          "description": "From bustling city streets to quiet suburban neighborhoods, ZiBot goes wherever your customers are. Weather-proof, terrain-adaptive, and always reliable.",
+          "minHeight": "70vh"
+        }
+      }
+    },
+    {
+      "sectionType": "specifications",
+      "sectionData": {
+        "specifications": {
+          "productName": "ZiBot",
+          "subtitle": "Technical Specifications",
+          "robotImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+          "specGroups": [
+            {
+              "groupName": "Performance",
+              "specs": [
+                { "label": "Max Speed", "value": "20 km/h" },
+                { "label": "Range", "value": "50 km per charge" },
+                { "label": "Max Load", "value": "125 kg" },
+                { "label": "Climbing Angle", "value": "15 degrees" },
+                { "label": "Operating Temperature", "value": "-20°C to 50°C" }
+              ]
+            },
+            {
+              "groupName": "Dimensions",
+              "specs": [
+                { "label": "Length", "value": "120 cm" },
+                { "label": "Width", "value": "70 cm" },
+                { "label": "Height", "value": "95 cm" },
+                { "label": "Weight", "value": "85 kg" },
+                { "label": "Cargo Volume", "value": "180 liters" }
+              ]
+            },
+            {
+              "groupName": "Battery",
+              "specs": [
+                { "label": "Type", "value": "Lithium-ion" },
+                { "label": "Capacity", "value": "20 kWh" },
+                { "label": "Charging Time", "value": "4 hours (full)" },
+                { "label": "Fast Charge", "value": "2 hours (80%)" },
+                { "label": "Battery Life", "value": "2000+ cycles" }
+              ]
+            },
+            {
+              "groupName": "Control",
+              "specs": [
+                { "label": "Navigation", "value": "GPS + LiDAR + Vision AI" },
+                { "label": "Connectivity", "value": "4G LTE / 5G" },
+                { "label": "Sensors", "value": "360° obstacle detection" },
+                { "label": "Control", "value": "Autonomous + Remote" },
+                { "label": "Updates", "value": "OTA (Over-the-air)" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionType": "footerCTA",
+      "sectionData": {
+        "footerCTA": {
+          "title": "Ready to Transform Your Delivery?",
+          "description": "Join hundreds of businesses already using ZiBot to deliver faster, cheaper, and smarter.",
+          "subtitle": "Get started today with a free consultation",
+          "ctaText": "Contact Sales",
+          "robotImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80"
+        }
+      }
+    }
+  ],
+  "seo": {
+    "metaTitle": "ZiBot - Autonomous Delivery Robot | 24/7 Smart Delivery Solution",
+    "metaDescription": "ZiBot is an AI-powered autonomous delivery robot offering fast, eco-friendly, and cost-effective delivery solutions for restaurants, hotels, and businesses.",
+    "keywords": "autonomous delivery robot, food delivery robot, ZiBot, AI delivery, robotic delivery, contactless delivery, smart delivery solution"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Dashboard Home Page",
+  "heroSection": {
+    "badgeText": "Supercharged with real-time analytics",
+    "title": "Business intelligence that grows with you",
+    "description": "Empowering businesses with cutting-edge tools to amplify data dissection and analytics. Get real-time insights, customer analytics, and boost productivity.",
+    "primaryButtonText": "Get Started",
+    "primaryButtonLink": "/get-started",
+    "secondaryButtonText": "Our Products & Services",
+    "secondaryButtonLink": "/products",
+    "footerText": "Already have a Fainzy Business account?"
+  },
+  "dashboardSection": {
+    "image": "/dashboard/dashboard.png"
+  },
+  "productsSection": {
+    "title": "Our Products & Services",
+    "description": "Comprehensive solutions designed to transform your business operations"
+  },
+  "seo": {
+    "metaTitle": "Fainzy Business - Business Intelligence & Analytics Platform",
+    "metaDescription": "Comprehensive business intelligence platform with real-time analytics, robotics solutions, and AI-powered consultancy services to transform your operations.",
+    "keywords": "business intelligence, real-time analytics, robotics solutions, AI consultancy, delivery automation, restaurant technology"
+  }
+}

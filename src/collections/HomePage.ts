@@ -70,9 +70,9 @@ export const HomePage: CollectionConfig = {
                 },
                 {
                     name: 'image',
-                    type: 'text',
-                    label: 'Image Path',
-                    required: true,
+                    type: 'upload',
+                    relationTo: 'media',
+                    required: false,
                 },
                 {
                     name: 'ctaText',
@@ -105,7 +105,9 @@ export const HomePage: CollectionConfig = {
                 },
                 {
                     name: 'posterImage',
-                    type: 'text',
+                    type: 'upload',
+                    relationTo: 'media',
+                    required: false,
                     admin: {
                         description: 'Optional poster image for video',
                     },
@@ -170,7 +172,8 @@ export const HomePage: CollectionConfig = {
                         },
                         {
                             name: 'image',
-                            type: 'text',
+                            type: 'upload',
+                            relationTo: 'media',
                             required: true,
                         },
                     ],
@@ -196,7 +199,8 @@ export const HomePage: CollectionConfig = {
                         },
                         {
                             name: 'image',
-                            type: 'text',
+                            type: 'upload',
+                            relationTo: 'media',
                             required: true,
                         },
                     ],
@@ -222,7 +226,8 @@ export const HomePage: CollectionConfig = {
                         },
                         {
                             name: 'image',
-                            type: 'text',
+                            type: 'upload',
+                            relationTo: 'media',
                             required: true,
                         },
                         {
@@ -265,8 +270,9 @@ export const HomePage: CollectionConfig = {
                 },
                 {
                     name: 'image',
-                    type: 'text',
-                    required: true,
+                    type: 'upload',
+                    relationTo: 'media',
+                    required: false,
                 },
                 {
                     name: 'link',
@@ -347,13 +353,9 @@ export const HomePage: CollectionConfig = {
                     type: 'array',
                     fields: [
                         {
-                            name: 'src',
-                            type: 'text',
-                            required: true,
-                        },
-                        {
-                            name: 'alt',
-                            type: 'text',
+                            name: 'image',
+                            type: 'upload',
+                            relationTo: 'media',
                             required: true,
                         },
                     ],
@@ -481,6 +483,39 @@ export const HomePage: CollectionConfig = {
                     name: 'order',
                     type: 'number',
                     defaultValue: 0,
+                },
+            ],
+        },
+
+        // SEO
+        {
+            name: 'seo',
+            type: 'group',
+            label: 'SEO',
+            fields: [
+                {
+                    name: 'metaTitle',
+                    type: 'text',
+                    required: false,
+                    admin: {
+                        description: 'SEO title (recommended: 50-60 characters)',
+                    },
+                },
+                {
+                    name: 'metaDescription',
+                    type: 'textarea',
+                    required: false,
+                    admin: {
+                        description: 'SEO description (recommended: 150-160 characters)',
+                    },
+                },
+                {
+                    name: 'keywords',
+                    type: 'text',
+                    required: false,
+                    admin: {
+                        description: 'SEO keywords (comma-separated)',
+                    },
                 },
             ],
         },

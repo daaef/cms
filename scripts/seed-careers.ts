@@ -7,31 +7,31 @@ import { dirname, join } from 'path';
 import { mapImagesToMediaIds } from './utils/media-mapper.js';
 
 /**
- * Seed script for Home Page content (Payload 3.x)
+ * Seed script for Careers Page content (Payload 3.x)
  *
- * This script reads the home-page.json file and creates/updates
- * the home page content in Payload CMS
+ * This script reads the careers-page.json file and creates/updates
+ * the careers page content in Payload CMS
  */
 
 // ESM equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const seedHomePage = async () => {
+const seedCareersPage = async () => {
     try {
-        console.log('🌱 Starting home page seed...');
+        console.log('🌱 Starting careers page seed...');
 
         // Read the JSON data
-        const dataPath = join(__dirname, '../seed-data/home-page.json');
+        const dataPath = join(__dirname, '../seed-data/careers-page.json');
 
         if (!existsSync(dataPath)) {
             throw new Error(`Seed data not found at: ${dataPath}`);
         }
 
         const rawData = readFileSync(dataPath, 'utf-8');
-        const homePageData = JSON.parse(rawData);
+        const careersPageData = JSON.parse(rawData);
 
-        console.log('📄 Loaded home page data from JSON');
+        console.log('📄 Loaded careers page data from JSON');
 
         // Initialize Payload 3.x with config promise
         const payload = await getPayload({
@@ -42,21 +42,21 @@ const seedHomePage = async () => {
 
         // Map image paths to media IDs
         console.log('🔗 Mapping images to media IDs...');
-        const mappedData = await mapImagesToMediaIds(payload, homePageData);
+        const mappedData = await mapImagesToMediaIds(payload, careersPageData);
         console.log('✅ Image mapping completed');
 
-        // Check if home page already exists
+        // Check if careers page already exists
         const existingPages = await payload.find({
-            collection: 'home-page' as any,
+            collection: 'careers-page' as any,
             limit: 1,
         });
 
         if (existingPages.docs.length > 0) {
-            console.log('📝 Home page already exists, updating...');
+            console.log('📝 Careers page already exists, updating...');
 
-            // Update existing home page
+            // Update existing careers page
             const updated = await payload.update({
-                collection: 'home-page' as any,
+                collection: 'careers-page' as any,
                 where: {
                     id: {
                         equals: existingPages.docs[0].id,
@@ -65,33 +65,33 @@ const seedHomePage = async () => {
                 data: mappedData,
             });
 
-            console.log(`✅ Home page updated successfully! ID: ${updated.docs[0]?.id}`);
+            console.log(`✅ Careers page updated successfully! ID: ${updated.docs[0]?.id}`);
         } else {
-            console.log('📝 Creating new home page...');
+            console.log('📝 Creating new careers page...');
 
-            // Create new home page
+            // Create new careers page
             const created = await payload.create({
-                collection: 'home-page' as any,
+                collection: 'careers-page' as any,
                 data: mappedData,
             });
 
-            console.log(`✅ Home page created successfully! ID: ${created.id}`);
+            console.log(`✅ Careers page created successfully! ID: ${created.id}`);
         }
 
-        console.log('🎉 Home page seeding completed!');
+        console.log('🎉 Careers page seeding completed!');
     } catch (error) {
-        console.error('❌ Error seeding home page:', error);
+        console.error('❌ Error seeding careers page:', error);
         console.error('Stack:', error instanceof Error ? error.stack : error);
         throw error;
     }
 };
 
 // Export for use in other scripts
-export { seedHomePage };
+export { seedCareersPage };
 
 // Run if executed directly (ESM way)
 if (import.meta.url === `file://${process.argv[1]}`) {
-    seedHomePage()
+    seedCareersPage()
         .then(() => process.exit(0))
         .catch(() => process.exit(1));
 }

@@ -1,79 +1,14 @@
 {
-  "title": "Home Page",
+  "title": "Products Page",
   "locale": "en",
-  "heroSlides": [
-    {
-      "type": "zibot",
-      "title": "ZiBot",
-      "subtitle": "Anything Anytime Anywhere",
-      "cursiveText": "Delivery",
-      "image": "/slides/zibot.png",
-      "ctaText": "Learn More",
-      "ctaLink": "/products/zibot"
-    },
-    {
-      "type": "glide",
-      "title": "Glide",
-      "subtitle": "Anything Anytime Anywhere",
-      "cursiveText": "Delivery",
-      "image": "/slides/glide.png",
-      "ctaText": "Learn More",
-      "ctaLink": "/products#glide"
-    },
-    {
-      "type": "consultancy",
-      "title": "Fainzy Consultancy",
-      "subtitle": "",
-      "cursiveText": "",
-      "image": "/slides/consultancy.png",
-      "ctaText": "Learn More",
-      "ctaLink": "/products#consultancy"
-    }
-  ],
-  "videoSection": {
-    "enabled": true,
-    "videoUrl": "/videos/zibot.mp4",
-    "posterImage": ""
-  },
-  "aboutSection": {
-    "foundation": {
-      "label": "Our Foundation",
-      "title": "Imagine the future we can build for humanity",
-      "description": "From autonomous delivery robots to cutting-edge AI solutions, our technology is transforming how services reach people, making delivery faster, safer, and more efficient through innovation and robotics.",
-      "ctaText": "Get Started",
-      "ctaLink": "#"
-    },
-    "purpose": {
-      "label": "Purpose",
-      "title": "Revolutionizing Last-Mile Delivery",
-      "description": "To create intelligent, autonomous delivery solutions that transform how goods and services reach people, making delivery faster, safer, and more efficient through cutting-edge robotics.",
-      "image": "/purpose.jpg"
-    },
-    "vision": {
-      "label": "Vision",
-      "title": "A World Where Robots Serve Humanity",
-      "description": "We envision a future where autonomous delivery robots become integral partners in seamlessly navigating cities and communities to deliver goods with precision, reliability, and sustainability.",
-      "image": "/vision.jpg"
-    },
-    "mission": {
-      "label": "Mission",
-      "title": "Pioneering the New Normal",
-      "description": "To develop and deploy advanced robotic delivery systems that prioritize safety, efficiency, and accessibility. We are committed to continuous innovation, exceptional quality, and creating solutions that transform lives.",
-      "image": "/mission.png",
-      "highlights": [
-        {
-          "title": "Safety",
-          "subtitle": "First Priority"
-        },
-        {
-          "title": "Innovation",
-          "subtitle": "Continuous"
-        }
-      ]
-    }
+  "heroSection": {
+    "title": "Our Products & Services",
+    "subtitle": "At Fainzy Technologies, we're pioneering the next generation of robotics and AI solutions that will transform industries worldwide.",
+    "bannerImage": "/careers/careers-banner.jpg"
   },
   "products": [
     {
+      "id": "zibot",
       "title": "ZiBot Last Mile Delivery Robot System",
       "description": "The Last Mile Delivery System uses our robot to take food deliveries from restaurants to consumers' locations.",
       "image": "/last-delivery.png",
@@ -103,10 +38,11 @@
       ]
     },
     {
+      "id": "glide",
       "title": "Glide",
       "description": "Introducing Fainzy's Glide, an innovative autonomous scooter that you can summon just like an Uber. Glide offers a seamless travel experience, allowing you to navigate your surroundings effortlessly while minimizing physical contact. Simply request a ride via the app, and your personal scooter will arrive to take you wherever you need to go!",
       "image": "/glide.png",
-      "link": "#glide",
+      "link": "/contact",
       "reverse": true,
       "features": [
         {
@@ -132,73 +68,191 @@
       ]
     },
     {
+      "id": "consultancy",
       "title": "Fainzy Consultancy Services",
-      "description": "Our consulting services help businesses integrate autonomous robotic solutions efficiently. From feasibility studies to deployment and maintenance, we guide you through every step of the adoption process to ensure optimal performance and ROI.",
+      "description": "Expert robotics and AI consulting services to help transform your business. Our experienced team provides comprehensive solutions including autonomous driving systems, robot development, mobile and web application development, and AI applications using deep learning.",
       "image": "/products/consultancy.jpg",
-      "link": "/custom-solutions",
+      "link": "/contact",
       "reverse": false,
       "features": [
         {
-          "title": "Expert Analysis",
-          "subtitle": "Comprehensive Solutions",
-          "icon": "CheckCircle"
+          "title": "24/7 Operation",
+          "subtitle": "Always Available",
+          "icon": "Clock"
         },
         {
-          "title": "Custom Integration",
-          "subtitle": "Tailored to Your Needs",
-          "icon": "Package"
-        },
-        {
-          "title": "Full Support",
-          "subtitle": "End-to-End Guidance",
-          "icon": "Shield"
-        },
-        {
-          "title": "Proven Results",
-          "subtitle": "Maximize ROI",
+          "title": "Cost Effective",
+          "subtitle": "Reduced Labor",
           "icon": "DollarSign"
+        },
+        {
+          "title": "Eco-Friendly",
+          "subtitle": "Zero Emissions",
+          "icon": "Leaf"
+        },
+        {
+          "title": "Reliable",
+          "subtitle": "Consistent Service",
+          "icon": "Shield"
         }
       ]
     }
   ],
-  "customSolutions": [],
-  "metricsSection": {
-    "title": "We'll keep making impact",
-    "subtitle": "Transforming industries with autonomous robotics technology",
-    "animatedStats": [
-      {
-        "value": 150,
-        "label": "Robots in active service",
-        "icon": "Package"
-      },
-      {
-        "value": 45,
-        "label": "Restaurants using the robot delivery system",
-        "icon": "UtensilsCrossed"
-      },
-      {
-        "value": 30,
-        "label": "Hotels using the robot delivery system",
-        "icon": "Hotel"
-      }
-    ],
-    "staticStats": [
-      {
-        "value": "25+",
-        "label": "Active Deployments",
-        "icon": "MapPin"
-      },
-      {
-        "value": "8+",
-        "label": "Countries Served",
-        "icon": "Globe2"
-      },
-      {
-        "value": "500K+",
-        "label": "Deliveries Completed",
-        "icon": "CheckCircle"
-      }
-    ]
+  "customSolutions": [
+    {
+      "id": "customized-robots",
+      "category": "Custom Solution",
+      "title": "Customized Robots",
+      "description": "Fainzy Technologies can make customized robots suitable for your needs. Please contact us for more details.",
+      "images": [
+        {
+          "src": "/products/custom-solutions.png",
+          "alt": "Customized Robots"
+        }
+      ],
+      "features": [
+        {
+          "title": "Health Robot",
+          "subtitle": "ALWAYS AVAILABLE"
+        },
+        {
+          "title": "Cost Effective",
+          "subtitle": "REDUCED LABOR"
+        },
+        {
+          "title": "Eco-Friendly",
+          "subtitle": "ZERO EMISSIONS"
+        },
+        {
+          "title": "Reliable",
+          "subtitle": "CONSISTENT SERVICE"
+        }
+      ]
+    },
+    {
+      "id": "iot-solutions",
+      "category": "Custom Solution",
+      "title": "IoT Solutions",
+      "description": "Web Development, Mobile Application Development, Deep learning Algorithm development, Autonomous driving software solutions",
+      "images": [
+        {
+          "src": "/products/consultancy.jpg",
+          "alt": "IoT Solutions"
+        }
+      ],
+      "features": [
+        {
+          "title": "Web Development",
+          "subtitle": "MODERN SOLUTIONS"
+        },
+        {
+          "title": "Mobile Apps",
+          "subtitle": "iOS & ANDROID"
+        },
+        {
+          "title": "Deep Learning",
+          "subtitle": "AI ALGORITHMS"
+        },
+        {
+          "title": "Autonomous Driving",
+          "subtitle": "SMART SOFTWARE"
+        }
+      ]
+    },
+    {
+      "id": "mirax",
+      "category": "Custom Solution",
+      "title": "MiraX",
+      "description": "Our in-restaurant delivery robot designed to minimize physical contact between staff and customers, seamlessly delivering orders throughout your establishment.",
+      "images": [
+        {
+          "src": "/products/mirax.png",
+          "alt": "MiraX"
+        }
+      ],
+      "features": [
+        {
+          "title": "Contactless",
+          "subtitle": "MINIMAL CONTACT"
+        },
+        {
+          "title": "Efficient",
+          "subtitle": "FAST DELIVERY"
+        },
+        {
+          "title": "Smart Navigation",
+          "subtitle": "AUTONOMOUS"
+        },
+        {
+          "title": "User-Friendly",
+          "subtitle": "EASY TO USE"
+        }
+      ]
+    },
+    {
+      "id": "food-ordering",
+      "category": "Food Service",
+      "title": "Efficient Food Ordering System",
+      "description": "Connect restaurants and customers on a unified platform where orders are seamlessly processed and delivered by our autonomous robot fleet.",
+      "images": [
+        {
+          "src": "/products/efficient.jpg",
+          "alt": "Efficient Food Ordering"
+        }
+      ],
+      "features": [
+        {
+          "title": "Unified Platform",
+          "subtitle": "ONE SOLUTION"
+        },
+        {
+          "title": "Robot Fleet",
+          "subtitle": "AUTONOMOUS DELIVERY"
+        },
+        {
+          "title": "Real-time Tracking",
+          "subtitle": "LIVE UPDATES"
+        },
+        {
+          "title": "Seamless Integration",
+          "subtitle": "EASY SETUP"
+        }
+      ]
+    },
+    {
+      "id": "hotel-delivery",
+      "category": "Hospitality",
+      "title": "Hotel Robot Delivery System",
+      "description": "In-door hotel delivery robot that handles guest requests through an integrated tablet system, delivering items directly to rooms with precision.",
+      "images": [
+        {
+          "src": "/products/hotel.png",
+          "alt": "Hotel Robot Delivery"
+        }
+      ],
+      "features": [
+        {
+          "title": "Tablet Integration",
+          "subtitle": "EASY REQUESTS"
+        },
+        {
+          "title": "Room Delivery",
+          "subtitle": "DIRECT TO ROOM"
+        },
+        {
+          "title": "24/7 Service",
+          "subtitle": "ALWAYS AVAILABLE"
+        },
+        {
+          "title": "Precision Navigation",
+          "subtitle": "ACCURATE DELIVERY"
+        }
+      ]
+    }
+  ],
+  "ctaSection": {
+    "text": "Explore Custom Solutions",
+    "link": "/custom-solutions"
   },
   "faqs": [
     {
@@ -280,15 +334,15 @@
       "order": 6
     },
     {
-      "question": "ファインジー・テクノロジーへの投資・提携を希望します。",
+      "question": "ファインジー・テクノロジーへの投資・提融を希望します。",
       "answer": "Fainzy Technologies は、常に新しい戦略的パートナーシップを模索しています。お問い合わせフォームからご連絡ください(その際、必ず「投資・パートナーシップ」を理由に選択してください)。",
       "locale": "ja",
       "order": 7
     }
   ],
   "seo": {
-    "metaTitle": "Fainzy Technologies - Advanced Robotics & AI Solutions",
-    "metaDescription": "Leading robotics company specializing in autonomous delivery robots, restaurant automation, and AI-powered solutions. Transform your operations with cutting-edge robotics technology.",
-    "keywords": "robotics, autonomous delivery, restaurant robots, AI solutions, deep learning, autonomous driving, mobile robotics"
+    "metaTitle": "Products - Autonomous Robots | Fainzy Technologies",
+    "metaDescription": "Explore Fainzy's innovative robotics products: autonomous delivery robots for last-mile logistics and advanced restaurant service robots. Transform your business operations.",
+    "keywords": "delivery robots, restaurant robots, autonomous robots, service robots, last-mile delivery, robotics products, automation solutions"
   }
 }

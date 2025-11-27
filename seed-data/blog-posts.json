@@ -1,0 +1,86 @@
+[
+  {
+    "title": "5 Ways Autonomous Robots Are Transforming the Hospitality Industry",
+    "slug": "autonomous-robots-hospitality-industry",
+    "category": "business",
+    "description": "From room service to concierge duties, discover how robots like ZiBot are enhancing guest experiences in hotels worldwide.",
+    "featuredImage": "/blog/post1.jpg",
+    "publishedDate": "2025-10-20",
+    "readTime": "6 min read",
+    "featured": false,
+    "views": 12500,
+    "likes": 2100
+  },
+  {
+    "title": "AI and Machine Learning: The Brain Behind Smart Delivery Robots",
+    "slug": "ai-machine-learning-delivery-robots",
+    "category": "technology",
+    "description": "Explore the sophisticated AI algorithms that power ZiBot's decision-making, path planning, and obstacle avoidance capabilities.",
+    "featuredImage": "/blog/post2.jpg",
+    "publishedDate": "2025-10-18",
+    "readTime": "10 min read",
+    "featured": false,
+    "views": 58000,
+    "likes": 3200
+  },
+  {
+    "title": "Customer Success Story: How Restaurant Chain MiraX Increased Efficiency by 40%",
+    "slug": "mirax-restaurant-success-story",
+    "category": "case-study",
+    "description": "Learn how implementing our delivery robots helped a major restaurant chain reduce wait times and improve customer satisfaction.",
+    "featuredImage": "/blog/post3.jpg",
+    "publishedDate": "2025-10-15",
+    "readTime": "7 min read",
+    "featured": false,
+    "views": 45000,
+    "likes": 1800
+  },
+  {
+    "title": "The Sensor Technology That Makes Autonomous Navigation Possible",
+    "slug": "sensor-technology-autonomous-navigation",
+    "category": "technology",
+    "description": "A deep dive into the advanced sensory array that allows ZiBot to navigate complex environments safely and efficiently.",
+    "featuredImage": "/blog/post4.jpg",
+    "publishedDate": "2025-10-12",
+    "readTime": "9 min read",
+    "featured": false,
+    "views": 72000,
+    "likes": 4100
+  },
+  {
+    "title": "Building Tomorrow's Workforce: Careers in Robotics at Fainzy Technologies",
+    "slug": "careers-robotics-fainzy",
+    "category": "careers",
+    "description": "Interested in shaping the future of autonomous delivery? Discover the exciting career opportunities available at Fainzy.",
+    "featuredImage": "/blog/post5.jpg",
+    "publishedDate": "2025-10-10",
+    "readTime": "5 min read",
+    "featured": false,
+    "views": 28000,
+    "likes": 980
+  },
+  {
+    "title": "Sustainability in Robotics: How ZiBot Reduces Carbon Footprint",
+    "slug": "sustainability-robotics-carbon-footprint",
+    "category": "sustainability",
+    "description": "Explore how our energy-efficient design and optimized routing algorithms contribute to a more sustainable future.",
+    "featuredImage": "/blog/post6.jpg",
+    "publishedDate": "2025-10-08",
+    "readTime": "6 min read",
+    "featured": false,
+    "views": 34000,
+    "likes": 1450
+  },
+  {
+    "title": "The Future of Autonomous Delivery: How ZiBot is Revolutionizing Last-Mile Logistics",
+    "slug": "future-autonomous-delivery-zibot",
+    "category": "technology",
+    "description": "Discover how our flagship robot ZiBot is transforming the delivery industry with cutting-edge AI technology, advanced sensors, and autonomous navigation. Learn about the innovative features that make ZiBot the most reliable delivery solution for hotels, restaurants, and businesses.",
+    "featuredImage": "/blog/feature-post.jpg",
+    "publishedDate": "2025-10-25",
+    "readTime": "8 min read",
+    "featured": true,
+    "views": 95000,
+    "likes": 5600
+  }
+]
