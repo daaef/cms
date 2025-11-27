@@ -70,7 +70,7 @@ const pathToFilenameMap: Record<string, string> = {
 /**
  * Get media ID by image path
  */
-export async function getMediaIdByPath(payload: Payload, imagePath: string): Promise<string | null> {
+export async function getMediaIdByPath(payload: Payload, imagePath: string): Promise<string | number | null> {
     const filename = pathToFilenameMap[imagePath];
 
     if (!filename) {
