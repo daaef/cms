@@ -45,15 +45,15 @@ export default buildConfig({
     'http://localhost:3000',  // Development frontend
     'https://fainzy.com',     // Production frontend (update with your actual domain)
     'https://www.fainzy.com', // Production frontend with www
-    'https://dashboard-v2-inky.vercel.app/',
-    'https://fainzy-website-v2.vercel.app/',
+    'https://dashboard-v2-inky.vercel.app',
+    'https://fainzy-website-v2.vercel.app',
   ],
   csrf: [
     'http://localhost:3000',
     'https://fainzy.com',
     'https://www.fainzy.com',
-    'https://dashboard-v2-inky.vercel.app/',
-    'https://fainzy-website-v2.vercel.app/',
+    'https://dashboard-v2-inky.vercel.app',
+    'https://fainzy-website-v2.vercel.app',
   ],
   plugins: [
     // storage-adapter-placeholder
