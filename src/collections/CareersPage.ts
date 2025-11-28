@@ -271,6 +271,147 @@ export const CareersPage: CollectionConfig = {
       ],
     },
 
+    // Open Positions / Jobs
+    {
+      name: 'jobs',
+      type: 'array',
+      label: 'Open Positions',
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'location',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'date',
+          type: 'text',
+          required: true,
+          admin: {
+            description: 'e.g., "November 20, 2025"',
+          },
+        },
+        {
+          name: 'type',
+          type: 'select',
+          required: true,
+          options: [
+            { label: 'Full time', value: 'Full time' },
+            { label: 'Part time', value: 'Part time' },
+            { label: 'Contract', value: 'Contract' },
+            { label: 'Internship', value: 'Internship' },
+          ],
+        },
+        {
+          name: 'salary',
+          type: 'text',
+          required: false,
+        },
+        {
+          name: 'skills',
+          type: 'array',
+          label: 'Skills',
+          fields: [
+            {
+              name: 'skill',
+              type: 'text',
+              required: true,
+            },
+          ],
+        },
+        {
+          name: 'description',
+          type: 'textarea',
+          required: false,
+        },
+        {
+          name: 'responsibilities',
+          type: 'array',
+          label: 'Responsibilities',
+          fields: [
+            {
+              name: 'responsibility',
+              type: 'textarea',
+              required: true,
+            },
+          ],
+        },
+        {
+          name: 'requirements',
+          type: 'array',
+          label: 'Requirements',
+          fields: [
+            {
+              name: 'requirement',
+              type: 'textarea',
+              required: true,
+            },
+          ],
+        },
+        {
+          name: 'qualifications',
+          type: 'array',
+          label: 'Qualifications',
+          fields: [
+            {
+              name: 'qualification',
+              type: 'textarea',
+              required: true,
+            },
+          ],
+        },
+        {
+          name: 'benefits',
+          type: 'array',
+          label: 'Benefits',
+          fields: [
+            {
+              name: 'benefit',
+              type: 'text',
+              required: true,
+            },
+          ],
+        },
+        {
+          name: 'techStack',
+          type: 'array',
+          label: 'Tech Stack',
+          fields: [
+            {
+              name: 'tech',
+              type: 'text',
+              required: true,
+            },
+          ],
+        },
+        {
+          name: 'imageKey',
+          type: 'select',
+          label: 'Hero Image',
+          options: [
+            { label: 'Product', value: 'product' },
+            { label: 'Engineering', value: 'engineering' },
+            { label: 'Innovation', value: 'innovation' },
+            { label: 'World Class', value: 'worldclass' },
+            { label: 'People', value: 'people' },
+          ],
+          required: false,
+        },
+        {
+          name: 'applyBefore',
+          type: 'text',
+          required: false,
+          admin: {
+            description: 'e.g., "December 20, 2025"',
+          },
+        },
+      ],
+    },
+
     // SEO
     {
       name: 'seo',

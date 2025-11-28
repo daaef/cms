@@ -81,6 +81,502 @@
     "description": "Explore our open positions and find the perfect role for you. We're always looking for talented individuals who share our passion for innovation.",
     "buttonText": "Explore Open Positions"
   },
+  "jobs": [
+    {
+      "id": "3f8a5c2e-1d4b-4e9f-a6c7-8b2d4e6f9a1c",
+      "title": "Software Developer (Full-Stack)",
+      "location": "Remote",
+      "date": "September 22, 2025",
+      "type": "Full time",
+      "salary": "₦700,000 - ₦900,000",
+      "skills": [
+        { "skill": "Python" },
+        { "skill": "Django" },
+        { "skill": "JavaScript" },
+        { "skill": "React" },
+        { "skill": "TypeScript" }
+      ],
+      "description": "We are seeking a talented Full-Stack Developer to join our dynamic team in building cutting-edge web applications. The ideal candidate will have experience with both front-end and back-end technologies and be passionate about creating seamless user experiences.",
+      "responsibilities": [
+        { "responsibility": "Build and integrate REST APIs in Django (best practices CRUD)" },
+        { "responsibility": "Write unit tests and perform code peer reviews to maintain high code quality and robustness" },
+        { "responsibility": "Design and develop product UI based on provided designs, while also being able to improvise and iterate into user experiences" },
+        { "responsibility": "Maintain clean code. Design Patterns for better shared architecture" },
+        { "responsibility": "Align on the React project's file structure" },
+        { "responsibility": "Collaborate locally with back-end and professional designers" },
+        { "responsibility": "Adhering our requirements, custom, and processes to all performance" }
+      ],
+      "requirements": [
+        { "requirement": "Proven professional experience with Python and Django" },
+        { "requirement": "Proficient in JavaScript and React, with Django Rest Framework (DRF) and RESTful APIs" },
+        { "requirement": "Proficiency with frontend frameworks or libraries (e.g., React)" },
+        { "requirement": "Solid understanding of databases, indexing, caching, authentication, and performance optimization" },
+        { "requirement": "Comfortable with Docker for containerization" },
+        { "requirement": "Familiarity with AWS or other cloud-based infrastructure" }
+      ],
+      "qualifications": [
+        { "qualification": "Strong problem-solving skills and creativity" },
+        { "qualification": "Ability to adapt and work in collaborative environments" }
+      ],
+      "benefits": [
+        { "benefit": "✓ Hybrid/REMOTE" },
+        { "benefit": "✓ Fully Remote setup" },
+        { "benefit": "✓ Comfortable work station" },
+        { "benefit": "✓ One salary increase" }
+      ],
+      "techStack": [
+        { "tech": "Python" },
+        { "tech": "Django" },
+        { "tech": "JavaScript" },
+        { "tech": "React" },
+        { "tech": "PostgreSQL" },
+        { "tech": "AWS" },
+        { "tech": "Docker" },
+        { "tech": "REST APIs" }
+      ],
+      "imageKey": "product",
+      "applyBefore": "October 15, 2025"
+    },
+    {
+      "id": "7b4e9f2a-6c3d-4a1e-b8f5-9c6d2e4a7b3f",
+      "title": "Robotics Engineer",
+      "location": "Nagoya, Japan",
+      "date": "October 11, 2025",
+      "type": "Full time",
+      "salary": "₦1,000,000 - ₦1,800,000",
+      "skills": [
+        { "skill": "ROS" },
+        { "skill": "C++" },
+        { "skill": "Embedded" },
+        { "skill": "Control Systems" }
+      ],
+      "description": "We are seeking an experienced Robotics Engineer to join our autonomous systems team in Nagoya. The ideal candidate will have deep expertise in ROS, embedded systems, and control algorithms. You will be working on cutting-edge autonomous delivery robots that are transforming the logistics industry.",
+      "responsibilities": [
+        { "responsibility": "Design and develop control algorithms for autonomous navigation and obstacle avoidance" },
+        { "responsibility": "Implement and optimize embedded software for real-time robotic systems" },
+        { "responsibility": "Integrate sensors (LiDAR, cameras, IMU) and actuators into robot platforms" },
+        { "responsibility": "Collaborate with hardware engineers to validate prototypes and conduct field testing" },
+        { "responsibility": "Develop simulation environments and hardware-in-the-loop testing frameworks" },
+        { "responsibility": "Debug and troubleshoot complex robot behaviors in real-world scenarios" },
+        { "responsibility": "Contribute to technical documentation and architectural design reviews" }
+      ],
+      "requirements": [
+        { "requirement": "Strong proficiency in C++ and Python for robotics applications" },
+        { "requirement": "Extensive experience with ROS (Robot Operating System) and ROS2" },
+        { "requirement": "Solid understanding of embedded systems, microcontrollers, and RTOS" },
+        { "requirement": "Experience with sensor fusion, SLAM algorithms, and path planning" },
+        { "requirement": "Knowledge of control theory and implementation of PID, MPC, or other control strategies" },
+        { "requirement": "Familiarity with Linux-based embedded systems and real-time computing" }
+      ],
+      "qualifications": [
+        { "qualification": "BSc/MS in Robotics, Electrical Engineering, Mechatronics, or related field" },
+        { "qualification": "3+ years of hands-on experience developing and deploying robotic systems" },
+        { "qualification": "Strong problem-solving abilities and experience debugging complex systems" }
+      ],
+      "benefits": [
+        { "benefit": "✓ Relocation assistance to Nagoya, Japan (visa sponsorship available)" },
+        { "benefit": "✓ Comprehensive health benefits and paid time off" },
+        { "benefit": "✓ Professional development budget for conferences and training" },
+        { "benefit": "✓ Access to state-of-the-art robotics lab and testing facilities" }
+      ],
+      "techStack": [
+        { "tech": "ROS" },
+        { "tech": "ROS2" },
+        { "tech": "C++" },
+        { "tech": "Python" },
+        { "tech": "Embedded Linux" },
+        { "tech": "RTOS" },
+        { "tech": "Gazebo" },
+        { "tech": "Hardware-in-the-loop testing" }
+      ],
+      "imageKey": "engineering",
+      "applyBefore": "October 30, 2025"
+    },
+    {
+      "id": "5d2e8f4a-9b6c-4e3d-a1f7-6c9b2e5d8a4f",
+      "title": "AI/ML Engineer",
+      "location": "Remote",
+      "date": "September 25, 2025",
+      "type": "Full time",
+      "salary": "₦2,000,000 - ₦2,500,000",
+      "skills": [
+        { "skill": "Python" },
+        { "skill": "TensorFlow" },
+        { "skill": "PyTorch" },
+        { "skill": "Model Deployment" }
+      ],
+      "description": "Join our AI/ML team to develop and productionize cutting-edge machine learning models for autonomous robotics. We're looking for talented engineers who can bridge the gap between research and production, building models that power our perception, navigation, and decision-making systems.",
+      "responsibilities": [
+        { "responsibility": "Design, train, and evaluate deep learning models for computer vision and perception tasks" },
+        { "responsibility": "Optimize models for deployment on edge devices and embedded systems with limited compute" },
+        { "responsibility": "Implement and maintain ML pipelines for data collection, annotation, training, and evaluation" },
+        { "responsibility": "Collaborate with robotics engineers to integrate ML models into autonomous systems" },
+        { "responsibility": "Conduct experiments to improve model accuracy, latency, and robustness" },
+        { "responsibility": "Monitor model performance in production and implement continuous improvement strategies" },
+        { "responsibility": "Stay current with latest ML research and evaluate new techniques for potential adoption" }
+      ],
+      "requirements": [
+        { "requirement": "Strong fundamentals in machine learning, deep learning, and computer vision" },
+        { "requirement": "Extensive experience with PyTorch or TensorFlow for model development" },
+        { "requirement": "Proven track record of deploying ML models to production environments" },
+        { "requirement": "Experience with model optimization techniques (quantization, pruning, distillation)" },
+        { "requirement": "Proficiency in Python and ML tooling ecosystem (NumPy, Pandas, scikit-learn)" },
+        { "requirement": "Familiarity with MLOps practices and tools for model versioning and monitoring" }
+      ],
+      "qualifications": [
+        { "qualification": "MS/PhD in Computer Science, Machine Learning, or related field (preferred but not required)" },
+        { "qualification": "Strong portfolio of ML projects, publications, or open-source contributions" },
+        { "qualification": "Excellent problem-solving skills and ability to work independently" }
+      ],
+      "benefits": [
+        { "benefit": "✓ Fully remote position with flexible working hours" },
+        { "benefit": "✓ Generous conference and training budget for professional development" },
+        { "benefit": "✓ Stock options and competitive compensation package" },
+        { "benefit": "✓ Access to high-performance computing resources and GPUs" }
+      ],
+      "techStack": [
+        { "tech": "Python" },
+        { "tech": "PyTorch" },
+        { "tech": "TensorFlow" },
+        { "tech": "ONNX" },
+        { "tech": "TensorRT" },
+        { "tech": "Docker" },
+        { "tech": "Kubernetes" },
+        { "tech": "AWS/GCP" },
+        { "tech": "MLflow" }
+      ],
+      "imageKey": "innovation",
+      "applyBefore": "November 1, 2025"
+    },
+    {
+      "id": "9a6c3e1f-4d7b-4e2a-8f5c-3b9d6e1a4c7f",
+      "title": "Hardware Engineer",
+      "location": "Nagoya, Japan",
+      "date": "November 1, 2025",
+      "type": "Full time",
+      "salary": "₦700,000 - ₦850,000",
+      "skills": [
+        { "skill": "PCB" },
+        { "skill": "CAD" },
+        { "skill": "Electronics" },
+        { "skill": "DFM" }
+      ],
+      "description": "We are seeking a skilled Hardware Engineer to design, validate, and productionize electronics for our autonomous delivery robots. You will work closely with mechanical and software teams to create robust, cost-effective hardware solutions that can withstand real-world operating conditions.",
+      "responsibilities": [
+        { "responsibility": "Design and review PCB schematics, layouts, and multi-layer board designs" },
+        { "responsibility": "Select components based on performance, cost, and availability considerations" },
+        { "responsibility": "Validate hardware through lab testing, environmental testing, and field trials" },
+        { "responsibility": "Work with manufacturing partners to ensure design for manufacturability (DFM) and high yield" },
+        { "responsibility": "Debug hardware issues and implement design improvements based on test results" },
+        { "responsibility": "Create and maintain technical documentation including BOMs, test procedures, and design specifications" },
+        { "responsibility": "Collaborate with firmware engineers to ensure hardware-software integration" }
+      ],
+      "requirements": [
+        { "requirement": "Proficiency with PCB design tools such as Altium Designer or KiCad" },
+        { "requirement": "Strong understanding of analog and digital circuit design, power electronics, and signal integrity" },
+        { "requirement": "Experience with component selection, schematic capture, and PCB layout best practices" },
+        { "requirement": "Hands-on experience with lab equipment (oscilloscopes, multimeters, signal generators)" },
+        { "requirement": "Knowledge of design for manufacturability (DFM) and design for testing (DFT)" },
+        { "requirement": "Familiarity with EMC/EMI considerations and regulatory compliance" }
+      ],
+      "qualifications": [
+        { "qualification": "Bachelor's or Master's degree in Electrical Engineering or related field" },
+        { "qualification": "3+ years of experience in hardware design and productization" },
+        { "qualification": "Experience bringing products from prototype to mass production" }
+      ],
+      "benefits": [
+        { "benefit": "✓ Access to fully-equipped electronics lab and prototyping resources" },
+        { "benefit": "✓ Relocation support and visa sponsorship for Nagoya, Japan" },
+        { "benefit": "✓ Comprehensive health benefits and paid time off" },
+        { "benefit": "✓ Professional development opportunities and training budget" }
+      ],
+      "techStack": [
+        { "tech": "Altium Designer" },
+        { "tech": "KiCad" },
+        { "tech": "SPICE simulation" },
+        { "tech": "Oscilloscopes" },
+        { "tech": "Logic Analyzers" },
+        { "tech": "PCB fabrication workflows" }
+      ],
+      "imageKey": "engineering",
+      "applyBefore": "November 20, 2025"
+    },
+    {
+      "id": "2e5a8c4f-6b9d-4a3e-7f1c-9b4e6d2a5c8f",
+      "title": "Product Designer",
+      "location": "Remote",
+      "date": "December 18, 2025",
+      "type": "Full time",
+      "salary": "₦800,000 - ₦1,200,000",
+      "skills": [
+        { "skill": "Figma" },
+        { "skill": "UI/UX" },
+        { "skill": "Prototyping" },
+        { "skill": "User Research" }
+      ],
+      "description": "We are looking for a talented Product Designer to lead the design of user-facing products and experiences. You will work at the intersection of robotics, logistics, and software to create intuitive interfaces for our autonomous delivery platform, mobile applications, and internal tools.",
+      "responsibilities": [
+        { "responsibility": "Lead end-to-end product design from concept to launch, including wireframing, prototyping, and visual design" },
+        { "responsibility": "Conduct user research, interviews, and usability testing to inform design decisions" },
+        { "responsibility": "Create and maintain design systems, component libraries, and style guides" },
+        { "responsibility": "Collaborate closely with product managers and engineers to ship polished user experiences" },
+        { "responsibility": "Design for multiple platforms including web, mobile (iOS/Android), and embedded displays" },
+        { "responsibility": "Iterate on designs based on user feedback, analytics, and business requirements" },
+        { "responsibility": "Advocate for user-centered design principles across the organization" }
+      ],
+      "requirements": [
+        { "requirement": "Strong portfolio showcasing end-to-end product design work and UX process" },
+        { "requirement": "Proficiency in Figma for interface design, prototyping, and design systems" },
+        { "requirement": "Experience conducting user research, usability testing, and synthesizing insights" },
+        { "requirement": "Solid understanding of interaction design, information architecture, and visual design principles" },
+        { "requirement": "Ability to work collaboratively with cross-functional teams including engineering and product" },
+        { "requirement": "Excellent communication and presentation skills" }
+      ],
+      "qualifications": [
+        { "qualification": "3+ years of experience in product design or UX/UI design" },
+        { "qualification": "Bachelor's degree in Design, HCI, or related field (or equivalent experience)" },
+        { "qualification": "Experience designing for B2B SaaS, logistics, or hardware-software products is a plus" }
+      ],
+      "benefits": [
+        { "benefit": "✓ Fully remote position with flexible working hours" },
+        { "benefit": "✓ Generous learning and development budget for courses, books, and conferences" },
+        { "benefit": "✓ Opportunity to work on both hardware and software product design" },
+        { "benefit": "✓ Collaborative team culture with regular design critiques and feedback sessions" }
+      ],
+      "techStack": [
+        { "tech": "Figma" },
+        { "tech": "FigJam" },
+        { "tech": "Miro" },
+        { "tech": "ProtoPie" },
+        { "tech": "Adobe Creative Suite" },
+        { "tech": "Maze" },
+        { "tech": "UserTesting" }
+      ],
+      "imageKey": "product",
+      "applyBefore": "December 10, 2025"
+    },
+    {
+      "id": "6c9e2a5f-3d8b-4e4a-1f7c-4b6d9e2a8c5f",
+      "title": "DevOps Engineer",
+      "location": "Remote",
+      "date": "November 20, 2025",
+      "type": "Full time",
+      "salary": "₦700,000 - ₦850,000",
+      "skills": [
+        { "skill": "Docker" },
+        { "skill": "Kubernetes" },
+        { "skill": "AWS" },
+        { "skill": "CI/CD" }
+      ],
+      "description": "Join our infrastructure team to build and maintain the platform that powers our autonomous delivery robots. We're looking for a DevOps Engineer who can design scalable cloud infrastructure, implement robust CI/CD pipelines, and ensure high availability of our production systems.",
+      "responsibilities": [
+        { "responsibility": "Design, implement, and maintain CI/CD pipelines for multiple services and repositories" },
+        { "responsibility": "Manage and optimize cloud infrastructure on AWS (EC2, ECS, Lambda, RDS, S3, etc.)" },
+        { "responsibility": "Deploy and manage Kubernetes clusters for containerized applications" },
+        { "responsibility": "Implement infrastructure as code using Terraform or similar tools" },
+        { "responsibility": "Set up monitoring, logging, and alerting systems using Prometheus, Grafana, and ELK stack" },
+        { "responsibility": "Develop and maintain incident response processes and participate in on-call rotation" },
+        { "responsibility": "Optimize infrastructure costs and improve system performance and reliability" }
+      ],
+      "requirements": [
+        { "requirement": "Strong experience with Docker and Kubernetes for container orchestration" },
+        { "requirement": "Proficiency with cloud platforms, preferably AWS (EC2, ECS, Lambda, RDS, etc.)" },
+        { "requirement": "Experience with infrastructure as code tools like Terraform or CloudFormation" },
+        { "requirement": "Solid understanding of CI/CD concepts and tools (Jenkins, GitLab CI, GitHub Actions)" },
+        { "requirement": "Knowledge of monitoring and observability tools (Prometheus, Grafana, Datadog, etc.)" },
+        { "requirement": "Proficiency in scripting languages such as Python, Bash, or Go" }
+      ],
+      "qualifications": [
+        { "qualification": "3+ years of experience managing production infrastructure and DevOps practices" },
+        { "qualification": "Experience with high-availability systems and incident management" },
+        { "qualification": "Strong troubleshooting skills and ability to debug complex distributed systems" }
+      ],
+      "benefits": [
+        { "benefit": "✓ Fully remote position with flexible working hours" },
+        { "benefit": "✓ On-call compensation and rotation schedule" },
+        { "benefit": "✓ Generous learning budget for certifications and training" },
+        { "benefit": "✓ Work with cutting-edge robotics and cloud infrastructure" }
+      ],
+      "techStack": [
+        { "tech": "Docker" },
+        { "tech": "Kubernetes" },
+        { "tech": "Terraform" },
+        { "tech": "AWS" },
+        { "tech": "Prometheus" },
+        { "tech": "Grafana" },
+        { "tech": "GitLab CI" },
+        { "tech": "Ansible" },
+        { "tech": "ELK Stack" }
+      ],
+      "imageKey": "worldclass",
+      "applyBefore": "December 5, 2025"
+    },
+    {
+      "id": "8f3a6c2e-9b5d-4e1a-4f7c-2b8d6e9a3c1f",
+      "title": "Senior Software Engineer",
+      "location": "San Francisco, USA",
+      "date": "October 5, 2025",
+      "type": "Full time",
+      "salary": "₦1,500,000 - ₦2,000,000",
+      "skills": [
+        { "skill": "React" },
+        { "skill": "Node.js" },
+        { "skill": "TypeScript" },
+        { "skill": "Architecture" }
+      ],
+      "description": "We are seeking a Senior Software Engineer to lead critical technical initiatives and help scale our platform. You will own complex projects end-to-end, mentor engineers, and shape our technical architecture. This is an opportunity to make a significant impact at a fast-growing robotics company.",
+      "responsibilities": [
+        { "responsibility": "Lead design and implementation of complex, cross-functional technical projects" },
+        { "responsibility": "Architect scalable, maintainable systems that can handle millions of requests" },
+        { "responsibility": "Mentor junior and mid-level engineers through code reviews, pair programming, and technical guidance" },
+        { "responsibility": "Drive technical strategy and make key architectural decisions for the platform" },
+        { "responsibility": "Collaborate with product managers and designers to define requirements and scope projects" },
+        { "responsibility": "Establish engineering best practices, coding standards, and development workflows" },
+        { "responsibility": "Participate in on-call rotation and lead incident response when needed" }
+      ],
+      "requirements": [
+        { "requirement": "Proven track record of leading and shipping large-scale technical projects" },
+        { "requirement": "Strong system design skills and experience with distributed systems architecture" },
+        { "requirement": "Expert-level proficiency in TypeScript, Node.js, and React" },
+        { "requirement": "Deep understanding of database design, caching strategies, and performance optimization" },
+        { "requirement": "Experience with cloud platforms (AWS, GCP, Azure) and microservices architecture" },
+        { "requirement": "Excellent communication and collaboration skills" }
+      ],
+      "qualifications": [
+        { "qualification": "5+ years of experience in full-stack software engineering" },
+        { "qualification": "Experience building and scaling systems that serve millions of users" },
+        { "qualification": "Track record of mentoring engineers and leading technical teams" }
+      ],
+      "benefits": [
+        { "benefit": "✓ Competitive compensation package with equity/stock options" },
+        { "benefit": "✓ Relocation support to San Francisco (if applicable)" },
+        { "benefit": "✓ Comprehensive health, dental, and vision insurance" },
+        { "benefit": "✓ Flexible PTO and work-from-home options" }
+      ],
+      "techStack": [
+        { "tech": "React" },
+        { "tech": "Next.js" },
+        { "tech": "Node.js" },
+        { "tech": "TypeScript" },
+        { "tech": "PostgreSQL" },
+        { "tech": "Redis" },
+        { "tech": "GraphQL" },
+        { "tech": "AWS" }
+      ],
+      "imageKey": "worldclass",
+      "applyBefore": "October 25, 2025"
+    },
+    {
+      "id": "4a7e9c2f-8d6b-4e3a-5f1c-6b9d2e4a7c8f",
+      "title": "Computer Vision Engineer",
+      "location": "Remote",
+      "date": "November 15, 2025",
+      "type": "Full time",
+      "salary": "₦1,200,000 - ₦1,800,000",
+      "skills": [
+        { "skill": "OpenCV" },
+        { "skill": "Python" },
+        { "skill": "Deep Learning" },
+        { "skill": "CUDA" }
+      ],
+      "description": "We are seeking a Computer Vision Engineer to develop perception systems for our autonomous delivery robots. You will build and optimize vision pipelines for object detection, tracking, semantic segmentation, and scene understanding that enable robots to navigate safely in real-world environments.",
+      "responsibilities": [
+        { "responsibility": "Design and implement computer vision pipelines for object detection, tracking, and segmentation" },
+        { "responsibility": "Develop and optimize deep learning models for perception tasks using PyTorch or TensorFlow" },
+        { "responsibility": "Implement classical computer vision algorithms using OpenCV for preprocessing and feature extraction" },
+        { "responsibility": "Optimize models and algorithms for real-time performance on edge devices (CUDA, TensorRT)" },
+        { "responsibility": "Collaborate with robotics engineers to integrate vision systems into autonomous navigation stack" },
+        { "responsibility": "Collect, annotate, and manage datasets for training and validation" },
+        { "responsibility": "Evaluate and benchmark model performance on diverse real-world scenarios" }
+      ],
+      "requirements": [
+        { "requirement": "Strong experience with OpenCV and classical computer vision techniques" },
+        { "requirement": "Proficiency with deep learning frameworks (PyTorch or TensorFlow) for vision tasks" },
+        { "requirement": "Experience deploying computer vision models to production or edge devices" },
+        { "requirement": "Knowledge of CUDA programming and GPU optimization techniques" },
+        { "requirement": "Familiarity with 3D vision, camera calibration, and multi-camera systems" },
+        { "requirement": "Strong Python programming skills and software engineering practices" }
+      ],
+      "qualifications": [
+        { "qualification": "3+ years of experience in computer vision or related ML/AI roles" },
+        { "qualification": "Bachelor's or Master's degree in Computer Science, Robotics, or related field" },
+        { "qualification": "Experience with autonomous systems, robotics, or similar applications is a plus" }
+      ],
+      "benefits": [
+        { "benefit": "✓ Fully remote position with flexible working hours" },
+        { "benefit": "✓ Opportunity to collaborate with research teams and publish findings" },
+        { "benefit": "✓ Access to GPU clusters and high-quality datasets" },
+        { "benefit": "✓ Conference attendance and professional development support" }
+      ],
+      "techStack": [
+        { "tech": "OpenCV" },
+        { "tech": "PyTorch" },
+        { "tech": "TensorFlow" },
+        { "tech": "CUDA" },
+        { "tech": "TensorRT" },
+        { "tech": "ONNX" },
+        { "tech": "ROS" },
+        { "tech": "Python" }
+      ],
+      "imageKey": "innovation",
+      "applyBefore": "December 1, 2025"
+    },
+    {
+      "id": "1c5e8a4f-2d9b-4e6a-7f3c-8b4d6e1a9c2f",
+      "title": "UX Researcher",
+      "location": "London, UK",
+      "date": "December 1, 2025",
+      "type": "Full time",
+      "salary": "₦600,000 - ₦900,000",
+      "skills": [
+        { "skill": "Research" },
+        { "skill": "Analytics" },
+        { "skill": "User Testing" },
+        { "skill": "Interviewing" }
+      ],
+      "description": "We are looking for a UX Researcher to help us deeply understand our users and inform product decisions with data-driven insights. You will plan and conduct user research studies, synthesize findings, and work closely with product and design teams to create user-centered experiences.",
+      "responsibilities": [
+        { "responsibility": "Plan and conduct qualitative research studies including user interviews, usability testing, and field studies" },
+        { "responsibility": "Design and execute quantitative research using surveys, A/B tests, and analytics" },
+        { "responsibility": "Synthesize research findings into actionable insights and compelling presentations" },
+        { "responsibility": "Present findings to cross-functional teams and influence product roadmap decisions" },
+        { "responsibility": "Develop and maintain research roadmaps aligned with product goals" },
+        { "responsibility": "Build and maintain user personas, journey maps, and other UX artifacts" },
+        { "responsibility": "Collaborate with product designers and managers to define research questions and methodologies" }
+      ],
+      "requirements": [
+        { "requirement": "Proven experience planning and conducting qualitative user research (interviews, usability tests, ethnographic studies)" },
+        { "requirement": "Strong understanding of quantitative research methods and statistical analysis" },
+        { "requirement": "Excellent synthesis and storytelling skills to communicate insights effectively" },
+        { "requirement": "Experience with research tools such as UserTesting, Optimal Workshop, or similar platforms" },
+        { "requirement": "Proficiency with analytics tools (Google Analytics, Mixpanel, Looker, etc.)" },
+        { "requirement": "Ability to work independently and manage multiple research projects simultaneously" }
+      ],
+      "qualifications": [
+        { "qualification": "3+ years of experience in UX research, product research, or similar roles" },
+        { "qualification": "Bachelor's or Master's degree in HCI, Psychology, Sociology, or related field" },
+        { "qualification": "Portfolio of research projects demonstrating impact on product decisions" }
+      ],
+      "benefits": [
+        { "benefit": "✓ Research stipends for recruiting participants and conducting studies" },
+        { "benefit": "✓ Conference budgets for professional development and networking" },
+        { "benefit": "✓ Flexible working hours and hybrid/remote options" },
+        { "benefit": "✓ Collaborative team culture with designers, PMs, and engineers" }
+      ],
+      "techStack": [
+        { "tech": "UserTesting" },
+        { "tech": "Optimal Workshop" },
+        { "tech": "Looker" },
+        { "tech": "Google Analytics" },
+        { "tech": "Mixpanel" },
+        { "tech": "Figma" },
+        { "tech": "Dovetail" },
+        { "tech": "Miro" }
+      ],
+      "imageKey": "people",
+      "applyBefore": "December 20, 2025"
+    }
+  ],
   "seo": {
     "metaTitle": "Careers - Join Fainzy Technologies | Robotics Jobs",
     "metaDescription": "Join Fainzy Technologies and help shape the future of robotics. Explore career opportunities in engineering, AI, product design, and more at our Nagoya-based innovation hub.",

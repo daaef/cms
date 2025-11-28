@@ -40,6 +40,7 @@ export default buildConfig({
     },
   }),
   sharp,
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001',
   cors: [
     'http://localhost:3000',  // Development frontend
     'https://fainzy.com',     // Production frontend (update with your actual domain)

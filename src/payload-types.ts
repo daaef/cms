@@ -166,6 +166,7 @@ export interface Media {
   id: number;
   alt: string;
   cloudinaryId?: string | null;
+  cloudinaryUrl?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -588,6 +589,61 @@ export interface CareersPage {
     description: string;
     buttonText?: string | null;
   };
+  jobs?:
+    | {
+        title: string;
+        location: string;
+        /**
+         * e.g., "November 20, 2025"
+         */
+        date: string;
+        type: 'Full time' | 'Part time' | 'Contract' | 'Internship';
+        salary?: string | null;
+        skills?:
+          | {
+              skill: string;
+              id?: string | null;
+            }[]
+          | null;
+        description?: string | null;
+        responsibilities?:
+          | {
+              responsibility: string;
+              id?: string | null;
+            }[]
+          | null;
+        requirements?:
+          | {
+              requirement: string;
+              id?: string | null;
+            }[]
+          | null;
+        qualifications?:
+          | {
+              qualification: string;
+              id?: string | null;
+            }[]
+          | null;
+        benefits?:
+          | {
+              benefit: string;
+              id?: string | null;
+            }[]
+          | null;
+        techStack?:
+          | {
+              tech: string;
+              id?: string | null;
+            }[]
+          | null;
+        imageKey?: ('product' | 'engineering' | 'innovation' | 'worldclass' | 'people') | null;
+        /**
+         * e.g., "December 20, 2025"
+         */
+        applyBefore?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   seo?: {
     /**
      * SEO title (recommended: 50-60 characters)
@@ -1377,6 +1433,7 @@ export interface UsersSelect<T extends boolean = true> {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   cloudinaryId?: T;
+  cloudinaryUrl?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -1784,6 +1841,55 @@ export interface CareersPageSelect<T extends boolean = true> {
         title?: T;
         description?: T;
         buttonText?: T;
+      };
+  jobs?:
+    | T
+    | {
+        title?: T;
+        location?: T;
+        date?: T;
+        type?: T;
+        salary?: T;
+        skills?:
+          | T
+          | {
+              skill?: T;
+              id?: T;
+            };
+        description?: T;
+        responsibilities?:
+          | T
+          | {
+              responsibility?: T;
+              id?: T;
+            };
+        requirements?:
+          | T
+          | {
+              requirement?: T;
+              id?: T;
+            };
+        qualifications?:
+          | T
+          | {
+              qualification?: T;
+              id?: T;
+            };
+        benefits?:
+          | T
+          | {
+              benefit?: T;
+              id?: T;
+            };
+        techStack?:
+          | T
+          | {
+              tech?: T;
+              id?: T;
+            };
+        imageKey?: T;
+        applyBefore?: T;
+        id?: T;
       };
   seo?:
     | T
