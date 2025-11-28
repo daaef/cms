@@ -40,6 +40,18 @@ export default buildConfig({
     },
   }),
   sharp,
+  cors: [
+    'http://localhost:3000',  // Development frontend
+    'https://fainzy.com',     // Production frontend (update with your actual domain)
+    'https://www.fainzy.com', // Production frontend with www
+    'https://cms-rouge-pi.vercel.app', // Vercel frontend
+  ],
+  csrf: [
+    'http://localhost:3000',
+    'https://fainzy.com',
+    'https://www.fainzy.com',
+    'https://cms-rouge-pi.vercel.app', // Vercel frontend
+  ],
   plugins: [
     // storage-adapter-placeholder
   ],
