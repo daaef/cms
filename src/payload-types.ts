@@ -165,14 +165,65 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
-  cloudinaryId?: string | null;
+  cloudinaryPublicId?: string | null;
   cloudinaryUrl?: string | null;
+  cloudinaryResourceType?: string | null;
+  cloudinaryFormat?: string | null;
+  cloudinaryVersion?: number | null;
+  /**
+   * Direct URL to the original file without transformations
+   */
+  originalUrl?: string | null;
+  /**
+   * URL with applied transformations
+   */
+  transformedUrl?: string | null;
+  /**
+   * Folder path in Cloudinary (e.g., products/2024)
+   */
+  cloudinaryFolder?: string | null;
+  /**
+   * Select transformations to apply. Note: Only one preset from each category (Size, Effect, etc.) will be applied.
+   */
+  transformationPreset?:
+    | (
+        | 'thumbnail'
+        | 'card'
+        | 'banner'
+        | 'hero'
+        | 'feature'
+        | 'avatar'
+        | 'profile-header'
+        | 'og-image'
+        | 'twitter-card'
+        | 'instagram-square'
+        | 'instagram-story'
+        | 'square'
+        | 'landscape-16-9'
+        | 'landscape-4-3'
+        | 'portrait-9-16'
+        | 'blur'
+        | 'grayscale'
+        | 'sepia'
+        | 'pixelate'
+        | 'sharpen'
+        | 'vignette'
+        | 'auto-optimize'
+        | 'high-quality'
+        | 'balanced'
+        | 'eco-mode'
+        | 'progressive'
+      )[]
+    | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
   thumbnailURL?: string | null;
   filename?: string | null;
   mimeType?: string | null;
+  /**
+   * File size in bytes
+   */
   filesize?: number | null;
   width?: number | null;
   height?: number | null;
@@ -1432,8 +1483,15 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
-  cloudinaryId?: T;
+  cloudinaryPublicId?: T;
   cloudinaryUrl?: T;
+  cloudinaryResourceType?: T;
+  cloudinaryFormat?: T;
+  cloudinaryVersion?: T;
+  originalUrl?: T;
+  transformedUrl?: T;
+  cloudinaryFolder?: T;
+  transformationPreset?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

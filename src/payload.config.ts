@@ -5,18 +5,19 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { cloudinaryStorage, commonPresets } from 'payload-storage-cloudinary'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-import {HomePage} from "@/collections/HomePage";
-import {AboutPage} from "@/collections/AboutPage";
-import {ProductsPage} from "@/collections/ProductsPage";
-import {CareersPage} from "@/collections/CareersPage";
-import {BlogPosts} from "@/collections/BlogPosts";
-import {ContactPage} from "@/collections/ContactPage";
-import {Products} from "@/collections/Products";
-import {DashboardHomePage} from "@/collections/DashboardHomePage";
-import {ProductDetails} from "@/collections/ProductDetails";
+import {HomePage} from "@/collections/HomePage"
+import {AboutPage} from "@/collections/AboutPage"
+import {ProductsPage} from "@/collections/ProductsPage"
+import {CareersPage} from "@/collections/CareersPage"
+import {BlogPosts} from "@/collections/BlogPosts"
+import {ContactPage} from "@/collections/ContactPage"
+import {Products} from "@/collections/Products"
+import {DashboardHomePage} from "@/collections/DashboardHomePage"
+import {ProductDetails} from "@/collections/ProductDetails"
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -56,6 +57,30 @@ export default buildConfig({
     'https://fainzy-website-v2.vercel.app',
   ],
   plugins: [
-    // storage-adapter-placeholder
+    cloudinaryStorage({
+      cloudConfig: {
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME!,
+        api_key: process.env.CLOUDINARY_API_KEY!,
+        api_secret: process.env.CLOUDINARY_API_SECRET!,
+      },
+      collections: {
+        media: {
+          folder: {
+            path: 'fainzy-cms', // Default folder
+            enableDynamic: true, // Adds a text field for custom folder paths
+            fieldName: 'cloudinaryFolder', // Custom field name (optional)
+          },
+          transformations: {
+            default: {
+              quality: 'auto',
+              fetch_format: 'auto',
+            },
+            presets: commonPresets, // Built-in presets
+            enablePresetSelection: true, // Shows multi-select dropdown
+            preserveOriginal: true, // Recommended
+          },
+        },
+      },
+    }),
   ],
 })

@@ -69,6 +69,7 @@ const pathToFilenameMap: Record<string, string> = {
 
 /**
  * Get media ID by image path
+ * Updated for Cloudinary plugin - queries by filename field
  */
 export async function getMediaIdByPath(payload: Payload, imagePath: string): Promise<string | number | null> {
     const filename = pathToFilenameMap[imagePath];
@@ -90,6 +91,7 @@ export async function getMediaIdByPath(payload: Payload, imagePath: string): Pro
         });
 
         if (result.docs.length > 0) {
+            // console.log(`✅ Found media: ${filename} → ID: ${result.docs[0].id}`);
             return result.docs[0].id;
         }
 
