@@ -5,7 +5,7 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
-import { cloudinaryStorage, commonPresets } from 'payload-storage-cloudinary'
+import { cloudinaryStorage } from 'payload-storage-cloudinary'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -65,20 +65,7 @@ export default buildConfig({
       },
       collections: {
         media: {
-          folder: {
-            path: 'fainzy-cms', // Default folder
-            enableDynamic: true, // Adds a text field for custom folder paths
-            fieldName: 'cloudinaryFolder', // Custom field name (optional)
-          },
-          transformations: {
-            default: {
-              quality: 'auto',
-              fetch_format: 'auto',
-            },
-            presets: commonPresets, // Built-in presets
-            enablePresetSelection: true, // Shows multi-select dropdown
-            preserveOriginal: true, // Recommended
-          },
+          folder: 'fainzy-cms', // Static folder path
         },
       },
     }),

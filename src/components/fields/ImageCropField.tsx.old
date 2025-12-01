@@ -1,0 +1,208 @@
+'use client'
+
+import React, { useState, useEffect } from 'react'
+import ReactCrop, { Crop, PixelCrop } from 'react-image-crop'
+import 'react-image-crop/dist/ReactCrop.css'
+import { useFormFields } from '@payloadcms/ui'
+
+export const ImageCropField: React.FC = () => {
+  // Get the entire form data
+  const cropData = useFormFields(([fields]) => fields?.cropData)
+  const urlField = useFormFields(([fields]) => fields?.url?.value as string)
+  
+  const cropValue = cropData?.value as any
+  
+  const [crop, setCrop] = useState<Crop>({
+    unit: 'px',
+    x: (cropValue?.x as number) || 0,
+    y: (cropValue?.y as number) || 0,
+    width: (cropValue?.width as number) || 100,
+    height: (cropValue?.height as number) || 100,
+  })
+
+  const [showCropper, setShowCropper] = useState(false)
+
+  // Update crop when field value changes
+  useEffect(() => {
+    if (cropValue) {
+      setCrop({
+        unit: 'px',
+        x: (cropValue.x as number) || 0,
+        y: (cropValue.y as number) || 0,
+        width: (cropValue.width as number) || 100,
+        height: (cropValue.height as number) || 100,
+      })
+    }
+  }, [cropData?.value])
+
+  const handleCropComplete = (crop: PixelCrop) => {
+    if (crop.width && crop.height && cropData?.setValue) {
+      cropData.setValue({
+        x: Math.round(crop.x),
+        y: Math.round(crop.y),
+        width: Math.round(crop.width),
+        height: Math.round(crop.height),
+      })
+    }
+  }
+
+  const handleReset = () => {
+    if (cropData?.setValue) {
+      cropData.setValue({
+        x: null,
+        y: null,
+        width: null,
+        height: null,
+      })
+      setCrop({
+        unit: 'px',
+        x: 0,
+        y: 0,
+        width: 100,
+        height: 100,
+      })
+    }
+  }
+
+  if (!urlField) {
+    return (
+      <div style={{ padding: '1rem', background: '#f5f5f5', borderRadius: '4px', marginBottom: '1rem' }}>
+        <p style={{ margin: 0, color: '#666', fontSize: '0.875rem' }}>
+          📸 Upload an image first to enable the crop tool
+        </p>
+      </div>
+    )
+  }
+
+  const currentCrop = cropData?.value as { x?: number; y?: number; width?: number; height?: number } | undefined
+
+  return (
+    <div style={{ marginBottom: '1.5rem' }}>
+      <div style={{ marginBottom: '1rem' }}>
+        <button
+          type="button"
+          onClick={() => setShowCropper(!showCropper)}
+          style={{
+            padding: '0.625rem 1.25rem',
+            background: '#0070f3',
+            color: 'white',
+            border: 'none',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            marginRight: '0.5rem',
+            fontSize: '0.875rem',
+            fontWeight: 500,
+            transition: 'background 0.2s',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.background = '#0051cc')}
+          onMouseLeave={(e) => (e.currentTarget.style.background = '#0070f3')}
+        >
+          {showCropper ? '✖ Hide Crop Tool' : '✂️ Show Crop Tool'}
+        </button>
+        {currentCrop?.width && (
+          <button
+            type="button"
+            onClick={handleReset}
+            style={{
+              padding: '0.625rem 1.25rem',
+              background: '#dc3545',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontSize: '0.875rem',
+              fontWeight: 500,
+              transition: 'background 0.2s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#c82333')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#dc3545')}
+          >
+            🔄 Reset Crop
+          </button>
+        )}
+      </div>
+
+      {currentCrop?.width && (
+        <div
+          style={{
+            padding: '1rem',
+            background: '#e7f3ff',
+            border: '1px solid #b3d9ff',
+            borderRadius: '6px',
+            marginBottom: '1rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          <div style={{ fontWeight: 600, marginBottom: '0.5rem', color: '#0051cc' }}>
+            ✅ Current Crop Applied:
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.5rem', color: '#333' }}>
+            <div><strong>X:</strong> {currentCrop.x}px</div>
+            <div><strong>Y:</strong> {currentCrop.y}px</div>
+            <div><strong>Width:</strong> {currentCrop.width}px</div>
+            <div><strong>Height:</strong> {currentCrop.height}px</div>
+          </div>
+        </div>
+      )}
+
+      {showCropper && (
+        <div
+          style={{
+            border: '2px solid #e0e0e0',
+            borderRadius: '8px',
+            padding: '1.5rem',
+            background: '#fafafa',
+          }}
+        >
+          <div style={{ 
+            background: 'white', 
+            borderRadius: '4px', 
+            overflow: 'hidden',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+          }}>
+            <ReactCrop
+              crop={crop}
+              onChange={(c) => setCrop(c)}
+              onComplete={handleCropComplete}
+            >
+              <img
+                src={urlField}
+                alt="Crop preview"
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '600px',
+                  display: 'block',
+                }}
+                onLoad={(e) => {
+                  const img = e.currentTarget
+                  // Set initial crop to 50% of image if no crop exists
+                  if (!currentCrop?.width && img.naturalWidth && img.naturalHeight) {
+                    const initialCrop = {
+                      unit: 'px' as const,
+                      x: Math.round(img.naturalWidth * 0.25),
+                      y: Math.round(img.naturalHeight * 0.25),
+                      width: Math.round(img.naturalWidth * 0.5),
+                      height: Math.round(img.naturalHeight * 0.5),
+                    }
+                    setCrop(initialCrop)
+                  }
+                }}
+              />
+            </ReactCrop>
+          </div>
+          <div style={{ 
+            marginTop: '1rem', 
+            fontSize: '0.875rem', 
+            color: '#666',
+            padding: '0.75rem',
+            background: '#fff9e6',
+            borderRadius: '4px',
+            border: '1px solid #ffe066'
+          }}>
+            💡 <strong>Tip:</strong> Drag the corners to resize, drag the center to move. Coordinates save automatically when you release.
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}

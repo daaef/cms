@@ -140,6 +140,31 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
+  /**
+   * Author first name
+   */
+  firstName?: string | null;
+  /**
+   * Author last name
+   */
+  lastName?: string | null;
+  /**
+   * Job title or role (e.g., "Senior Robotics Engineer")
+   */
+  title?: string | null;
+  /**
+   * Short biography about the user
+   */
+  bio?: string | null;
+  /**
+   * Profile picture
+   */
+  avatar?: (number | null) | Media;
+  socialLinks?: {
+    twitter?: string | null;
+    linkedin?: string | null;
+    github?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -165,6 +190,31 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  /**
+   * Automatically filled when you use the crop tool above the image preview
+   */
+  cropData?: {
+    /**
+     * X coordinate (left position)
+     */
+    x?: number | null;
+    /**
+     * Y coordinate (top position)
+     */
+    y?: number | null;
+    /**
+     * Crop width
+     */
+    width?: number | null;
+    /**
+     * Crop height
+     */
+    height?: number | null;
+  };
+  /**
+   * Auto-generated Cloudinary URL with crop transformations applied
+   */
+  croppedUrl?: string | null;
   cloudinaryPublicId?: string | null;
   cloudinaryUrl?: string | null;
   cloudinaryResourceType?: string | null;
@@ -178,43 +228,6 @@ export interface Media {
    * URL with applied transformations
    */
   transformedUrl?: string | null;
-  /**
-   * Folder path in Cloudinary (e.g., products/2024)
-   */
-  cloudinaryFolder?: string | null;
-  /**
-   * Select transformations to apply. Note: Only one preset from each category (Size, Effect, etc.) will be applied.
-   */
-  transformationPreset?:
-    | (
-        | 'thumbnail'
-        | 'card'
-        | 'banner'
-        | 'hero'
-        | 'feature'
-        | 'avatar'
-        | 'profile-header'
-        | 'og-image'
-        | 'twitter-card'
-        | 'instagram-square'
-        | 'instagram-story'
-        | 'square'
-        | 'landscape-16-9'
-        | 'landscape-4-3'
-        | 'portrait-9-16'
-        | 'blur'
-        | 'grayscale'
-        | 'sepia'
-        | 'pixelate'
-        | 'sharpen'
-        | 'vignette'
-        | 'auto-optimize'
-        | 'high-quality'
-        | 'balanced'
-        | 'eco-mode'
-        | 'progressive'
-      )[]
-    | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -1460,6 +1473,18 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  firstName?: T;
+  lastName?: T;
+  title?: T;
+  bio?: T;
+  avatar?: T;
+  socialLinks?:
+    | T
+    | {
+        twitter?: T;
+        linkedin?: T;
+        github?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -1483,6 +1508,15 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  cropData?:
+    | T
+    | {
+        x?: T;
+        y?: T;
+        width?: T;
+        height?: T;
+      };
+  croppedUrl?: T;
   cloudinaryPublicId?: T;
   cloudinaryUrl?: T;
   cloudinaryResourceType?: T;
@@ -1490,8 +1524,6 @@ export interface MediaSelect<T extends boolean = true> {
   cloudinaryVersion?: T;
   originalUrl?: T;
   transformedUrl?: T;
-  cloudinaryFolder?: T;
-  transformationPreset?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
