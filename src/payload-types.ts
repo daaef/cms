@@ -255,19 +255,34 @@ export interface HomePage {
   locale: 'en' | 'ja';
   heroSlides?:
     | {
-        type: 'zibot' | 'glide' | 'consultancy' | 'custom';
+        /**
+         * Upload image for slide type (e.g., ZiBot, Glide, Consultancy logo)
+         */
+        typeImage?: (number | null) | Media;
+        /**
+         * Optional custom title text
+         */
         title?: string | null;
-        subtitle?: string | null;
-        cursiveText?: string | null;
+        /**
+         * Upload image for subtitle
+         */
+        subtitleImage?: (number | null) | Media;
+        /**
+         * Upload image for cursive text
+         */
+        cursiveTextImage?: (number | null) | Media;
         image?: (number | null) | Media;
         ctaText?: string | null;
         ctaLink?: string | null;
         id?: string | null;
       }[]
     | null;
-  videoSection: {
+  videoSection?: {
     enabled?: boolean | null;
-    videoUrl: string;
+    /**
+     * Upload video file (MP4, WebM, etc.)
+     */
+    video?: (number | null) | Media;
     /**
      * Optional poster image for video
      */
@@ -450,6 +465,10 @@ export interface AboutPage {
       | {
           name: string;
           role: string;
+          /**
+           * Short biography (recommended: 100-150 characters)
+           */
+          bio?: string | null;
           imageUrl: number | Media;
           id?: string | null;
         }[]
@@ -1546,10 +1565,10 @@ export interface HomePageSelect<T extends boolean = true> {
   heroSlides?:
     | T
     | {
-        type?: T;
+        typeImage?: T;
         title?: T;
-        subtitle?: T;
-        cursiveText?: T;
+        subtitleImage?: T;
+        cursiveTextImage?: T;
         image?: T;
         ctaText?: T;
         ctaLink?: T;
@@ -1559,7 +1578,7 @@ export interface HomePageSelect<T extends boolean = true> {
     | T
     | {
         enabled?: T;
-        videoUrl?: T;
+        video?: T;
         posterImage?: T;
       };
   aboutSection?:
@@ -1741,6 +1760,7 @@ export interface AboutPageSelect<T extends boolean = true> {
           | {
               name?: T;
               role?: T;
+              bio?: T;
               imageUrl?: T;
               id?: T;
             };

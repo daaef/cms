@@ -75,6 +75,9 @@ const imagesToUpload = [
     { path: '../../dashboard-v2/public/mirax.png', alt: 'MiraX Restaurant Robot', filename: 'dashboard-mirax.png' },
     { path: '../../dashboard-v2/public/efficient.jpg', alt: 'Efficient Food Ordering', filename: 'dashboard-efficient.jpg' },
     { path: '../../dashboard-v2/public/hotel.png', alt: 'Hotel Robot Delivery', filename: 'dashboard-hotel.png' },
+
+    // Product videos (add your video files here)
+    // Example: { path: '../../website-v2/public/videos/zibot-demo.mp4', alt: 'ZiBot Product Demo', filename: 'zibot-demo.mp4', type: 'video' },
 ];
 
 const seedMedia = async () => {
@@ -123,6 +126,28 @@ const seedMedia = async () => {
                 // Read the file
                 const fileBuffer = readFileSync(imagePath);
 
+                // Determine MIME type based on file extension
+                let mimetype = 'application/octet-stream';
+                const ext = imageInfo.filename.toLowerCase();
+                
+                if (ext.endsWith('.png')) {
+                    mimetype = 'image/png';
+                } else if (ext.endsWith('.jpg') || ext.endsWith('.jpeg')) {
+                    mimetype = 'image/jpeg';
+                } else if (ext.endsWith('.gif')) {
+                    mimetype = 'image/gif';
+                } else if (ext.endsWith('.webp')) {
+                    mimetype = 'image/webp';
+                } else if (ext.endsWith('.mp4')) {
+                    mimetype = 'video/mp4';
+                } else if (ext.endsWith('.webm')) {
+                    mimetype = 'video/webm';
+                } else if (ext.endsWith('.mov')) {
+                    mimetype = 'video/quicktime';
+                } else if (ext.endsWith('.avi')) {
+                    mimetype = 'video/x-msvideo';
+                }
+
                 // Upload to media collection
                 const uploaded = await payload.create({
                     collection: 'media',
@@ -131,13 +156,13 @@ const seedMedia = async () => {
                     },
                     file: {
                         data: fileBuffer,
-                        mimetype: imageInfo.filename.endsWith('.png') ? 'image/png' : 'image/jpeg',
+                        mimetype: mimetype,
                         name: imageInfo.filename,
                         size: fileBuffer.length,
                     },
                 });
 
-                console.log(`✅ Uploaded: ${imageInfo.filename} (ID: ${uploaded.id})`);
+                console.log(`✅ Uploaded: ${imageInfo.filename} (ID: ${uploaded.id}, Type: ${mimetype})`);
                 uploadedCount++;
             } catch (error) {
                 console.error(`❌ Error uploading ${imageInfo.filename}:`, error instanceof Error ? error.message : error);

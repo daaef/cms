@@ -3,37 +3,37 @@
   "locale": "en",
   "heroSlides": [
     {
-      "type": "zibot",
+      "typeImage": "/slides/zibot.png",
       "title": "ZiBot",
-      "subtitle": "Anything Anytime Anywhere",
-      "cursiveText": "Delivery",
+      "subtitleImage": null,
+      "cursiveTextImage": null,
       "image": "/slides/zibot.png",
       "ctaText": "Learn More",
       "ctaLink": "/products/zibot"
     },
     {
-      "type": "glide",
+      "typeImage": "/slides/glide.png",
       "title": "Glide",
-      "subtitle": "Anything Anytime Anywhere",
-      "cursiveText": "Delivery",
+      "subtitleImage": null,
+      "cursiveTextImage": null,
       "image": "/slides/glide.png",
       "ctaText": "Learn More",
       "ctaLink": "/products#glide"
     },
     {
-      "type": "consultancy",
+      "typeImage": "/slides/consultancy.png",
       "title": "Fainzy Consultancy",
-      "subtitle": "",
-      "cursiveText": "",
+      "subtitleImage": null,
+      "cursiveTextImage": null,
       "image": "/slides/consultancy.png",
       "ctaText": "Learn More",
       "ctaLink": "/products#consultancy"
     }
   ],
   "videoSection": {
-    "enabled": true,
-    "videoUrl": "/videos/zibot.mp4",
-    "posterImage": ""
+    "enabled": false,
+    "video": null,
+    "posterImage": null
   },
   "aboutSection": {
     "foundation": {

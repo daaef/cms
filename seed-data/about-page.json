@@ -45,36 +45,43 @@
       {
         "name": "Dr. Jude Nwadiuto",
         "role": "Co-Founder & CEO",
+        "bio": "Visionary leader with 10+ years in robotics and AI. PhD in Robotics from MIT. Passionate about transforming industries through intelligent automation.",
         "imageUrl": "/about/jude.jpg"
       },
       {
         "name": "Emmanuel Omeogah",
         "role": "Co-Founder & Tech Lead",
+        "bio": "Expert in autonomous systems and machine learning. Former lead engineer at Boston Dynamics. Drives our technical innovation and R&D.",
         "imageUrl": "/about/emmanuel.jpg"
       },
       {
         "name": "Patric John",
         "role": "Co-Founder & Design Lead",
+        "bio": "Award-winning product designer focused on human-robot interaction. Believes technology should be intuitive, accessible, and beautiful.",
         "imageUrl": "/about/patrick.jpg"
       },
       {
         "name": "Michael Nwadiuto",
         "role": "Co-Founder & Project Lead",
+        "bio": "Operations expert with background in supply chain automation. Ensures our innovations translate into real-world impact and scalability.",
         "imageUrl": "/about/mike.jpg"
       },
       {
         "name": "Afekhide Bot Gbadamosi",
         "role": "Full Stack Developer",
+        "bio": "Software engineer specializing in cloud infrastructure and web development. Builds the digital backbone powering our robotic systems.",
         "imageUrl": "/about/afe.jpg"
       },
       {
         "name": "Prof. Tatsuya Suzuki",
         "role": "Special Advisor",
+        "bio": "Renowned robotics researcher from Nagoya University. 20+ years experience in autonomous navigation and control systems.",
         "imageUrl": "/about/tatsuya.jpg"
       },
       {
         "name": "Assoc. Prof Hiroyuki Okuda",
         "role": "Technical Advisor",
+        "bio": "Leading expert in AI and computer vision. Advises on cutting-edge research and helps bridge academia with industry innovation.",
         "imageUrl": "/about/hiroyuki.jpg"
       }
     ]

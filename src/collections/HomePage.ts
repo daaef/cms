@@ -42,31 +42,42 @@ export const HomePage: CollectionConfig = {
             maxRows: 10,
             fields: [
                 {
-                    name: 'type',
-                    type: 'select',
-                    required: true,
-                    options: [
-                        { label: 'ZiBot', value: 'zibot' },
-                        { label: 'Glide', value: 'glide' },
-                        { label: 'Consultancy', value: 'consultancy' },
-                        { label: 'Custom', value: 'custom' },
-                    ],
+                    name: 'typeImage',
+                    type: 'upload',
+                    relationTo: 'media',
+                    label: 'Type Image',
+                    required: false,
+                    admin: {
+                        description: 'Upload image for slide type (e.g., ZiBot, Glide, Consultancy logo)',
+                    },
                 },
                 {
                     name: 'title',
                     type: 'text',
+                    required: false,
                     admin: {
-                        condition: (data, siblingData) => siblingData.type === 'custom',
+                        description: 'Optional custom title text',
                     },
                 },
                 {
-                    name: 'subtitle',
-                    type: 'text',
+                    name: 'subtitleImage',
+                    type: 'upload',
+                    relationTo: 'media',
+                    label: 'Subtitle Image',
+                    required: false,
+                    admin: {
+                        description: 'Upload image for subtitle',
+                    },
                 },
                 {
-                    name: 'cursiveText',
-                    type: 'text',
-                    label: 'Cursive Text',
+                    name: 'cursiveTextImage',
+                    type: 'upload',
+                    relationTo: 'media',
+                    label: 'Cursive Text Image',
+                    required: false,
+                    admin: {
+                        description: 'Upload image for cursive text',
+                    },
                 },
                 {
                     name: 'image',
@@ -96,12 +107,17 @@ export const HomePage: CollectionConfig = {
                 {
                     name: 'enabled',
                     type: 'checkbox',
-                    defaultValue: true,
+                    defaultValue: false,
                 },
                 {
-                    name: 'videoUrl',
-                    type: 'text',
-                    required: true,
+                    name: 'video',
+                    type: 'upload',
+                    relationTo: 'media',
+                    required: false,
+                    admin: {
+                        description: 'Upload video file (MP4, WebM, etc.)',
+                        condition: (data) => data.enabled === true,
+                    },
                 },
                 {
                     name: 'posterImage',
@@ -110,6 +126,7 @@ export const HomePage: CollectionConfig = {
                     required: false,
                     admin: {
                         description: 'Optional poster image for video',
+                        condition: (data) => data.enabled === true,
                     },
                 },
             ],

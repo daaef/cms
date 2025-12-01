@@ -18,7 +18,7 @@ export const Media: CollectionConfig = {
     beforeChange: [
       ({ data, req }) => {
         // Capture crop coordinates from Payload's crop tool
-        const uploadEdits = req.query?.uploadEdits as any
+        const uploadEdits = req.query?.uploadEdits as { crop?: { x?: number; y?: number; width?: number; height?: number } } | undefined
         
         if (uploadEdits?.crop) {
           // PayloadCMS provides crop coordinates as percentages (0-100)

@@ -5,7 +5,7 @@
     {
       "sectionType": "hero",
       "hero": {
-        "backgroundVideo": "/videos/zibot.mp4",
+        "backgroundVideo": null,
         "title": "ZIBOT",
         "tagline": "ANYTHING - ANYTIME - ANYWHERE DELIVERY",
         "primaryCTA": "GET STARTED",
@@ -28,7 +28,7 @@
     {
       "sectionType": "videoWithText",
       "videoWithText": {
-        "video": "/videos/zibot.mp4",
+        "video": null,
         "poster": "https://images.unsplash.com/photo-1629248242733-43d4013f33a1?w=1200&q=80",
         "title": "From Cozy Dinners to Office Lunches",
         "description": "ZiBot ensures your orders are delivered promptly and accurately. Robots navigate through traffic faster than human drivers—resulting in quicker delivery times, especially during peak hours.",
@@ -39,7 +39,7 @@
     {
       "sectionType": "videoWithText",
       "videoWithText": {
-        "video": "/videos/zibot.mp4",
+        "video": null,
         "poster": "https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?w=1200&q=80",
         "title": "Hot and Fresh. Every Single Time.",
         "description": "Wait for your hot and fresh food to get delivered by ZiBot – contactless, clean, and exactly when you need it.",
@@ -183,7 +183,7 @@
     {
       "sectionType": "videoWithText",
       "videoWithText": {
-        "video": "/videos/zibot.mp4",
+        "video": null,
         "poster": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=1200&q=80",
         "title": "Built for All Weather Conditions",
         "description": "Rain or shine, ZiBot delivers. Weather-resistant design ensures reliable operation in any condition.",
@@ -382,7 +382,7 @@
     {
       "sectionType": "videoWithStats",
       "videoWithStats": {
-        "video": "/videos/zibot.mp4",
+        "video": null,
         "poster": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
         "title": "Trusted by Thousands",
         "stats": [
@@ -567,7 +567,7 @@
     {
       "sectionType": "backgroundVideo",
       "backgroundVideo": {
-        "video": "/videos/zibot.mp4",
+        "video": null,
         "title": "No Boundaries. Just Deliveries.",
         "description": "From bustling city streets to quiet suburban neighborhoods, ZiBot goes wherever your customers are. Weather-proof, terrain-adaptive, and always reliable.",
         "minHeight": "70vh"

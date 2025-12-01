@@ -119,7 +119,7 @@ export async function mapImagesToMediaIds(payload: Payload, data: any): Promise<
 
     for (const [key, value] of Object.entries(data)) {
         // Check if this is an image/video field (common field names)
-        if ((key === 'image' || key === 'bannerImage' || key === 'imageUrl' || key === 'posterImage' || key === 'src' || key === 'backgroundImage' || key === 'featuredImage' || key === 'video' || key === 'backgroundVideo' || key === 'robotImage' || key === 'poster')
+        if ((key === 'image' || key === 'typeImage' || key === 'subtitleImage' || key === 'cursiveTextImage' || key === 'bannerImage' || key === 'imageUrl' || key === 'posterImage' || key === 'src' || key === 'backgroundImage' || key === 'featuredImage' || key === 'video' || key === 'backgroundVideo' || key === 'robotImage' || key === 'poster')
             && typeof value === 'string') {
             // Only try to map local paths (starting with /)
             if (value.startsWith('/')) {

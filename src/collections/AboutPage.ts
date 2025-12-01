@@ -182,6 +182,15 @@ export const AboutPage: CollectionConfig = {
                             required: true,
                         },
                         {
+                            name: 'bio',
+                            type: 'textarea',
+                            required: false,
+                            admin: {
+                                description: 'Short biography (recommended: 100-150 characters)',
+                                rows: 3,
+                            },
+                        },
+                        {
                             name: 'imageUrl',
                             type: 'upload',
                             relationTo: 'media',
