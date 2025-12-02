@@ -18,6 +18,7 @@ import {ContactPage} from "@/collections/ContactPage"
 import {Products} from "@/collections/Products"
 import {DashboardHomePage} from "@/collections/DashboardHomePage"
 import {ProductDetails} from "@/collections/ProductDetails"
+import { clearCroppedUrls } from './endpoints/clearCroppedUrls'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -55,6 +56,13 @@ export default buildConfig({
     'https://www.fainzy.com',
     'https://dashboard-v2-inky.vercel.app',
     'https://fainzy-website-v2.vercel.app',
+  ],
+  endpoints: [
+    {
+      path: '/clear-cropped-urls',
+      method: 'post',
+      handler: clearCroppedUrls,
+    },
   ],
   plugins: [
     cloudinaryStorage({

@@ -43,7 +43,7 @@ export const Media: CollectionConfig = {
             const wDecimal = (width / 100).toFixed(2)
             const hDecimal = (height / 100).toFixed(2)
 
-            const transformations = [`x_${xDecimal},y_${yDecimal},w_${wDecimal},h_${hDecimal},c_crop,fl_relative`]
+            const transformations = [`c_crop,fl_relative,x_${xDecimal},y_${yDecimal},w_${wDecimal},h_${hDecimal}`]
 
             const parts = data.url.split('/upload/')
             if (parts.length === 2) {
