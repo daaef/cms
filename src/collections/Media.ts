@@ -67,7 +67,7 @@ export const Media: CollectionConfig = {
           // This hook just ensures proper logging
           return true
         } catch (error) {
-          req.payload.logger.error(`[Media] Error during media deletion`, error)
+          req.payload.logger.error(`[Media] Error during media deletion: ${error instanceof Error ? error.message : String(error)}`)
           // Allow deletion to continue even if Cloudinary fails
           return true
         }
