@@ -256,9 +256,9 @@ export interface HomePage {
   heroSlides?:
     | {
         /**
-         * Upload image for slide type (e.g., ZiBot, Glide, Consultancy logo)
+         * Upload logo/brand image for the slide (e.g., ZiBot, Glide, Consultancy logo)
          */
-        typeImage?: (number | null) | Media;
+        logoImage?: (number | null) | Media;
         /**
          * Optional custom title text
          */
@@ -1565,7 +1565,7 @@ export interface HomePageSelect<T extends boolean = true> {
   heroSlides?:
     | T
     | {
-        typeImage?: T;
+        logoImage?: T;
         title?: T;
         subtitleImage?: T;
         cursiveTextImage?: T;
