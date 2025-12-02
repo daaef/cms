@@ -42,13 +42,13 @@ export const HomePage: CollectionConfig = {
             maxRows: 10,
             fields: [
                 {
-                    name: 'typeImage',
+                    name: 'logoImage',
                     type: 'upload',
                     relationTo: 'media',
-                    label: 'Type Image',
+                    label: 'Logo Image',
                     required: false,
                     admin: {
-                        description: 'Upload image for slide type (e.g., ZiBot, Glide, Consultancy logo)',
+                        description: 'Upload logo/brand image for the slide (e.g., ZiBot, Glide, Consultancy logo)',
                     },
                 },
                 {
