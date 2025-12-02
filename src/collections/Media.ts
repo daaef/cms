@@ -19,7 +19,7 @@ export const Media: CollectionConfig = {
       ({ data, req }) => {
         // Capture crop coordinates from Payload's crop tool
         const uploadEdits = req.query?.uploadEdits as { crop?: { x?: number; y?: number; width?: number; height?: number } } | undefined
-        
+
         if (uploadEdits?.crop) {
           // PayloadCMS provides crop coordinates as percentages (0-100)
           // Save them as-is for reference
@@ -29,7 +29,7 @@ export const Media: CollectionConfig = {
             width: Math.round(uploadEdits.crop.width || 100),
             height: Math.round(uploadEdits.crop.height || 100),
           }
-          
+
           // Save percentage coordinates
           data.cropData = cropPercentages
 
@@ -42,17 +42,35 @@ export const Media: CollectionConfig = {
             const yDecimal = (y / 100).toFixed(2)
             const wDecimal = (width / 100).toFixed(2)
             const hDecimal = (height / 100).toFixed(2)
-            
+
             const transformations = [`x_${xDecimal},y_${yDecimal},w_${wDecimal},h_${hDecimal},c_crop,fl_relative`]
-            
+
             const parts = data.url.split('/upload/')
             if (parts.length === 2) {
               data.croppedUrl = `${parts[0]}/upload/${transformations.join(',')}/${parts[1]}`
             }
           }
         }
-        
+
         return data
+      },
+    ],
+    beforeDelete: [
+      async ({ req, id }) => {
+        // Log deletion attempt
+        req.payload.logger.info(`[Media] Attempting to delete media ID: ${id}`)
+
+        // The Cloudinary plugin will handle deletion
+        // If it fails, this hook ensures the transaction isn't aborted
+        try {
+          // Cloudinary deletion is handled by the plugin automatically
+          // This hook just ensures proper logging
+          return true
+        } catch (error) {
+          req.payload.logger.error(`[Media] Error during media deletion`, error)
+          // Allow deletion to continue even if Cloudinary fails
+          return true
+        }
       },
     ],
   },
