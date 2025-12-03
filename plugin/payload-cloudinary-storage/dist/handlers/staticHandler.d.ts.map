@@ -1,0 +1,1 @@
+{"version":3,"file":"staticHandler.d.ts","sourceRoot":"","sources":["../../src/handlers/staticHandler.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,wCAAwC,CAAA;AAC3E,OAAO,KAAK,EAAE,wBAAwB,EAAE,MAAM,aAAa,CAAA;AAE3D,eAAO,MAAM,mBAAmB,GAC9B,SAAS,wBAAwB,KAChC,aAkCF,CAAA"}

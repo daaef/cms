@@ -5,7 +5,7 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
-import { cloudinaryStorage } from 'payload-storage-cloudinary'
+import { cloudinaryStorage } from '../plugin/payload-cloudinary-storage/dist/index.js'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
