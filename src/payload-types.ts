@@ -78,6 +78,8 @@ export interface Config {
     products: Product;
     'dashboard-home-page': DashboardHomePage;
     'product-details': ProductDetail;
+    navbar: Navbar;
+    footer: Footer;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -96,6 +98,8 @@ export interface Config {
     products: ProductsSelect<false> | ProductsSelect<true>;
     'dashboard-home-page': DashboardHomePageSelect<false> | DashboardHomePageSelect<true>;
     'product-details': ProductDetailsSelect<false> | ProductDetailsSelect<true>;
+    navbar: NavbarSelect<false> | NavbarSelect<true>;
+    footer: FooterSelect<false> | FooterSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -1378,6 +1382,188 @@ export interface ProductDetail {
   createdAt: string;
 }
 /**
+ * Manage navigation bar content
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "navbar".
+ */
+export interface Navbar {
+  id: number;
+  /**
+   * Internal identifier for this navbar configuration
+   */
+  title: string;
+  locale: 'en' | 'ja';
+  logo?: {
+    image?: (number | null) | Media;
+    alt?: string | null;
+    href?: string | null;
+  };
+  mainLinks?:
+    | {
+        name: string;
+        href: string;
+        /**
+         * Open in new tab
+         */
+        isExternal?: boolean | null;
+        order: number;
+        id?: string | null;
+      }[]
+    | null;
+  productsDropdown?: {
+    enabled?: boolean | null;
+    title?: string | null;
+    /**
+     * Link to Products Page - products will be pulled from here
+     */
+    productsPageRef?: (number | null) | ProductsPage;
+    /**
+     * Optional: Override products from Products Page. Leave empty to use Products Page data.
+     */
+    mainProducts?:
+      | {
+          name: string;
+          href: string;
+          image?: (number | null) | Media;
+          /**
+           * Fallback image path if no media upload
+           */
+          imagePath?: string | null;
+          description: string;
+          order?: number | null;
+          id?: string | null;
+        }[]
+      | null;
+    /**
+     * Link to Products Page - custom solutions will be pulled from here
+     */
+    customSolutionsPageRef?: (number | null) | ProductsPage;
+    /**
+     * Optional: Override custom solutions from Products Page. Leave empty to use Products Page data.
+     */
+    customSolutions?:
+      | {
+          title: string;
+          description: string;
+          href: string;
+          image?: (number | null) | Media;
+          /**
+           * Fallback image path
+           */
+          imagePath?: string | null;
+          order?: number | null;
+          id?: string | null;
+        }[]
+      | null;
+    sidebarLinks?:
+      | {
+          text: string;
+          href: string;
+          order?: number | null;
+          id?: string | null;
+        }[]
+      | null;
+    contactButton?: {
+      text?: string | null;
+      href?: string | null;
+    };
+  };
+  rightSection?: {
+    supportLink?: string | null;
+    loginLink?: string | null;
+    languages?:
+      | {
+          /**
+           * Language code (e.g., "en", "ja")
+           */
+          code: string;
+          /**
+           * Display name (e.g., "English", "日本語")
+           */
+          label: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  /**
+   * Set as active navbar configuration
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Manage footer content
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: number;
+  /**
+   * Internal identifier for this footer configuration
+   */
+  title: string;
+  locale: 'en' | 'ja';
+  branding?: {
+    logo?: (number | null) | Media;
+    /**
+     * Fallback logo path
+     */
+    logoPath?: string | null;
+    logoAlt?: string | null;
+    tagline?: string | null;
+  };
+  sections?:
+    | {
+        /**
+         * Section heading (e.g., "Main Pages", "Business", "Social")
+         */
+        heading: string;
+        /**
+         * Number of columns for this section (1 or 2)
+         */
+        columns?: number | null;
+        links?:
+          | {
+              text: string;
+              href: string;
+              /**
+               * Open in new tab
+               */
+              isExternal?: boolean | null;
+              /**
+               * Optional icon for social links
+               */
+              icon?: ('' | 'instagram' | 'x' | 'facebook' | 'linkedin') | null;
+              /**
+               * Column number (1 or 2) for multi-column sections
+               */
+              column?: number | null;
+              order?: number | null;
+              id?: string | null;
+            }[]
+          | null;
+        /**
+         * Section display order
+         */
+        order?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  bottomSection?: {
+    copyrightText?: string | null;
+    showCookieBanner?: boolean | null;
+  };
+  /**
+   * Set as active footer configuration
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -1444,6 +1630,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'product-details';
         value: number | ProductDetail;
+      } | null)
+    | ({
+        relationTo: 'navbar';
+        value: number | Navbar;
+      } | null)
+    | ({
+        relationTo: 'footer';
+        value: number | Footer;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -2374,6 +2568,134 @@ export interface ProductDetailsSelect<T extends boolean = true> {
         metaDescription?: T;
         keywords?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "navbar_select".
+ */
+export interface NavbarSelect<T extends boolean = true> {
+  title?: T;
+  locale?: T;
+  logo?:
+    | T
+    | {
+        image?: T;
+        alt?: T;
+        href?: T;
+      };
+  mainLinks?:
+    | T
+    | {
+        name?: T;
+        href?: T;
+        isExternal?: T;
+        order?: T;
+        id?: T;
+      };
+  productsDropdown?:
+    | T
+    | {
+        enabled?: T;
+        title?: T;
+        productsPageRef?: T;
+        mainProducts?:
+          | T
+          | {
+              name?: T;
+              href?: T;
+              image?: T;
+              imagePath?: T;
+              description?: T;
+              order?: T;
+              id?: T;
+            };
+        customSolutionsPageRef?: T;
+        customSolutions?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              href?: T;
+              image?: T;
+              imagePath?: T;
+              order?: T;
+              id?: T;
+            };
+        sidebarLinks?:
+          | T
+          | {
+              text?: T;
+              href?: T;
+              order?: T;
+              id?: T;
+            };
+        contactButton?:
+          | T
+          | {
+              text?: T;
+              href?: T;
+            };
+      };
+  rightSection?:
+    | T
+    | {
+        supportLink?: T;
+        loginLink?: T;
+        languages?:
+          | T
+          | {
+              code?: T;
+              label?: T;
+              id?: T;
+            };
+      };
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  title?: T;
+  locale?: T;
+  branding?:
+    | T
+    | {
+        logo?: T;
+        logoPath?: T;
+        logoAlt?: T;
+        tagline?: T;
+      };
+  sections?:
+    | T
+    | {
+        heading?: T;
+        columns?: T;
+        links?:
+          | T
+          | {
+              text?: T;
+              href?: T;
+              isExternal?: T;
+              icon?: T;
+              column?: T;
+              order?: T;
+              id?: T;
+            };
+        order?: T;
+        id?: T;
+      };
+  bottomSection?:
+    | T
+    | {
+        copyrightText?: T;
+        showCookieBanner?: T;
+      };
+  isActive?: T;
   updatedAt?: T;
   createdAt?: T;
 }

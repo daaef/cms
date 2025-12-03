@@ -1,0 +1,398 @@
+{
+  "title": "ホームページ",
+  "locale": "ja",
+  "heroSlides": [
+    {
+      "typeImage": "/slides/zibot.png",
+      "title": "ZiBot",
+      "subtitleImage": null,
+      "cursiveTextImage": null,
+      "image": "/slides/zibot.png",
+      "ctaText": "詳細を見る",
+      "ctaLink": "/products/zibot"
+    },
+    {
+      "typeImage": "/slides/glide.png",
+      "title": "Glide",
+      "subtitleImage": null,
+      "cursiveTextImage": null,
+      "image": "/slides/glide.png",
+      "ctaText": "詳細を見る",
+      "ctaLink": "/products#glide"
+    },
+    {
+      "typeImage": "/slides/consultancy.png",
+      "title": "Fainzyコンサルタンシー",
+      "subtitleImage": null,
+      "cursiveTextImage": null,
+      "image": "/slides/consultancy.png",
+      "ctaText": "詳細を見る",
+      "ctaLink": "/products#consultancy"
+    }
+  ],
+  "videoSection": {
+    "enabled": false,
+    "video": null,
+    "posterImage": null
+  },
+  "aboutSection": {
+    "foundation": {
+      "label": "私たちの基盤",
+      "title": "人類のために構築できる未来を想像してください",
+      "description": "自律配送ロボットから最先端のAIソリューションまで、当社のテクノロジーはサービスが人々に届く方法を変革し、イノベーションとロボティクスを通じて配送をより速く、より安全に、より効率的にしています。",
+      "ctaText": "始める",
+      "ctaLink": "#"
+    },
+    "purpose": {
+      "label": "目的",
+      "title": "ラストワンマイル配送の革命",
+      "description": "最先端のロボティクスを通じて、商品やサービスが人々に届く方法を変革する、インテリジェントで自律的な配送ソリューションを創造し、配送をより速く、より安全に、より効率的にします。",
+      "image": "/purpose.jpg"
+    },
+    "vision": {
+      "label": "ビジョン",
+      "title": "ロボットが人類に奉仕する世界",
+      "description": "自律配送ロボットが都市やコミュニティをシームレスにナビゲートし、精度、信頼性、持続可能性を持って商品を配送する不可欠なパートナーとなる未来を思い描いています。",
+      "image": "/vision.jpg"
+    },
+    "mission": {
+      "label": "ミッション",
+      "title": "新しい常識の開拓",
+      "description": "安全性、効率性、アクセシビリティを優先する高度なロボット配送システムの開発と展開。継続的なイノベーション、卓越した品質、そして人々の生活を変革するソリューションの創造に取り組んでいます。",
+      "image": "/mission.png",
+      "highlights": [
+        {
+          "title": "安全性",
+          "subtitle": "最優先事項"
+        },
+        {
+          "title": "イノベーション",
+          "subtitle": "継続的"
+        }
+      ]
+    }
+  },
+  "products": [
+    {
+      "title": "ZiBot ラストワンマイル配送ロボットシステム",
+      "description": "ラストワンマイル配送システムは、当社のロボットを使用してレストランから消費者の場所まで食品を配送します。",
+      "image": "/last-delivery.png",
+      "link": "/products/zibot",
+      "reverse": false,
+      "features": [
+        {
+          "title": "24時間365日稼働",
+          "subtitle": "常に利用可能",
+          "icon": "Clock"
+        },
+        {
+          "title": "費用対効果",
+          "subtitle": "人件費削減",
+          "icon": "DollarSign"
+        },
+        {
+          "title": "環境に優しい",
+          "subtitle": "排出ゼロ",
+          "icon": "Leaf"
+        },
+        {
+          "title": "信頼性",
+          "subtitle": "一貫したサービス",
+          "icon": "Shield"
+        }
+      ]
+    },
+    {
+      "title": "Glide 自律型スクーター配送",
+      "description": "Glideは、より長距離の配送に迅速で効率的なスクーターベースの配送サービスを提供します。",
+      "image": "/glide.png",
+      "link": "/products#glide",
+      "reverse": true,
+      "features": [
+        {
+          "title": "高速配送",
+          "subtitle": "迅速なサービス",
+          "icon": "Package"
+        },
+        {
+          "title": "拡張範囲",
+          "subtitle": "より遠くへ",
+          "icon": "CheckCircle"
+        },
+        {
+          "title": "電動式",
+          "subtitle": "持続可能",
+          "icon": "Leaf"
+        },
+        {
+          "title": "スマート",
+          "subtitle": "AIパワード",
+          "icon": "Shield"
+        }
+      ]
+    },
+    {
+      "title": "Fainzyコンサルタンシー",
+      "description": "ロボティクスとAIの専門知識を活用し、企業がビジネスを変革する自律化ソリューションを実装するのを支援します。",
+      "image": "/slides/consultancy.png",
+      "link": "/products#consultancy",
+      "reverse": false,
+      "features": [
+        {
+          "title": "専門家指導",
+          "subtitle": "専門知識",
+          "icon": "UtensilsCrossed"
+        },
+        {
+          "title": "カスタムソリューション",
+          "subtitle": "あなたのニーズに合わせて",
+          "icon": "Hotel"
+        },
+        {
+          "title": "実装サポート",
+          "subtitle": "エンドツーエンド",
+          "icon": "CheckCircle"
+        },
+        {
+          "title": "継続的サポート",
+          "subtitle": "長期的パートナーシップ",
+          "icon": "Shield"
+        }
+      ]
+    }
+  ],
+  "customSolutions": [
+    {
+      "id": "customized-robots-ja",
+      "category": "カスタムソリューション",
+      "title": "カスタマイズロボット",
+      "description": "Fainzy Technologiesは、お客様のニーズに合わせたカスタマイズロボットを製作できます。詳細については、お問い合わせください。",
+      "features": [
+        {
+          "title": "ヘルスロボット",
+          "subtitle": "常に利用可能"
+        },
+        {
+          "title": "費用対効果",
+          "subtitle": "人件費削減"
+        },
+        {
+          "title": "環境に優しい",
+          "subtitle": "排出ゼロ"
+        },
+        {
+          "title": "信頼性",
+          "subtitle": "一貫したサービス"
+        }
+      ],
+      "images": [
+        {
+          "image": "/products/custom-solutions.png"
+        }
+      ]
+    },
+    {
+      "id": "iot-solutions-ja",
+      "category": "カスタムソリューション",
+      "title": "IoTソリューション",
+      "description": "ウェブ開発、モバイルアプリケーション開発、深層学習アルゴリズム開発、自律走行ソフトウェアソリューション",
+      "features": [
+        {
+          "title": "ウェブ開発",
+          "subtitle": "最新ソリューション"
+        },
+        {
+          "title": "モバイルアプリ",
+          "subtitle": "iOS＆Android"
+        },
+        {
+          "title": "深層学習",
+          "subtitle": "AIアルゴリズム"
+        },
+        {
+          "title": "自律走行",
+          "subtitle": "スマートソフトウェア"
+        }
+      ],
+      "images": [
+        {
+          "image": "/products/consultancy.jpg"
+        }
+      ]
+    },
+    {
+      "id": "mirax-ja",
+      "category": "カスタムソリューション",
+      "title": "MiraX",
+      "description": "スタッフと顧客の物理的接触を最小限に抑えるように設計された店内配送ロボットで、施設全体にシームレスに注文を配送します。",
+      "features": [
+        {
+          "title": "非接触",
+          "subtitle": "最小限の接触"
+        },
+        {
+          "title": "効率的",
+          "subtitle": "高速配送"
+        },
+        {
+          "title": "スマートナビゲーション",
+          "subtitle": "自律型"
+        },
+        {
+          "title": "使いやすい",
+          "subtitle": "簡単操作"
+        }
+      ],
+      "images": [
+        {
+          "image": "/products/mirax.png"
+        }
+      ]
+    },
+    {
+      "id": "food-ordering-ja",
+      "category": "フードサービス",
+      "title": "効率的な食品注文システム",
+      "description": "レストランと顧客を統合プラットフォームで接続し、注文をシームレスに処理し、自律ロボット群で配送します。",
+      "features": [
+        {
+          "title": "統合プラットフォーム",
+          "subtitle": "ワンソリューション"
+        },
+        {
+          "title": "ロボット群",
+          "subtitle": "自律配送"
+        },
+        {
+          "title": "リアルタイム追跡",
+          "subtitle": "ライブ更新"
+        },
+        {
+          "title": "シームレス統合",
+          "subtitle": "簡単セットアップ"
+        }
+      ],
+      "images": [
+        {
+          "image": "/products/efficient.jpg"
+        }
+      ]
+    },
+    {
+      "id": "hotel-delivery-ja",
+      "category": "ホスピタリティ",
+      "title": "ホテルロボット配送システム",
+      "description": "統合タブレットシステムを通じてゲストのリクエストを処理し、アイテムを精度高く客室に直接配送する屋内ホテル配送ロボット。",
+      "features": [
+        {
+          "title": "タブレット統合",
+          "subtitle": "簡単リクエスト"
+        },
+        {
+          "title": "客室配送",
+          "subtitle": "直接配送"
+        },
+        {
+          "title": "24時間365日サービス",
+          "subtitle": "常に利用可能"
+        },
+        {
+          "title": "精密ナビゲーション",
+          "subtitle": "正確な配送"
+        }
+      ],
+      "images": [
+        {
+          "image": "/products/hotel.png"
+        }
+      ]
+    }
+  ],
+  "metricsSection": {
+    "title": "数字で見るインパクト",
+    "subtitle": "私たちは革新的なロボティクスソリューションを世界中に提供しています",
+    "animatedStats": [
+      {
+        "value": 150,
+        "label": "稼働中のロボット",
+        "icon": "Package"
+      },
+      {
+        "value": 45,
+        "label": "ロボット配送システムを使用しているレストラン",
+        "icon": "UtensilsCrossed"
+      },
+      {
+        "value": 30,
+        "label": "ロボット配送システムを使用しているホテル",
+        "icon": "Hotel"
+      }
+    ],
+    "staticStats": [
+      {
+        "value": "25+",
+        "label": "アクティブな展開",
+        "icon": "MapPin"
+      },
+      {
+        "value": "8+",
+        "label": "サービス提供国",
+        "icon": "Globe2"
+      },
+      {
+        "value": "500K+",
+        "label": "完了した配送",
+        "icon": "CheckCircle"
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "ファインジー・テクノロジーズの得意分野は何ですか?",
+      "answer": "(1)高度な自律走行システム、(2)ロボット製作、(3)モバイルアプリ・ウェブサイト開発、(4)ディープラーニングによるAIアプリケーションに特化した事業展開を行っています。",
+      "locale": "ja",
+      "order": 1
+    },
+    {
+      "question": "どのように応募すればよいのですか?",
+      "answer": "お問い合わせフォームよりご連絡ください(必ず「応募する」を選択してください)。",
+      "locale": "ja",
+      "order": 2
+    },
+    {
+      "question": "どのようなロボットをお持ちですか?",
+      "answer": "レストランロボットとラストワンマイルデリバリーロボット。",
+      "locale": "ja",
+      "order": 3
+    },
+    {
+      "question": "ロボットに興味があるのですが、どうしたらいいですか?",
+      "answer": "お問い合わせフォームよりお問い合わせください(理由は必ず「ロボット販売」を選択してください)。",
+      "locale": "ja",
+      "order": 4
+    },
+    {
+      "question": "カスタムロボットは作れますか?",
+      "answer": "はい、お客様のニーズやご要望に合わせたカスタムロボットの製作が可能です。",
+      "locale": "ja",
+      "order": 5
+    },
+    {
+      "question": "カスタムロボットの製作に興味があるのですが、どうすればよいですか?",
+      "answer": "お問い合わせフォームよりお問い合わせください(理由は必ず「カスタムロボット」を選択してください)。",
+      "locale": "ja",
+      "order": 6
+    },
+    {
+      "question": "ファインジー・テクノロジーへの投資・提携を希望します。",
+      "answer": "Fainzy Technologies は、常に新しい戦略的パートナーシップを模索しています。お問い合わせフォームからご連絡ください(その際、必ず「投資・パートナーシップ」を理由に選択してください)。",
+      "locale": "ja",
+      "order": 7
+    }
+  ],
+  "seo": {
+    "metaTitle": "Fainzy Technologies - 高度なロボティクス＆AIソリューション",
+    "metaDescription": "自律配送ロボット、レストランオートメーション、AIパワードソリューションを専門とする先進的なロボティクス企業。最先端のロボティクステクノロジーでビジネスを変革します。",
+    "keywords": "ロボティクス, 自律配送, レストランロボット, AIソリューション, 深層学習, 自律走行, モバイルロボティクス"
+  }
+}

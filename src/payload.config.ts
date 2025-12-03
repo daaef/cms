@@ -18,6 +18,8 @@ import {ContactPage} from "@/collections/ContactPage"
 import {Products} from "@/collections/Products"
 import {DashboardHomePage} from "@/collections/DashboardHomePage"
 import {ProductDetails} from "@/collections/ProductDetails"
+import {Navbar} from "@/collections/Navbar"
+import {Footer} from "@/collections/Footer"
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -29,7 +31,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, HomePage, AboutPage, ProductsPage, CareersPage, BlogPosts, ContactPage, Products, DashboardHomePage, ProductDetails],
+  collections: [Users, Media, HomePage, AboutPage, ProductsPage, CareersPage, BlogPosts, ContactPage, Products, DashboardHomePage, ProductDetails, Navbar, Footer],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

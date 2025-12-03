@@ -1,0 +1,91 @@
+[
+  {
+    "title": "Main Navigation - English",
+    "locale": "en",
+    "logo": {
+      "alt": "Fainzy",
+      "href": "/"
+    },
+    "mainLinks": [
+      {
+        "name": "HOME",
+        "href": "/",
+        "isExternal": false,
+        "order": 1
+      },
+      {
+        "name": "ABOUT",
+        "href": "/about",
+        "isExternal": false,
+        "order": 2
+      },
+      {
+        "name": "CAREERS",
+        "href": "/careers",
+        "isExternal": false,
+        "order": 4
+      },
+      {
+        "name": "CONTACT",
+        "href": "/contact",
+        "isExternal": false,
+        "order": 5
+      },
+      {
+        "name": "BLOG",
+        "href": "/blog",
+        "isExternal": false,
+        "order": 6
+      },
+      {
+        "name": "BUSINESS",
+        "href": "https://dashboard-v2-inky.vercel.app/",
+        "isExternal": true,
+        "order": 7
+      },
+      {
+        "name": "LOGIN",
+        "href": "https://dashboard-v2-inky.vercel.app/login",
+        "isExternal": true,
+        "order": 8
+      }
+    ],
+    "productsDropdown": {
+      "enabled": true,
+      "title": "PRODUCTS",
+      "productsPageRef": 1,
+      "customSolutionsPageRef": 1,
+      "sidebarLinks": [
+        {
+          "text": "View All Products",
+          "href": "/products",
+          "order": 1
+        },
+        {
+          "text": "All Custom Solutions",
+          "href": "/custom-solutions",
+          "order": 2
+        }
+      ],
+      "contactButton": {
+        "text": "Contact Us",
+        "href": "/custom-solutions#contact"
+      }
+    },
+    "rightSection": {
+      "supportLink": "https://dashboard-v2-inky.vercel.app/support",
+      "loginLink": "https://dashboard-v2-inky.vercel.app/login",
+      "languages": [
+        {
+          "code": "en",
+          "label": "English"
+        },
+        {
+          "code": "ja",
+          "label": "日本語"
+        }
+      ]
+    },
+    "isActive": true
+  }
+]

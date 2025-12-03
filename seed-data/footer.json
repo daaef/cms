@@ -1,0 +1,148 @@
+[
+  {
+    "title": "Main Footer - English",
+    "locale": "en",
+    "branding": {
+      "logoPath": "/logo.png",
+      "logoAlt": "Fainzy",
+      "tagline": "Pioneering the New Normal"
+    },
+    "sections": [
+      {
+        "heading": "Main Pages",
+        "columns": 2,
+        "links": [
+          {
+            "text": "Home",
+            "href": "/",
+            "isExternal": false,
+            "column": 1,
+            "order": 1
+          },
+          {
+            "text": "About",
+            "href": "/about",
+            "isExternal": false,
+            "column": 1,
+            "order": 2
+          },
+          {
+            "text": "Products",
+            "href": "/products",
+            "isExternal": false,
+            "column": 1,
+            "order": 3
+          },
+          {
+            "text": "Careers",
+            "href": "/careers",
+            "isExternal": false,
+            "column": 1,
+            "order": 4
+          },
+          {
+            "text": "Contact",
+            "href": "/contact",
+            "isExternal": false,
+            "column": 2,
+            "order": 5
+          },
+          {
+            "text": "Blog",
+            "href": "/blog",
+            "isExternal": false,
+            "column": 2,
+            "order": 6
+          },
+          {
+            "text": "Fainzy Business",
+            "href": "https://dashboard-v2-inky.vercel.app/",
+            "isExternal": true,
+            "column": 2,
+            "order": 7
+          }
+        ],
+        "order": 1
+      },
+      {
+        "heading": "Business",
+        "columns": 1,
+        "links": [
+          {
+            "text": "Download",
+            "href": "/contact",
+            "isExternal": false,
+            "column": 1,
+            "order": 1
+          },
+          {
+            "text": "Help center",
+            "href": "/contact",
+            "isExternal": false,
+            "column": 1,
+            "order": 2
+          },
+          {
+            "text": "Blog",
+            "href": "/blog",
+            "isExternal": false,
+            "column": 1,
+            "order": 3
+          },
+          {
+            "text": "Jobs",
+            "href": "/careers",
+            "isExternal": false,
+            "column": 1,
+            "order": 4
+          }
+        ],
+        "order": 2
+      },
+      {
+        "heading": "Social",
+        "columns": 1,
+        "links": [
+          {
+            "text": "Instagram",
+            "href": "https://instagram.com",
+            "isExternal": true,
+            "icon": "instagram",
+            "column": 1,
+            "order": 1
+          },
+          {
+            "text": "X",
+            "href": "https://twitter.com",
+            "isExternal": true,
+            "icon": "x",
+            "column": 1,
+            "order": 2
+          },
+          {
+            "text": "Facebook",
+            "href": "https://facebook.com",
+            "isExternal": true,
+            "icon": "facebook",
+            "column": 1,
+            "order": 3
+          },
+          {
+            "text": "LinkedIn",
+            "href": "https://linkedin.com",
+            "isExternal": true,
+            "icon": "linkedin",
+            "column": 1,
+            "order": 4
+          }
+        ],
+        "order": 3
+      }
+    ],
+    "bottomSection": {
+      "copyrightText": "Copyright © 2025 Fainzy Technologies LTD. All rights reserved",
+      "showCookieBanner": true
+    },
+    "isActive": true
+  }
+]

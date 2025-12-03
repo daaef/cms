@@ -21,18 +21,6 @@ const seedHomePage = async () => {
     try {
         console.log('🌱 Starting home page seed...');
 
-        // Read the JSON data
-        const dataPath = join(__dirname, '../seed-data/home-page.json');
-
-        if (!existsSync(dataPath)) {
-            throw new Error(`Seed data not found at: ${dataPath}`);
-        }
-
-        const rawData = readFileSync(dataPath, 'utf-8');
-        const homePageData = JSON.parse(rawData);
-
-        console.log('📄 Loaded home page data from JSON');
-
         // Initialize Payload 3.x with config promise
         const payload = await getPayload({
             config: configPromise
@@ -40,45 +28,81 @@ const seedHomePage = async () => {
 
         console.log('✅ Payload initialized');
 
-        // Map image paths to media IDs
-        console.log('🔗 Mapping images to media IDs...');
-        const mappedData = await mapImagesToMediaIds(payload, homePageData);
-        console.log('✅ Image mapping completed');
+        // Process both English and Japanese versions
+        const languages = [
+            { file: 'home-page.json', locale: 'en', label: 'English' },
+            { file: 'home-page-ja.json', locale: 'ja', label: 'Japanese' }
+        ];
 
-        // Check if home page already exists
-        const existingPages = await payload.find({
-            collection: 'home-page' as any,
-            limit: 1,
-        });
+        for (const lang of languages) {
+            console.log(`\n📝 Processing ${lang.label} home page...`);
 
-        if (existingPages.docs.length > 0) {
-            console.log('📝 Home page already exists, updating...');
+            // Read the JSON data
+            const dataPath = join(__dirname, `../seed-data/${lang.file}`);
 
-            // Update existing home page
-            const updated = await payload.update({
+            if (!existsSync(dataPath)) {
+                console.log(`⚠️  Seed data not found at: ${dataPath}, skipping...`);
+                continue;
+            }
+
+            const rawData = readFileSync(dataPath, 'utf-8');
+            const homePageData = JSON.parse(rawData);
+
+            console.log(`📄 Loaded ${lang.label} home page data from JSON`);
+
+            // Map image paths to media IDs
+            console.log('🔗 Mapping images to media IDs...');
+            const mappedData = await mapImagesToMediaIds(payload, homePageData);
+            console.log('✅ Image mapping completed');
+
+            // Check if home page already exists for this locale
+            const existingPages = await payload.find({
                 collection: 'home-page' as any,
                 where: {
-                    id: {
-                        equals: existingPages.docs[0].id,
+                    locale: {
+                        equals: lang.locale,
                     },
                 },
-                data: mappedData,
+                limit: 1,
             });
 
-            console.log(`✅ Home page updated successfully! ID: ${updated.docs[0]?.id}`);
-        } else {
-            console.log('📝 Creating new home page...');
+            if (existingPages.docs.length > 0) {
+                console.log(`📝 ${lang.label} home page already exists, updating...`);
 
-            // Create new home page
-            const created = await payload.create({
-                collection: 'home-page' as any,
-                data: mappedData,
-            });
+                // Update existing home page
+                const updated = await payload.update({
+                    collection: 'home-page' as any,
+                    where: {
+                        id: {
+                            equals: existingPages.docs[0].id,
+                        },
+                    },
+                    data: mappedData,
+                });
 
-            console.log(`✅ Home page created successfully! ID: ${created.id}`);
+                console.log(`✅ ${lang.label} home page updated successfully! ID: ${updated.docs[0]?.id}`);
+            } else {
+                console.log(`📝 Creating new ${lang.label} home page...`);
+
+                // Create new home page
+                try {
+                    const created = await payload.create({
+                        collection: 'home-page' as any,
+                        data: mappedData,
+                    });
+
+                    console.log(`✅ ${lang.label} home page created successfully! ID: ${created.id}`);
+                } catch (createError: any) {
+                    console.error(`❌ Error creating ${lang.label} home page:`, createError);
+                    if (createError.data?.errors) {
+                        console.error('Validation errors:', JSON.stringify(createError.data.errors, null, 2));
+                    }
+                    throw createError;
+                }
+            }
         }
 
-        console.log('🎉 Home page seeding completed!');
+        console.log('\n🎉 Home page seeding completed for all languages!');
     } catch (error) {
         console.error('❌ Error seeding home page:', error);
         console.error('Stack:', error instanceof Error ? error.stack : error);

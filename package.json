@@ -16,6 +16,8 @@
     "seed:media": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/seed-media.ts",
     "migrate:cloudinary": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/migrate-media-to-cloudinary.ts",
     "fix:cloudinary-urls": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/fix-cloudinary-urls.ts",
+    "seed:navbar": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/seed-navbar.ts",
+    "seed:footer": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/seed-footer.ts",
     "seed:home": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/seed-home.ts",
     "seed:about": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/seed-about.ts",
     "seed:products": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/seed-products.ts",
