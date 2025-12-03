@@ -64,17 +64,21 @@ export default buildConfig({
         cloud_name: process.env.CLOUDINARY_CLOUD_NAME!,
         api_key: process.env.CLOUDINARY_API_KEY!,
         api_secret: process.env.CLOUDINARY_API_SECRET!,
-         params: {
+        params: {
+          // Keep filenames readable, but don't force unique_filename here
           use_filename: true,
-          unique_filename: true, // <— enable this
-          overwrite: false       // <— prevent updates
-        }
+          unique_filename: false, // Let public_id be derived from filename/folder
+          overwrite: true,        // Allow safe updates if the adapter tries to overwrite
+          invalidate: true,       // Ensure cached URLs are invalidated if overwritten
+          folder: 'fainzy-cms',
+        },
       },
       collections: {
         media: {
-          folder: 'fainzy-cms', // Static folder path
+          // You can still override per-collection if needed
+          folder: 'fainzy-cms',
         },
       },
-    }),
+    })
   ],
 })

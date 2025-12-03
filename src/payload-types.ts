@@ -198,21 +198,9 @@ export interface Media {
    * Automatically filled when you use the crop tool above the image preview
    */
   cropData?: {
-    /**
-     * X coordinate (left position)
-     */
     x?: number | null;
-    /**
-     * Y coordinate (top position)
-     */
     y?: number | null;
-    /**
-     * Crop width
-     */
     width?: number | null;
-    /**
-     * Crop height
-     */
     height?: number | null;
   };
   /**
