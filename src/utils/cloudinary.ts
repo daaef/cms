@@ -57,6 +57,7 @@ export function getCloudinaryUrl(
   if (!url || !url.includes('cloudinary.com')) {
     return url
   }
+  console.log('Original URL in cloudinary.ts:', url)
 
   const transformations: string[] = []
 
@@ -199,6 +200,7 @@ export function getMediaUrl(
   options: Omit<CloudinaryTransformOptions, 'customCrop'> = {}
 ): string {
   if (!media?.url) return ''
+  console.log('Media document cloudinary.ts:', media)
 
   return getCloudinaryUrl(media.url, {
     ...options,

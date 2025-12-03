@@ -16,7 +16,15 @@ export const Media: CollectionConfig = {
   },
   hooks: {
     beforeChange: [
-      ({ data, req }) => {
+      ({ data, req, operation }) => {
+        // On CREATE: Save the original Cloudinary URL
+        if (operation === 'create' && data.url && typeof data.url === 'string' && data.url.includes('cloudinary.com')) {
+          // Store the original URL (before any crops)
+          if (!data.originalUrl) {
+            data.originalUrl = data.url
+          }
+        }
+
         // Capture crop coordinates from Payload's crop tool
         const uploadEdits = req.query?.uploadEdits as { crop?: { x?: number; y?: number; width?: number; height?: number } } | undefined
 
@@ -32,10 +40,14 @@ export const Media: CollectionConfig = {
 
           // Save percentage coordinates
           data.cropData = cropPercentages
+          console.log('Crop percentages:', cropPercentages)
 
+          // Use ORIGINAL URL for generating cropped URL (not the potentially already-cropped data.url)
+          const baseUrl = data.originalUrl || data.url
+          
           // Generate cropped URL using Cloudinary's relative/decimal syntax
           // Convert percentages to decimals: 24% = 0.24, 52% = 0.52
-          if (data.url && typeof data.url === 'string' && data.url.includes('cloudinary.com')) {
+          if (baseUrl && typeof baseUrl === 'string' && baseUrl.includes('cloudinary.com')) {
             const { x, y, width, height } = cropPercentages
             // Convert to decimals (24 -> 0.24)
             const xDecimal = (x / 100).toFixed(2)
@@ -44,14 +56,21 @@ export const Media: CollectionConfig = {
             const hDecimal = (height / 100).toFixed(2)
 
             const transformations = [`c_crop,fl_relative,x_${xDecimal},y_${yDecimal},w_${wDecimal},h_${hDecimal}`]
-
-            const parts = data.url.split('/upload/')
+            console.log('Transformations:', transformations)
+            
+            const parts = baseUrl.split('/upload/')
             if (parts.length === 2) {
               data.croppedUrl = `${parts[0]}/upload/${transformations.join(',')}/${parts[1]}`
+              console.log('[Media Hook] Generated cropped URL:', {
+                originalUrl: data.originalUrl,
+                currentUrl: data.url,
+                croppedUrl: data.croppedUrl
+              })
             }
           }
         }
 
+        console.log('data:', data)
         return data
       },
     ],
@@ -79,6 +98,16 @@ export const Media: CollectionConfig = {
       name: 'alt',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'originalUrl',
+      type: 'text',
+      label: 'Original Cloudinary URL',
+      admin: {
+        description: 'Original uncropped URL from Cloudinary',
+        readOnly: true,
+        position: 'sidebar',
+      },
     },
     {
       name: 'cropData',
