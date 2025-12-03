@@ -23,6 +23,15 @@ import {Footer} from "@/collections/Footer"
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+const serverURL = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001'
+const allowedOrigins = [
+  serverURL,
+  'http://localhost:3000',  // Development frontend
+  'https://fainzy.com',     // Production frontend (update with your actual domain)
+  'https://www.fainzy.com', // Production frontend with www
+  'https://dashboard-v2-inky.vercel.app',
+  'https://fainzy-website-v2.vercel.app',
+]
 
 export default buildConfig({
   admin: {
@@ -43,21 +52,9 @@ export default buildConfig({
     },
   }),
   sharp,
-  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001',
-  cors: [
-    'http://localhost:3000',  // Development frontend
-    'https://fainzy.com',     // Production frontend (update with your actual domain)
-    'https://www.fainzy.com', // Production frontend with www
-    'https://dashboard-v2-inky.vercel.app',
-    'https://fainzy-website-v2.vercel.app',
-  ],
-  csrf: [
-    'http://localhost:3000',
-    'https://fainzy.com',
-    'https://www.fainzy.com',
-    'https://dashboard-v2-inky.vercel.app',
-    'https://fainzy-website-v2.vercel.app',
-  ],
+  serverURL,
+  cors: allowedOrigins,
+  csrf: allowedOrigins,
   plugins: [
     cloudinaryStorage({
       cloudConfig: {

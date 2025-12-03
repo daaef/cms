@@ -29,19 +29,7 @@ export const createUploadHandler = (options)=>async ({ collection, file, data })
         if (data?.cloudinaryPublicId) {
             console.log('[Cloudinary Upload] Existing file detected with publicId:', data.cloudinaryPublicId);
             console.log('[Cloudinary Upload] Current filename:', file.filename, 'Stored filename:', data.filename);
-            const isSameFile = data.filename === file.filename || data.filename && file.filename && data.filename.replace(/[- ]\d+\./g, '.') === file.filename.replace(/[- ]\d+\./g, '.');
-            if (isSameFile) {
-                console.log('[Cloudinary Upload] Same file detected. Skipping re-upload to Cloudinary.');
-                if (!data.url && data.cloudinaryUrl) {
-                    data.url = data.cloudinaryUrl;
-                }
-                data.filename = file.filename || data.filename;
-                data.filesize = file.filesize || data.filesize;
-                data.mimeType = file.mimeType || data.mimeType;
-                return;
-            } else {
-                console.log('[Cloudinary Upload] Different file detected. This will replace the existing file in Cloudinary.');
-            }
+            console.log('[Cloudinary Upload] Incoming file will overwrite the existing Cloudinary asset.');
         }
         try {
             const uploadOptions = buildUploadOptions(config, file.filename, data);
@@ -245,6 +233,7 @@ function buildUploadOptions(config, _filename, data) {
         Object.assign(options, privateOptions);
     }
     const folderConfig = getFolderConfig(config);
+    const hasExistingPublicId = typeof data?.cloudinaryPublicId === 'string' && data.cloudinaryPublicId.length > 0;
     let folder;
     if (folderConfig.enableDynamic && data) {
         const folderField = folderConfig.fieldName || 'cloudinaryFolder';
@@ -258,7 +247,7 @@ function buildUploadOptions(config, _filename, data) {
     if (!folder && folderConfig.path) {
         folder = folderConfig.path;
     }
-    if (folder) {
+    if (folder && !hasExistingPublicId) {
         options.folder = folder;
     }
     if (config.useFilename !== undefined) {
@@ -292,6 +281,11 @@ function buildUploadOptions(config, _filename, data) {
         if (Object.keys(transformations).length > 0) {
             options.transformation = transformations;
         }
+    }
+    if (hasExistingPublicId) {
+        options.public_id = data.cloudinaryPublicId;
+        options.invalidate = true;
+        options.overwrite = true;
     }
     return options;
 }
