@@ -388,48 +388,6 @@
       "answer": "Fainzy Technologies is always looking new strategic partnerships. Therefore, please contact using the Contact US Form, (Make sure to select \"Invest/Partnership\" as the Reason)",
       "locale": "en",
       "order": 7
-    },
-    {
-      "question": "ファインジー・テクノロジーズの得意分野は何ですか?",
-      "answer": "(1)高度な自律走行システム、(2)ロボット製作、(3)モバイルアプリ・ウェブサイト開発、(4)ディープラーニングによるAIアプリケーションに特化した事業展開を行っています。",
-      "locale": "ja",
-      "order": 1
-    },
-    {
-      "question": "どのように応募すればよいのですか?",
-      "answer": "お問い合わせフォームよりご連絡ください(必ず「応募する」を選択してください)。",
-      "locale": "ja",
-      "order": 2
-    },
-    {
-      "question": "どのようなロボットをお持ちですか?",
-      "answer": "レストランロボットとラストワンマイルデリバリーロボット。",
-      "locale": "ja",
-      "order": 3
-    },
-    {
-      "question": "ロボットに興味があるのですが、どうしたらいいですか?",
-      "answer": "お問い合わせフォームよりお問い合わせください(理由は必ず「ロボット販売」を選択してください)。",
-      "locale": "ja",
-      "order": 4
-    },
-    {
-      "question": "カスタムロボットは作れますか?",
-      "answer": "はい、お客様のニーズやご要望に合わせたカスタムロボットの製作が可能です。",
-      "locale": "ja",
-      "order": 5
-    },
-    {
-      "question": "カスタムロボットの製作に興味があるのですが、どうすればよいですか?",
-      "answer": "お問い合わせフォームよりお問い合わせください(理由は必ず「カスタムロボット」を選択してください)。",
-      "locale": "ja",
-      "order": 6
-    },
-    {
-      "question": "ファインジー・テクノロジーへの投資・提携を希望します。",
-      "answer": "Fainzy Technologies は、常に新しい戦略的パートナーシップを模索しています。お問い合わせフォームからご連絡ください(その際、必ず「投資・パートナーシップ」を理由に選択してください)。",
-      "locale": "ja",
-      "order": 7
     }
   ],
   "seo": {

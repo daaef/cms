@@ -23,15 +23,17 @@ import {Footer} from "@/collections/Footer"
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
-const serverURL = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001'
+const vercelURL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined
+const serverURL = process.env.PAYLOAD_PUBLIC_SERVER_URL || vercelURL || 'http://localhost:3001'
 const allowedOrigins = [
   serverURL,
+  vercelURL,
   'http://localhost:3000',  // Development frontend
   'https://fainzy.com',     // Production frontend (update with your actual domain)
   'https://www.fainzy.com', // Production frontend with www
   'https://dashboard-v2-inky.vercel.app',
   'https://fainzy-website-v2.vercel.app',
-]
+].filter(Boolean)
 
 export default buildConfig({
   admin: {
